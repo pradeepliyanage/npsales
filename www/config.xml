@@ -79,6 +79,7 @@
 	
 	<plugin name="cordova-plugin-cleartext" source="npm" spec="~1.0.0" />
 	
+	<plugin name="cordova-plugin-fullscreen" source="npm" spec="~1.3.0" />
 	
 	
 <platform name="ios">
