@@ -40,15 +40,7 @@ function onDeviceReady() {
 	AndroidFullScreen.immersiveMode(successFunction, errorFunction);
 
 
-	function successFunction()
-	{
-		
-	}
-
-	function errorFunction(error)
-	{
-		
-	}
+	
 	
 	//watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError);//getCurrentPosition //watchPosition //not required at the app load 
 	

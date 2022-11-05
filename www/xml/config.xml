@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.pradeepl.inframs" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>NP Sales</name>
+<widget id="com.pradeepl.tantriuniqueconex" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>UNIQUEFeex</name>
     <description>
-        NP Sales
+        A basic Framework7 template for PhoneGap.
     </description>
-    <author email="pradeepshantha@gmail.com" href="#">
-       Pradeep Liyanage
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
     </author>
     <content src="index.html" />
 	
@@ -15,45 +15,7 @@
 	<platform name="ios"/>
 	
 	
-	<access origin="*" />
-	<allow-navigation href="http://*/*" />
-	<allow-navigation href="https://*/*" />
 	
-	<allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="tel:*" />
-    <allow-intent href="sms:*" />
-    <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" />
-	
-	
-
-
-
-	
-	
-        
-		
-		<!--<allow-navigation href="https://inframs.mobitel.lk:8080/*" />
-		<allow-intent href="https://inframs.mobitel.lk/*" />-->
-		
-		<platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
-        <allow-navigation href="*" />
-		
-		<allow-navigation href="http://localhost:8080/*" />
-		<allow-navigation href="httpsionic://*" />
-		<allow-navigation href="http://124.43.160.52/*" />
-		<allow-navigation href="http://cqrmjaela.usslk.com/*" />
-		<allow-navigation href="https://cqrmjaela.usslk.com/*" />
-		
-		
-		</platform>
-		
-		
-		
-
 	 
 	<plugin name="cordova-plugin-battery-status" source="npm" spec="~2.0.3" />
     <plugin name="cordova-plugin-camera" source="npm" spec="~6.0.0" >
@@ -75,78 +37,49 @@
 	</plugin>
 
 	
+	
 
-    <plugin name="cordova-plugin-console" source="npm" spec="~1.1.0" />
+
+
+    <plugin name="cordova-plugin-console" source="npm" spec="~1.0.2" />
     <plugin name="cordova-plugin-contacts" source="npm" spec="~2.0.1" />
-    <plugin name="cordova-plugin-device" source="npm" spec="~2.0.3" />
+    <plugin name="cordova-plugin-device" source="npm" spec="~1.1.1" />
     <plugin name="cordova-plugin-device-motion" source="npm" spec="~1.2.0" />
     <plugin name="cordova-plugin-device-orientation" source="npm" spec="~1.0.2" />
-    <plugin name="cordova-plugin-dialogs" source="npm" spec="~2.0.2" />
+    <plugin name="cordova-plugin-dialogs" source="npm" spec="~1.2.0" />
     <plugin name="cordova-plugin-file" source="npm" spec="~6.0.2" />
 	
 	<feature name="File">
     <param name="android-package" value="org.apache.cordova.FileUtils" />
 	</feature>
 	
-
-	<!-- <plugin name="cordova-plugin-file-transfer" source="npm" spec="~1.7.1" />
-	
+    <plugin name="cordova-plugin-file-transfer" source="npm" spec="~1.7.1" />
+		
 	<feature name="File">
 		<param name="android-package" value="org.apache.cordova.FileUtils" />
 	</feature>
 	<feature name="FileTransfer">
 		<param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
 	</feature>
-	 -->
-	
-	
-	
-	<plugin name="cordova-plugin-file-transfer-ios-fix" source="npm" spec="~1.7.2" />
-	
 
     <plugin name="cordova-plugin-geolocation" source="npm" spec="~4.1.0" />
-	
-	<edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
-    <string>need location access</string>
-	</edit-config>
-
-	<edit-config target="NSLocationAlwaysAndWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
-    <string>need location access</string>
-	</edit-config>
-	
-	<edit-config target="NSLocationAlwaysUsageDescription" file="*-Info.plist" mode="merge">
-    <string>need location access</string>
-	</edit-config>
-	
-
-    <plugin name="cordova-plugin-globalization" source="npm" spec="~1.11.0" />
+    <plugin name="cordova-plugin-globalization" source="npm" spec="~1.0.3" />
     
 	<plugin name="cordova-plugin-inappbrowser" source="npm" spec="~5.0.0" />
 	
     <plugin name="cordova-plugin-media" source="npm" spec="~5.0.3" />
-    <plugin name="cordova-plugin-network-information" source="npm" spec="~3.0.0" />
+    <plugin name="cordova-plugin-network-information" source="npm" spec="~1.2.0" />
     <plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1" />
-    <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.4.3" />
+    <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" />
     <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
-    <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.3.5" />
+    <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.3.4" />
 	
 	<plugin name="cordova-plugin-sms" source="npm" />
 	<plugin name="cordova-sms-plugin" source="npm" />
 	
 	<plugin name="cordova-plugin-cleartext" source="npm" spec="~1.0.0" />
 	
-	<plugin name="cordova-plugin-ionic-webview" source="npm" spec="~5.0.0" />
-	
-	<platform name="ios">
-	<feature name="CDVWKWebViewEngine">
-	<param name="ios-package" value="CDVWKWebViewEngine" />
-	</feature>
-	<preference name="iosScheme" value="httpsionic" />
-	<preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
-	</platform>
-	<!--<plugin name="cordova-plugin-advanced-http" source="npm" spec="~3.2.2" />-->
-	
-	
+	<plugin name="cordova-plugin-fullscreen" source="npm" spec="~1.3.0" />
 	
 	
 <platform name="ios">
@@ -199,9 +132,21 @@
 </platform>
 
 	
-    
-		
-  
+    <access origin="*" />
+	<allow-navigation href="http://*/*" />
+	<allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+	
+
+	
+	<platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
    
 
 
