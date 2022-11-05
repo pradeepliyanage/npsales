@@ -1,0 +1,7 @@
+{
+  "name": "npsales",
+  "type": "custom",
+  "integrations": {
+    "cordova": {}
+  }
+}
