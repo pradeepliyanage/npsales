@@ -92,7 +92,7 @@ $$(document).on('pageInit', function (e) {
              var display = result;
 				// And insert generated list to page content
         $$(page.container).find('.page-content').append(display);
-		$("#backbutton").css("display", "block");
+		$("#backbutton").css("display", "table-cell");
 		});
        
         getLocationUpdate();//only when geo location info is required on this page
@@ -154,7 +154,7 @@ $$(document).on('pageInit', function (e) {
              var display = result;
 				// And insert generated list to page content
         $$(page.container).find('.page-content').append(display);
-		$("#backbutton").css("display", "block");		
+		$("#backbutton").css("display", "table-cell");		
 				 });
 				 
 		
