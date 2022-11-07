@@ -92,9 +92,8 @@ $$(document).on('pageInit', function (e) {
              var display = result;
 				// And insert generated list to page content
         $$(page.container).find('.page-content').append(display);
-		$$(page.container).find('.gradientnavbar').height("5%");
-				
-				 });
+		
+		});
        
         getLocationUpdate();//only when geo location info is required on this page
     }
