@@ -195,6 +195,7 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
 // swipe back event
 $$(document).on('pageAfterBack', function (e) { 
  
+	var page = e.detail.page;	
 	//stop geo location update
 	//navigator.geolocation.clearWatch(watchID);//skipped this to avoid error msg in going to the page repeattedly
 	//delete geo values
@@ -211,28 +212,6 @@ $$(document).on('pageAfterBack', function (e) {
  });
 
 
-// swipe back event
-$$(document).on('PageBeforeInit', function (e) { 
-	var page = e.detail.page;alert("1"+page.name);
-});
-$$(document).on('PageReinit', function (e) { 
-	var page = e.detail.page;alert("2"+page.name);
-});
-$$(document).on('PageBeforeAnimation', function (e) { 
-	var page = e.detail.page;alert("3"+page.name);
-});
-$$(document).on('PageAfterAnimation', function (e) { 
-	var page = e.detail.page;alert("4"+page.name);
-});
-$$(document).on('PageBeforeRemove', function (e) { 
-	var page = e.detail.page;alert("5"+page.name);
-});
-$$(document).on('PageBack', function (e) { 
-	var page = e.detail.page;alert("6"+page.name);
-});
-$$(document).on('PageAfterBack(', function (e) { 
-	var page = e.detail.page;alert("7"+page.name);
-});
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 //opening pages on browser
