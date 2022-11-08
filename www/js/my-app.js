@@ -194,6 +194,10 @@ $$(document).on('pageInit', '.page[data-page="index"]', function (e) {
     // Following code will be executed for page with data-page attribute equal to "about"
     $("#gradientnavbar").css("height", "25%");
 })
+$$(document).on('onPageReinit', '.page[data-page="index"]', function (e) {
+    // Following code will be executed for page with data-page attribute equal to "about"
+    $("#gradientnavbar").css("height", "25%");
+})
 
 
 // swipe back event
