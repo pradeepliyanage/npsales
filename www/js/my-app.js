@@ -194,9 +194,13 @@ $$(document).on('pageInit', '.page[data-page="index"]', function (e) {
     // Following code will be executed for page with data-page attribute equal to "about"
     $("#gradientnavbar").css("height", "25%");
 })
-$$(document).on('onPageReinit', '.page[data-page="index"]', function (e) {
+$$(document).on('onPageBack',function (e) {
+    // Get page data from event data
+    var page = e.detail.page;
+
+	alert(page.name);
     // Following code will be executed for page with data-page attribute equal to "about"
-    $("#gradientnavbar").css("height", "25%");
+   // $("#gradientnavbar").css("height", "25%");
 })
 
 
