@@ -190,23 +190,14 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
     // Following code will be executed for page with data-page attribute equal to "about"
     myApp.alert('Here comes About page');
 })
-$$(document).on('pageInit', '.page[data-page="index"]', function (e) {
-    // Following code will be executed for page with data-page attribute equal to "about"
-    $("#gradientnavbar").css("height", "25%");
-})
-$$(document).on('onPageBack',function (e) {
-    // Get page data from event data
-    var page = e.detail.page;
-
-	alert(page.name);
-    // Following code will be executed for page with data-page attribute equal to "about"
-   // $("#gradientnavbar").css("height", "25%");
-})
 
 
 // swipe back event
 $$(document).on('pageAfterBack', function (e) { 
  
+	var page = e.detail.page;
+
+	alert(page.name);
 	//stop geo location update
 	//navigator.geolocation.clearWatch(watchID);//skipped this to avoid error msg in going to the page repeattedly
 	//delete geo values
