@@ -93,6 +93,8 @@ $$(document).on('pageInit', function (e) {
 				// And insert generated list to page content
         $$(page.container).find('.page-content').append(display);
 		$("#backbutton").css("display", "table-cell");
+		$("#gradientnavbar").css("height", "5%");
+		
 		});
        
         getLocationUpdate();//only when geo location info is required on this page
@@ -168,7 +170,7 @@ $$(document).on('pageInit', function (e) {
 	if(uuidglobe!='')
 	getempname(uuidglobe);
 
-	$("#backbutton").css("display", "none");
+	//$("#backbutton").css("display", "none");
     }
 	
 	
