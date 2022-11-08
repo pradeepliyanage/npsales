@@ -195,9 +195,6 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
 // swipe back event
 $$(document).on('pageAfterBack', function (e) { 
  
-	var page = e.detail.page;
-
-	alert(page.name);
 	//stop geo location update
 	//navigator.geolocation.clearWatch(watchID);//skipped this to avoid error msg in going to the page repeattedly
 	//delete geo values
@@ -210,6 +207,17 @@ $$(document).on('pageAfterBack', function (e) {
     locationlon = '';
     locationerror = '';	
 	}
+ 
+ });
+
+
+// swipe back event
+$$(document).on('PageAfterAnimation', function (e) { 
+ 
+	var page = e.detail.page;
+
+	alert(page.name);
+	
  
  });
 /////////////////////////////////////////////////////////////////////////////////////////////
