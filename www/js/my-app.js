@@ -192,7 +192,12 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
     myApp.alert('Here comes About page');
 })
 
-
+$$(document).on('navbar:init', function (e) {
+	var navbar = e.detail.navbar;
+	var page = e.detail.page
+	alert(page);
+	alert(navbar);
+  });
 // swipe back event
 $$(document).on('pageAfterBack', function (e) { 
  
