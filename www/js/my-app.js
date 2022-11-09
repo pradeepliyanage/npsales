@@ -570,6 +570,8 @@ function getempname(uuid) {
 				//alert(display);
 				document.getElementById("index").innerHTML = display;
 				setoverlaydiv(uuid);
+				setviewmain(uuid);
+				setviews(uuid);
 				// document.getElementById("toolbardiv").innerHTML ="<a href=\"#\" onclick=\"openurl('main.php')\" class=\"link\"><i class = \"icon icon-form-url\"></i>System Home</a>";
 			}
         });
@@ -579,19 +581,37 @@ function setglobalempno(uuid2) {
 		
         var url = "http://124.43.160.52/npsales/phonegap-app/json.php";
         $.getJSON(url,{uuid2:uuid2}, function(result) {
-            console.log(result);
+            //console.log(result);
                 empno= result;
         });
-    }
+}
 
 function setoverlaydiv(uuidoverlaydiv) {	
 		
         var url = "http://124.43.160.52/npsales/phonegap-app/json.php";
         $.getJSON(url,{uuidoverlaydiv:uuidoverlaydiv}, function(result) {
-            console.log(result);
+            //console.log(result);
                 document.getElementById("overlaydiv").innerHTML = result;
         });
-    }
+}
+
+function setviewmain(uuidoverlaydiv) {	
+		
+	var url = "http://124.43.160.52/npsales/phonegap-app/json.php";
+	$.getJSON(url,{setviewmain:uuidoverlaydiv}, function(result) {
+		//console.log(result);
+		if(result!="")	document.getElementById("viewmain").innerHTML = result + document.getElementById("viewmain").innerHTML;
+	});
+}
+
+function setviews(uuidoverlaydiv) {	
+		
+	var url = "http://124.43.160.52/npsales/phonegap-app/json.php";
+	$.getJSON(url,{setviews:uuidoverlaydiv}, function(result) {
+		//console.log(result);
+		if(result!="")	document.getElementById("views").classList.add(result);
+	});
+}
 
 
 //call from login page 	
