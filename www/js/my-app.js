@@ -92,7 +92,6 @@ $$(document).on('pageInit', function (e) {
             //console.log(result);
              var display = result;
 				// And insert generated list to page content
-		$$(page.container).find('.page-content').empty();
         $$(page.container).find('.page-content').append(display);
 		
 		
@@ -571,6 +570,7 @@ function getempname(uuid) {
 				document.getElementById("index").innerHTML = display;
 				setoverlaydiv(uuid);
 				setviewmain(uuid);
+				setviewmain2(uuid);
 				setviews(uuid);
 				// document.getElementById("toolbardiv").innerHTML ="<a href=\"#\" onclick=\"openurl('main.php')\" class=\"link\"><i class = \"icon icon-form-url\"></i>System Home</a>";
 			}
@@ -602,7 +602,18 @@ function setviewmain(uuidoverlaydiv) {
 		//console.log(result);
 		if(result!="")	
 		$("#viewmain").prepend(result);
-		//document.getElementById("viewmain").innerHTML = result + document.getElementById("viewmain").innerHTML;
+		
+	});
+}
+
+function setviewmain2(uuidoverlaydiv) {	
+		
+	var url = globeippath+"/phonegap-app/json.php";
+	$.getJSON(url,{setviewmain2:uuidoverlaydiv}, function(result) {
+		//console.log(result);
+		if(result!="")	
+		$("#viewmain").append(result);
+		
 	});
 }
 
