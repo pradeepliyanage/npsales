@@ -89,12 +89,12 @@ $$(document).on('pageInit', function (e) {
 		
 		 var url = globeippath+"/phonegap-app/viewdetail_universal.php";
         $.getJSON(url,{viewname:viewname,empno:empnotemp,postval0:postval0}, function(result) {
-            console.log(result);
+            //console.log(result);
              var display = result;
 				// And insert generated list to page content
+		$$(page.container).find('.page-content')..empty();
         $$(page.container).find('.page-content').append(display);
-		$("#backbutton").css("display", "table-cell");
-		$("#gradientnavbar").css("height", "5%");
+		
 		
 		});
        
@@ -157,7 +157,7 @@ $$(document).on('pageInit', function (e) {
              var display = result;
 				// And insert generated list to page content
         $$(page.container).find('.page-content').append(display);
-		$("#backbutton").css("display", "table-cell");		
+		
 				 });
 				 
 		
@@ -171,7 +171,7 @@ $$(document).on('pageInit', function (e) {
 	if(uuidglobe!='')
 	getempname(uuidglobe);
 
-	//$("#backbutton").css("display", "none");
+	
     }
 	
 	
@@ -192,12 +192,6 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
     myApp.alert('Here comes About page');
 })
 
-$$(document).on('navbar:init', function (e) {
-	var navbar = e.detail.navbar;
-	var page = e.detail.page
-	alert(page);
-	alert(navbar);
-  });
 // swipe back event
 $$(document).on('pageAfterBack', function (e) { 
  
