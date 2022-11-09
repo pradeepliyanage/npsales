@@ -26,6 +26,7 @@ var locationlon = '';
 var locationerror = '';
 var locationtime = '';
 var globepage='';
+var globeippath='http://124.43.160.52/npsales';
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -86,7 +87,7 @@ $$(document).on('pageInit', function (e) {
 		var postval0 = page.query.val0;
         // Now we can generate some dummy list
 		
-		 var url = "http://124.43.160.52/npsales/phonegap-app/viewdetail_universal.php";
+		 var url = globeippath+"/phonegap-app/viewdetail_universal.php";
         $.getJSON(url,{viewname:viewname,empno:empnotemp,postval0:postval0}, function(result) {
             console.log(result);
              var display = result;
@@ -150,7 +151,7 @@ $$(document).on('pageInit', function (e) {
 		
 		
 		
-		var url = "http://124.43.160.52/npsales/phonegap-app/gatherdata_universal.php";
+		var url = globeippath+"/phonegap-app/gatherdata_universal.php";
         $.getJSON(url,{viewname:viewname,empno:empnotemp,morevar:morevar,postval0:postval0}, function(result) {
             console.log(result);
              var display = result;
@@ -221,7 +222,7 @@ function openurl(page){
 
 		//var page='new_viewsite.php?modalwin=modal_win_site_detail.php?siteid=';
 		var uuid = uuidglobe;
-        var ref = window.open('http://124.43.160.52/npsales/login-execapp.php?uuid='+uuid+'&page='+page, '_system', 'location=no'); 
+        var ref = window.open(globeippath+'/login-execapp.php?uuid='+uuid+'&page='+page, '_system', 'location=no'); 
 
 }
 
@@ -232,7 +233,7 @@ function openurl2old(page){
 
 		//var page='new_viewsite.php?modalwin=modal_win_site_detail.php?siteid=';
 		var uuid = uuidglobe;
-        var ref = window.open('http://124.43.160.52/npsales/login-execapp.php?uuid='+uuid+'&page='+page, '_blank', 'hidenavigationbuttons=yes,hideurlbar=yes,zoom=no');//location=yes,zoom=no,hardwareback=no,footer=yes,hidenavigationbuttons=yes,hideurlbar=yes 
+        var ref = window.open(globeippath+'/login-execapp.php?uuid='+uuid+'&page='+page, '_blank', 'hidenavigationbuttons=yes,hideurlbar=yes,zoom=no');//location=yes,zoom=no,hardwareback=no,footer=yes,hidenavigationbuttons=yes,hideurlbar=yes 
 
 }
 
@@ -244,7 +245,7 @@ function openurl2(page){
 
 		//var page='new_viewsite.php?modalwin=modal_win_site_detail.php?siteid=';
 		var uuid = uuidglobe;
-        var ref = cordova.InAppBrowser.open('http://124.43.160.52/npsales/login-execapp.php?uuid='+uuid+'&page='+page, '_blank', 'location=no,zoom=no,hardwareback=no');//location=yes,zoom=no,hardwareback=no,footer=yes,hidenavigationbuttons=yes,hideurlbar=yes 
+        var ref = cordova.InAppBrowser.open(globeippath+'/login-execapp.php?uuid='+uuid+'&page='+page, '_blank', 'location=no,zoom=no,hardwareback=no');//location=yes,zoom=no,hardwareback=no,footer=yes,hidenavigationbuttons=yes,hideurlbar=yes 
 
 		
 		ref.addEventListener('loadstart', function(e) {
@@ -253,7 +254,7 @@ function openurl2(page){
 		  var extension = url.substr(url.length - 11);
 		 
 		  if (extension == 'openurl2mod') {
-			var args = url.substr(0,url.length - 11).replace("http://124.43.160.52/npsales/", "").replace(/&/g, "xxx");
+			var args = url.substr(0,url.length - 11).replace(globeippath+"/", "").replace(/&/g, "xxx");
 			
 			ref.close(); // close window or you get exception
 			document.addEventListener('deviceready', function () {
@@ -294,7 +295,7 @@ var options = "location=yes,hidden=no,enableViewportScale=yes,toolbar=no,hardwar
 
 
 		var uuid = uuidglobe;
-        var ref = cordova.InAppBrowser.open('http://124.43.160.52/npsales/login-execapp.php?uuid='+uuid+'&page='+page, target, options);//location=yes,zoom=no,hardwareback=no,footer=yes,hidenavigationbuttons=yes,hideurlbar=yes 
+        var ref = cordova.InAppBrowser.open(globeippath+'/login-execapp.php?uuid='+uuid+'&page='+page, target, options);//location=yes,zoom=no,hardwareback=no,footer=yes,hidenavigationbuttons=yes,hideurlbar=yes 
 
 		
 		
@@ -323,7 +324,7 @@ function openurl2gps(page,latlong){
 			
 			
 		var uuid = uuidglobe;
-        var ref = cordova.InAppBrowser.open('http://124.43.160.52/npsales/login-execapp.php?uuid='+uuid+'&page='+page+'&latlong='+latlong, '_blank', 'location=no,zoom=no,hardwareback=no');//location=yes,zoom=no,hardwareback=no,footer=yes,hidenavigationbuttons=yes,hideurlbar=yes 
+        var ref = cordova.InAppBrowser.open(globeippath+'/login-execapp.php?uuid='+uuid+'&page='+page+'&latlong='+latlong, '_blank', 'location=no,zoom=no,hardwareback=no');//location=yes,zoom=no,hardwareback=no,footer=yes,hidenavigationbuttons=yes,hideurlbar=yes 
 
 		/* //close the inapp window with the call from the web page//set window.shouldClose=true; at the web page	
 		ref.addEventListener( "loadstop", function(){
@@ -510,7 +511,7 @@ function openurl3(page){
 
 		//var page='new_viewsite.php?modalwin=modal_win_site_detail.php?siteid=';
 		var uuid = uuidglobe;
-        var ref = cordova.InAppBrowser.open('http://124.43.160.52/npsales/login-execapp.php?uuid='+uuid+'&page='+page, '_blank', 'location=no,zoom=no,hardwareback=yes');//location=yes,zoom=no,hardwareback=no,footer=yes,hidenavigationbuttons=yes,hideurlbar=yes 
+        var ref = cordova.InAppBrowser.open(globeippath+'/login-execapp.php?uuid='+uuid+'&page='+page, '_blank', 'location=no,zoom=no,hardwareback=yes');//location=yes,zoom=no,hardwareback=no,footer=yes,hidenavigationbuttons=yes,hideurlbar=yes 
 
 		//close the inapp window with the call from the web page//set window.shouldClose=true; at the web page	
 		ref.addEventListener( "loadstop", function(){
@@ -521,7 +522,7 @@ function openurl3(page){
 					   function(values){
 						   if(values[0]){
 							 //ref.close();
-							 ref = cordova.InAppBrowser.open('http://124.43.160.52/npsales/login-execapp.php?uuid='+uuid+'&page='+page, '_blank', 'location=no,zoom=no,hardwareback=yes');//location=yes,zoom=no,hardwareback=no,footer=yes,hidenavigationbuttons=yes,hideurlbar=yes 
+							 ref = cordova.InAppBrowser.open(globeippath+'/login-execapp.php?uuid='+uuid+'&page='+page, '_blank', 'location=no,zoom=no,hardwareback=yes');//location=yes,zoom=no,hardwareback=no,footer=yes,hidenavigationbuttons=yes,hideurlbar=yes 
 							
 							 window.clearInterval(loop);
 						   }
@@ -554,7 +555,7 @@ function onError(error) {
 	
 function getempname(uuid) {	
 		
-        var url = "http://124.43.160.52/npsales/phonegap-app/json.php";
+        var url = globeippath+"/phonegap-app/json.php";
         $.getJSON(url,{uuid:uuid}, function(result) {
             console.log(result);
             var display = result;
@@ -579,7 +580,7 @@ function getempname(uuid) {
 	
 function setglobalempno(uuid2) {	
 		
-        var url = "http://124.43.160.52/npsales/phonegap-app/json.php";
+        var url = globeippath+"/phonegap-app/json.php";
         $.getJSON(url,{uuid2:uuid2}, function(result) {
             //console.log(result);
                 empno= result;
@@ -588,7 +589,7 @@ function setglobalempno(uuid2) {
 
 function setoverlaydiv(uuidoverlaydiv) {	
 		
-        var url = "http://124.43.160.52/npsales/phonegap-app/json.php";
+        var url = globeippath+"/phonegap-app/json.php";
         $.getJSON(url,{uuidoverlaydiv:uuidoverlaydiv}, function(result) {
             //console.log(result);
                 document.getElementById("overlaydiv").innerHTML = result;
@@ -597,16 +598,18 @@ function setoverlaydiv(uuidoverlaydiv) {
 
 function setviewmain(uuidoverlaydiv) {	
 		
-	var url = "http://124.43.160.52/npsales/phonegap-app/json.php";
+	var url = globeippath+"/phonegap-app/json.php";
 	$.getJSON(url,{setviewmain:uuidoverlaydiv}, function(result) {
 		//console.log(result);
-		if(result!="")	document.getElementById("viewmain").innerHTML = result + document.getElementById("viewmain").innerHTML;
+		if(result!="")	
+		$("#viewmain").prepend(result);
+		//document.getElementById("viewmain").innerHTML = result + document.getElementById("viewmain").innerHTML;
 	});
 }
 
 function setviews(uuidoverlaydiv) {	
 		
-	var url = "http://124.43.160.52/npsales/phonegap-app/json.php";
+	var url = globeippath+"/phonegap-app/json.php";
 	$.getJSON(url,{setviews:uuidoverlaydiv}, function(result) {
 		//console.log(result);
 		if(result!="")	document.getElementById("views").classList.add(result);
@@ -627,7 +630,7 @@ function firstlogin() {
             
 			$.ajax({
                 type: "POST",
-                url: "http://124.43.160.52/npsales/phonegap-app/update.php",
+                url: globeippath+"/phonegap-app/update.php",
                 data: dataString,
                 crossDomain: true,
                 cache: false,
@@ -778,7 +781,7 @@ function uploadFile(imageData,imagecaption,thisid,sourceType) {
 		alert('element exists!');
 	}
    
-   var uri = encodeURI("http://124.43.160.52/npsales/phonegap-app/fileupload.php?val0="+morevar);
+   var uri = encodeURI(globeippath+"/phonegap-app/fileupload.php?val0="+morevar);
    var options = new FileUploadOptions();
    options.chunkedMode = false,
    options.fileKey = "file";
@@ -843,7 +846,7 @@ function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodesca
             
 			$.ajax({
                 type: "POST",
-                url: "http://124.43.160.52/npsales/phonegap-app/update.php",
+                url: globeippath+"/phonegap-app/update.php",
                 data: dataString,
                 crossDomain: true,
                 cache: false,
@@ -1047,7 +1050,7 @@ function updatetabelonchangeallformdata(textcaption,thisid,thisvalue,saveto,type
             
 			$.ajax({
                 type: "POST",
-                url: "http://124.43.160.52/npsales/phonegap-app/update.php",
+                url: globeippath+"/phonegap-app/update.php",
                 data: dataString,
                 crossDomain: true,
                 cache: false,
@@ -1202,7 +1205,7 @@ function uploadFilecompareimages(imageData,imagecaption,thisid,type) {
 		alert('element exists!');
 	}
    
-   var uri = encodeURI("http://124.43.160.52/npsales/phonegap-app/fileupload.php?val0="+morevar);
+   var uri = encodeURI(globeippath+"/phonegap-app/fileupload.php?val0="+morevar);
    var options = new FileUploadOptions();
    options.chunkedMode = false,
    options.fileKey = "file";
@@ -1292,7 +1295,7 @@ var n=0;
 		var postval0 = '';
         // Now we can generate some dummy list
 		
-		 var url = "http://124.43.160.52/npsales/phonegap-app/viewdetail_universal.php";
+		 var url = globeippath+"/phonegap-app/viewdetail_universal.php";
         $.getJSON(url,{viewname:viewname,empno:empnotemp,postval0:postval0}, function(result) {
             console.log(result);
              var display = result;
