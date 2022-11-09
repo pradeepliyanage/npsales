@@ -92,7 +92,7 @@ $$(document).on('pageInit', function (e) {
             //console.log(result);
              var display = result;
 				// And insert generated list to page content
-		$$(page.container).find('.page-content')..empty();
+		$$(page.container).find('.page-content').empty();
         $$(page.container).find('.page-content').append(display);
 		
 		
