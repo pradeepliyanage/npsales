@@ -26,7 +26,8 @@ var locationlon = '';
 var locationerror = '';
 var locationtime = '';
 var globepage='';
-var globeippath='http://124.43.160.52/npsales';
+var globeippath='http://124.43.160.52/dppos';
+var nongeotag='nongeo';
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -97,7 +98,12 @@ $$(document).on('pageInit', function (e) {
 		
 		});
        
+		if(viewname.substring(0, 6) != "nongeo" && nongeotag != 'nongeo') {
         getLocationUpdate();//only when geo location info is required on this page
+		}
+
+
+
     }
 	
 	if (page.name === 'gatherdata_universal') {
