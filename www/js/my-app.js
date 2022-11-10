@@ -622,7 +622,11 @@ function setviews(uuidoverlaydiv) {
 	var url = globeippath+"/phonegap-app/json.php";
 	$.getJSON(url,{setviews:uuidoverlaydiv}, function(result) {
 		//console.log(result);
-		if(result!="")	document.getElementById("views").classList.add(result);
+		if(result!="")	{ 
+			document.getElementById("views").classList.remove("theme-blue");
+			document.getElementById("views").classList.add(result);
+
+		}
 	});
 }
 
