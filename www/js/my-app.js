@@ -952,6 +952,7 @@ function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodesca
                     if (rescheck1=='logoutindex') {//force go to index //logout
 					    uuidglobe="";
 						window.location.href="index.html";
+						location.reload(true);
 						return false;
 					}
 					
