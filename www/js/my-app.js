@@ -524,7 +524,7 @@ function getLocationUpdate_v2_server() {
 	
 	if(navigator.geolocation){
                // timeout at 60000 milliseconds (60 seconds)
-               var options = {enableHighAccuracy: true,  maximumAge: 30000,  timeout: 27000};
+               var options = {enableHighAccuracy: false,  maximumAge: 30000,  timeout: 27000};
              alert('t1');
                watchID = navigator.geolocation.watchPosition(function(position){
 				getLocationUpdate_v2_success_server(position);
