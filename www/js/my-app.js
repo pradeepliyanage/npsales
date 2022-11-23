@@ -26,7 +26,7 @@ var locationlon = '';
 var locationerror = '';
 var locationtime = '';
 var globepage='';
-var globeippath='http://124.43.160.52/dppos';
+var globeippath='http://124.43.160.52/tantriconex';
 var nongeotag='nongeo';
 
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -158,7 +158,7 @@ $$(document).on('pageInit', function (e) {
 		
 		var url = globeippath+"/phonegap-app/gatherdata_universal.php";
         $.getJSON(url,{viewname:viewname,empno:empnotemp,morevar:morevar,postval0:postval0}, function(result) {
-            console.log(result);
+            //console.log(result);
              var display = result;
 				// And insert generated list to page content
         $$(page.container).find('.page-content').append(display);
@@ -226,7 +226,7 @@ function openurl(page){
 
 		//var page='new_viewsite.php?modalwin=modal_win_site_detail.php?siteid=';
 		var uuid = uuidglobe;
-        var ref = window.open(globeippath+'/login-execapp.php?uuid='+uuid+'&page='+page, '_system', 'location=no'); 
+        var ref = cordova.InAppBrowser.open(globeippath+'/login-execapp.php?uuid='+uuid+'&page='+page, '_system', 'location=no'); 
 
 }
 
@@ -237,7 +237,7 @@ function openurl2old(page){
 
 		//var page='new_viewsite.php?modalwin=modal_win_site_detail.php?siteid=';
 		var uuid = uuidglobe;
-        var ref = window.open(globeippath+'/login-execapp.php?uuid='+uuid+'&page='+page, '_blank', 'hidenavigationbuttons=yes,hideurlbar=yes,zoom=no');//location=yes,zoom=no,hardwareback=no,footer=yes,hidenavigationbuttons=yes,hideurlbar=yes 
+        var ref = cordova.InAppBrowser.open(globeippath+'/login-execapp.php?uuid='+uuid+'&page='+page, '_blank', 'hidenavigationbuttons=yes,hideurlbar=yes,zoom=no');//location=yes,zoom=no,hardwareback=no,footer=yes,hidenavigationbuttons=yes,hideurlbar=yes 
 
 }
 
@@ -561,7 +561,7 @@ function getempname(uuid) {
 		
         var url = globeippath+"/phonegap-app/json.php";
         $.getJSON(url,{uuid:uuid}, function(result) {
-            console.log(result);
+            //console.log(result);
             var display = result;
 			
 		
@@ -734,6 +734,7 @@ function cameraTakePicture(imagecaption,thisid,sourceType) {
 	  targetWidth: 712,
       targetHeight: 712,	  
       destinationType: Camera.DestinationType.FILE_URI,
+	  correctOrientation: true					   
 	  //sourceType : Camera.PictureSourceType.PHOTOLIBRARY ,
 	  //sourceType: Camera.PictureSource.CAMERA, 
 	  //popoverOptions : popover
@@ -830,8 +831,8 @@ function uploadFile(imageData,imagecaption,thisid,sourceType) {
 
    function onErrorfileupload(error) {
       alert("An error has occurred: Code = " + error.code);
-      console.log("upload error source " + error.source);
-      console.log("upload error target " + error.target);
+     // console.log("upload error source " + error.source);
+     // console.log("upload error target " + error.target);
    }
 	
 }
@@ -1261,8 +1262,8 @@ function uploadFilecompareimages(imageData,imagecaption,thisid,type) {
 
    function onErrorfileupload(error) {
       alert("An error has occurred: Code = " + error.code);
-      console.log("upload error source " + error.source);
-      console.log("upload error target " + error.target);
+      //console.log("upload error source " + error.source);
+      //console.log("upload error target " + error.target);
    }
 	
 }
@@ -1318,7 +1319,7 @@ var n=0;
 		
 		 var url = globeippath+"/phonegap-app/viewdetail_universal.php";
         $.getJSON(url,{viewname:viewname,empno:empnotemp,postval0:postval0}, function(result) {
-            console.log(result);
+            //console.log(result);
              var display = result;
 			 
 			 
