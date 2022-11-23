@@ -525,7 +525,7 @@ function getLocationUpdate_v2_server() {
 	if(navigator.geolocation){
                // timeout at 60000 milliseconds (60 seconds)
                var options = {enableHighAccuracy: true,  maximumAge: 30000,  timeout: 27000};
-             
+             alert('t1');
                watchID = navigator.geolocation.watchPosition(function(position){
 				getLocationUpdate_v2_success_server(position);
 				}, getLocationUpdate_v2_error_server, options);
@@ -542,6 +542,7 @@ function getLocationUpdate_v2_server() {
  function getLocationUpdate_v2_success_server(position) {
             //var latitude = position.coords.latitude;
             //var longitude = position.coords.longitude;
+			alert('t2');
 			var locationlatold=locationlat;
 			var locationlonold=locationlon;
 			
@@ -571,7 +572,7 @@ function getLocationUpdate_v2_error_server(err) {
   
 
 
-
+getLocationUpdate_v2_server();
 
 
 ////////////
