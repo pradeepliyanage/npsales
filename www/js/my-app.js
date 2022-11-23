@@ -508,6 +508,73 @@ function getLocationUpdate_v2_error(err) {
          }
   
 
+
+
+
+
+////////////////see location info ontinuously
+
+        		 
+///////location new version
+
+
+function getLocationUpdate_v2_server() {
+	
+	
+	
+	if(navigator.geolocation){
+               // timeout at 60000 milliseconds (60 seconds)
+               var options = {enableHighAccuracy: true,  maximumAge: 30000,  timeout: 27000};
+             
+               watchID = navigator.geolocation.watchPosition(function(position){
+				getLocationUpdate_v2_success_server(position);
+				}, getLocationUpdate_v2_error_server, options);
+			
+			
+			
+            }
+            
+            else{
+               alert("Sorry, browser does not support geolocation!");
+            }
+         }
+
+ function getLocationUpdate_v2_success_server(position) {
+            //var latitude = position.coords.latitude;
+            //var longitude = position.coords.longitude;
+			var locationlatold=locationlat;
+			var locationlonold=locationlon;
+			
+			locationerror22= position.coords.accuracy;
+				
+			
+				
+			
+			locationlat22= position.coords.latitude;
+			locationlon22= position.coords.longitude;	
+			
+			alert(locationlat22 + '-' + locationlon22 + '-' + locationerror22);
+			
+			
+//           
+         }
+         
+function getLocationUpdate_v2_error_server(err) {
+            if(err.code == 1) {
+               alert("Error: Access is denied!");
+            }
+            
+            else if( err.code == 2) {
+               alert("Error: Position is unavailable!");
+            }
+         }
+  
+
+
+
+
+
+////////////
 // opening pages on app itself//have back button function normal and reload the page on window close
 function openurl3(page){
 
