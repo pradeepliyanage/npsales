@@ -520,24 +520,24 @@ function getLocationUpdate_v2_error(err) {
 
 function getLocationUpdate_v2_server() {
 	
+	cordova.plugins.LocationProvider.setConfiguration({ maximumAge: 30000,  timeout: 27000});
 	
-	
-	if(navigator.geolocation){
                // timeout at 60000 milliseconds (60 seconds)
-               var options = {enableHighAccuracy: false,  maximumAge: 30000,  timeout: 27000};
+              
              alert('t1');
-               watchID = navigator.geolocation.watchPosition(function(position){
-				getLocationUpdate_v2_success_server(position);
-				}, getLocationUpdate_v2_error_server, options);
+               
+				cordova.plugins.LocationProvider.getAndClearHistory(successCallback);
+
+				function successCallback(history){
+					alert(history);
+
+
+				}
+							
 			
 			
-			
-            }
-            
-            else{
-               alert("Sorry, browser does not support geolocation!");
-            }
-         }
+          
+}
 
  function getLocationUpdate_v2_success_server(position) {
             //var latitude = position.coords.latitude;
