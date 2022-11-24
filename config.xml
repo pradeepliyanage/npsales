@@ -29,6 +29,10 @@
         <allow-navigation href="http://cqrmjaela.usslk.com/*" />
         <allow-navigation href="https://cqrmjaela.usslk.com/*" />
     </platform>
+
+
+    <preference name="Fullscreen" value="true" />
+
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~2.0.3" />
     <plugin name="cordova-plugin-camera" source="npm" spec="~6.0.0">
         <variable name="CAMERA_USAGE_DESCRIPTION" value="Use Camera" />
