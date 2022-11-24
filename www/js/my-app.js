@@ -425,7 +425,7 @@ function errorHandlermapandopenurl(err) {
 function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 	
 	if(navigator.geolocation){
-
+		getLocationUpdate();
 	}
 
 	cordova.plugins.LocationProvider.setConfiguration();
@@ -740,7 +740,7 @@ function getLocationUpdate(){
             }
             
             else{
-               alert("Sorry, browser does not support geolocation!");
+               alert("Sorry, Device does not support geolocation!");
             }
          }
 
