@@ -117,7 +117,7 @@ $$(document).on('pageInit', function (e) {
 		//if(viewname.substring(0, 14) === "markattendance") getLocationUpdate();//only when geo location info is required on this page
 		
 		if(viewname.substring(0, 14) === "markattendance") {
-			getLocationUpdate_v3(viewname,empnotemp,morevar,postval0);//only when geo location info is required on this page
+			getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page);//only when geo location info is required on this page
 			
 		} else {
 
@@ -413,7 +413,7 @@ function errorHandlermapandopenurl(err) {
          		 
 ///////location new version v3
 
-function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0) {
+function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 	
 	if(navigator.geolocation){
 
