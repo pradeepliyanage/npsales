@@ -99,7 +99,7 @@ $$(document).on('pageInit', function (e) {
 		});
        
 		if(viewname.substring(0, 6) != "nongeo" && nongeotag != 'nongeo') {
-		getLocationUpdate_v2();//only when geo location info is required on this page
+		getLocationUpdate();//only when geo location info is required on this page
 		}
 
 
@@ -117,67 +117,24 @@ $$(document).on('pageInit', function (e) {
 		//if(viewname.substring(0, 14) === "markattendance") getLocationUpdate();//only when geo location info is required on this page
 		
 		if(viewname.substring(0, 14) === "markattendance") {
-			getLocationUpdate_v2();//only when geo location info is required on this page
+			getLocationUpdate_v3(viewname,empnotemp,morevar,postval0);//only when geo location info is required on this page
 			
-		}
-		
-		
-	    // more variable to post
-       // if(viewname === "sitecleaningimage") morevar=locationlon+"xxx"+locationlat+"xxx"+locationerror;
-		
-        
-		//alert("test123");
-		//return event
-		if(viewname.substring(0, 14) === "markattendance" ) {
-		
+		} else {
+
+			var url = globeippath+"/phonegap-app/gatherdata_universal.php";
+			$.getJSON(url,{viewname:viewname,empno:empnotemp,morevar:morevar,postval0:postval0}, function(result) {
+				//console.log(result);
+				var display = result;
+					// And insert generated list to page content
+			$$(page.container).find('.page-content').append(display);
 			
-			for(var dd=0;dd<100;dd++) {
-			
-			if(locationlat!='') break;			
-				
-			setTimeout(function() {	}, 1000);
-			}
-			
-		}
-		
-		if(viewname.substring(0, 14) === "markattendance" ) {
-		
-			if(locationlat=='') {
-				
-				getLocationUpdate_v3();
-				
-			}
-				
-				
-		}
+			});
 
 
-
-		if(viewname.substring(0, 14) === "markattendance" ) {
-		
-		if(locationlat=='') {
-			
-			alert("Error !!! \n\nPlease Check GPS in the Phone is Enabled.\n\nIf GPS is already enabled, Remove App History and Restart the App.")
-			return;
-		}
-			
-			
 		}
 		
-		if(viewname.substring(0, 14) === "markattendance") morevar=locationlon+"xxx"+locationlat+"xxx"+locationerror;
-		
-		
-		
-		var url = globeippath+"/phonegap-app/gatherdata_universal.php";
-        $.getJSON(url,{viewname:viewname,empno:empnotemp,morevar:morevar,postval0:postval0}, function(result) {
-            //console.log(result);
-             var display = result;
-				// And insert generated list to page content
-        $$(page.container).find('.page-content').append(display);
-		
-				 });
-				 
-		
+		return;
+	   
 		
 		
 	
@@ -456,8 +413,12 @@ function errorHandlermapandopenurl(err) {
          		 
 ///////location new version v3
 
-function getLocationUpdate_v3() {
+function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0) {
 	
+	if(navigator.geolocation){
+
+	}
+
 	cordova.plugins.LocationProvider.setConfiguration();
 	
 	 var options = {enableHighAccuracy: true,  maximumAge: 30000,  timeout: 27000};
@@ -490,6 +451,22 @@ function getLocationUpdate_v3() {
 		locationlat= position.coords.latitude;
 		locationlon= position.coords.longitude;	
 		
+
+		if(viewname.substring(0, 14) === "markattendance") morevar=locationlon+"xxx"+locationlat+"xxx"+locationerror;
+		
+		
+		
+		var url = globeippath+"/phonegap-app/gatherdata_universal.php";
+        $.getJSON(url,{viewname:viewname,empno:empnotemp,morevar:morevar,postval0:postval0}, function(result) {
+            //console.log(result);
+             var display = result;
+				// And insert generated list to page content
+        $$(page.container).find('.page-content').append(display);
+		
+		});
+			
+
+
 		
 		}
 
@@ -577,75 +554,6 @@ function getLocationUpdate_v2_error(err) {
 
 
 ////////////////see location info ontinuously
-
-        		 
-///////location new version
-
-
-function getLocationUpdate_v2_server() {
-	
-	//cordova.plugins.LocationProvider.setConfiguration({ maximumAge: 30000,  timeout: 27000});
-	
-               // timeout at 60000 milliseconds (60 seconds)
-			   var options = {enableHighAccuracy: true,  maximumAge: 30000,  timeout: 27000};    
-             alert('t1');
-               
-			 cordova.plugins.LocationProvider.getOwnPosition(options, successcallback, errorcallback);
-
-			 function successcallback(history){
-					
-
-				alert(JSON.stringify(history));
-
-				}
-				
-				function errorcallback(err){
-					
-
-				alert(JSON.stringify(err));
-
-				}
-							
-			
-			
-          
-}
-
- function getLocationUpdate_v2_success_server(position) {
-            //var latitude = position.coords.latitude;
-            //var longitude = position.coords.longitude;
-			alert('t2');
-			var locationlatold=locationlat;
-			var locationlonold=locationlon;
-			
-			locationerror22= position.coords.accuracy;
-				
-			
-				
-			
-			locationlat22= position.coords.latitude;
-			locationlon22= position.coords.longitude;	
-			
-			alert(locationlat22 + '-' + locationlon22 + '-' + locationerror22);
-			
-			
-//           
-         }
-         
-function getLocationUpdate_v2_error_server(err) {
-            if(err.code == 1) {
-               alert("Error: Access is denied!");
-            }
-            
-            else if( err.code == 2) {
-               alert("Error: Position is unavailable!");
-            }
-         }
-  
-
-
-getLocationUpdate_v2_server();
-
 
 ////////////
 // opening pages on app itself//have back button function normal and reload the page on window close
