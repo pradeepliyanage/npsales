@@ -27,7 +27,7 @@ var locationerror = '';
 var locationtime = '';
 var globepage='';
 var globeippath='http://124.43.160.52/tantriconex';
-var nongeotag='nongeo';
+var nongeotag='';//nongeo //for no gps app put nongeo
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -81,6 +81,9 @@ $$(document).on('pageInit', function (e) {
     // Get page data from event data
     var page = e.detail.page;
 
+	document.getElementById("loaderoptimized").style.display="block";
+
+
 	 if (page.name === 'viewdetail_universal') {
         // We need to get count GET parameter from URL (about.html?count=10)
         var viewname = page.query.viewname;
@@ -93,6 +96,7 @@ $$(document).on('pageInit', function (e) {
             //console.log(result);
              var display = result;
 				// And insert generated list to page content
+				document.getElementById("loaderoptimized").style.display="none";		
         $$(page.container).find('.page-content').append(display);
 		
 		
@@ -126,6 +130,7 @@ $$(document).on('pageInit', function (e) {
 				//console.log(result);
 				var display = result;
 					// And insert generated list to page content
+					document.getElementById("loaderoptimized").style.display="none";		
 			$$(page.container).find('.page-content').append(display);
 			
 			});
@@ -144,7 +149,7 @@ $$(document).on('pageInit', function (e) {
         
 	if(uuidglobe!='')
 	getempname(uuidglobe);
-
+		document.getElementById("loaderoptimized").style.display="none";		
 	
     }
 	
@@ -154,6 +159,7 @@ $$(document).on('pageInit', function (e) {
 	if (page.name === 'dummy') {
        
 	navigator.geolocation.clearWatch(watchID);
+	document.getElementById("loaderoptimized").style.display="none";		
 		
     }
 
@@ -444,7 +450,7 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 			locationlon2= position.coords.longitude;	
 		
 			alert("Your location info is not accurate.You will be directed to Google MAP.Please tune the location and Try Again.\n\n" +"Latitude : " + locationlat2 + " Longitude: " + locationlon2 + " locationerror: " + locationerror );
-			
+			document.getElementById("loaderoptimized").style.display="none";		
 			openurlgooglemap("https://maps.google.com/?q="+locationlat2+","+locationlon2+"");
 		} else  {			
 		
@@ -461,6 +467,7 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
             //console.log(result);
              var display = result;
 				// And insert generated list to page content
+				document.getElementById("loaderoptimized").style.display="none";		
         $$(page.container).find('.page-content').append(display);
 		
 		});
@@ -475,7 +482,7 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 	 function errorcallback(err){
 		 
 
-	 alert('Please check whether the Location is enabled!!!');
+	 alert('Please check whether the GPS Location is enabled!!!');
 
 	 }
 		 
