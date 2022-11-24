@@ -526,7 +526,7 @@ function getLocationUpdate_v2_server() {
 			   var options = {enableHighAccuracy: true,  maximumAge: 30000,  timeout: 27000};    
              alert('t1');
                
-			 cordova.plugins.LocationProvider.getOwnPosition(options, successcallback, errorcallback)
+			 cordova.plugins.LocationProvider.getOwnPosition(options, successcallback, errorcallback);
 
 			 function successcallback(history){
 					
