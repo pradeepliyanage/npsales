@@ -99,7 +99,7 @@ $$(document).on('pageInit', function (e) {
 		});
        
 		if(viewname.substring(0, 6) != "nongeo" && nongeotag != 'nongeo') {
-        getLocationUpdate();//only when geo location info is required on this page
+		getLocationUpdate_v2();//only when geo location info is required on this page
 		}
 
 
@@ -140,7 +140,19 @@ $$(document).on('pageInit', function (e) {
 			
 		}
 		
-	
+		if(viewname.substring(0, 14) === "markattendance" ) {
+		
+			if(locationlat=='') {
+				
+				getLocationUpdate_v3();
+				
+			}
+				
+				
+		}
+
+
+
 		if(viewname.substring(0, 14) === "markattendance" ) {
 		
 		if(locationlat=='') {
@@ -442,8 +454,60 @@ function errorHandlermapandopenurl(err) {
             }
          }
          		 
-///////location new version
+///////location new version v3
 
+function getLocationUpdate_v3() {
+	
+	cordova.plugins.LocationProvider.setConfiguration();
+	
+	 var options = {enableHighAccuracy: true,  maximumAge: 30000,  timeout: 27000};
+	 cordova.plugins.LocationProvider.getOwnPosition(options, successCallback, errorcallback);
+	 
+	 
+	 function successCallback(position){
+		 
+
+		var locationlatold=locationlat;
+		var locationlonold=locationlon;
+		
+		locationerror= position.coords.accuracy;
+			
+		
+		
+		if(document.getElementById('jasonhiddenvariable0')) var jasonhiddenvariable0 = document.getElementById('jasonhiddenvariable0').innerHTML;
+		else var jasonhiddenvariable0=500;
+		
+		
+		if(+locationerror > +jasonhiddenvariable0) {
+			locationlat2= position.coords.latitude;
+			locationlon2= position.coords.longitude;	
+		
+			alert("Your location info is not accurate.You will be directed to Google MAP.Please tune the location and Try Again.\n\n" +"Latitude : " + locationlat2 + " Longitude: " + locationlon2 + " locationerror: " + locationerror );
+			
+			openurlgooglemap("https://maps.google.com/?q="+locationlat2+","+locationlon2+"");
+		} else  {			
+		
+		locationlat= position.coords.latitude;
+		locationlon= position.coords.longitude;	
+		
+		
+		}
+
+	 }
+	 
+	 function errorcallback(err){
+		 
+
+	 alert('Please check whether the Location is enabled!!!');
+
+	 }
+		 
+
+}
+
+
+
+//////////////////////////location new version v2		 
 
 function getLocationUpdate_v2() {
 	
@@ -495,7 +559,7 @@ function getLocationUpdate_v2() {
 			
 			}
 //           
-         }
+ }
          
 function getLocationUpdate_v2_error(err) {
             if(err.code == 1) {
