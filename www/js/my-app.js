@@ -39,9 +39,9 @@ function onDeviceReady() {
 	var uuid2 = device.uuid;
 	uuidglobe = uuid;
 
-	AndroidFullScreen.showUnderStatusBar(successFunction, errorFunction);
+	
 	AndroidFullScreen.immersiveMode(successFunction, errorFunction);
-	AndroidFullScreen.showUnderSystemUI(successFunction, errorFunction);
+	
  
 
 
