@@ -520,17 +520,25 @@ function getLocationUpdate_v2_error(err) {
 
 function getLocationUpdate_v2_server() {
 	
-	cordova.plugins.LocationProvider.setConfiguration({ maximumAge: 30000,  timeout: 27000});
+	//cordova.plugins.LocationProvider.setConfiguration({ maximumAge: 30000,  timeout: 27000});
 	
                // timeout at 60000 milliseconds (60 seconds)
-              
+			   var options = {enableHighAccuracy: true,  maximumAge: 30000,  timeout: 27000};    
              alert('t1');
                
-				cordova.plugins.LocationProvider.getAndClearHistory(successCallback);
+			 cordova.plugins.LocationProvider.getOwnPosition(options, successcallback, errorcallback)
 
-				function successCallback(history){
-					alert(history);
+			 function successcallback(history){
+					
 
+				alert(JSON.stringify(history));
+
+				}
+				
+				function errorcallback(err){
+					
+
+				alert(JSON.stringify(err));
 
 				}
 							
