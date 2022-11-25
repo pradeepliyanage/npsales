@@ -774,7 +774,7 @@ function errorHandler(err) {
 function cameraTakePicture(imagecaption,thisid,sourceType) { 
 	var imagecaption=imagecaption;//value passing from onclick button event
 	var thisid=thisid;
-	alert(thisid));
+	alert(thisid);
 	
 	if(sourceType=="PHOTOLIBRARY") {
    navigator.camera.getPicture(onSuccess, onFail, {  
