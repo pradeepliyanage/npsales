@@ -123,7 +123,7 @@ $$(document).on('pageInit', function (e) {
 		//if(viewname === "sitecleaningimage") getLocationUpdate();//only when geo location info is required on this page
 		//if(viewname.substring(0, 14) === "markattendance") getLocationUpdate();//only when geo location info is required on this page
 		
-		if(viewname.substring(0, 14) === "markattendance") {
+		if(viewname.substring(0, 14) === "markattendance1") {
 			getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page);//only when geo location info is required on this page
 			
 		} else {
