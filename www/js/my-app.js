@@ -424,9 +424,7 @@ function errorHandlermapandopenurl(err) {
 
 function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 	
-	if(navigator.geolocation){
-		getLocationUpdate();
-	}
+	
 
 	cordova.plugins.LocationProvider.setConfiguration();
 	
@@ -484,8 +482,11 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 	 
 	 function errorcallback(err){
 		 
-
-	 alert('Please check whether the GPS Location is enabled!!!');
+		if(navigator.geolocation){
+			getLocationUpdate();
+			getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) ;
+		}
+	// alert('Please check whether the GPS Location is enabled!!!');
 
 	 }
 		 
