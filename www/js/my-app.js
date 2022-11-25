@@ -740,6 +740,8 @@ function getLocationUpdate(){
             }
             
             else{
+				if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
+			
                alert("Sorry, Device does not support geolocation!");
             }
          }
@@ -759,10 +761,14 @@ function showLocation(position) {
 function errorHandler(err) {
 	
             if(err.code == 1) {
+				if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
+			
                alert("Error: Access is denied!");
             }
             
             else if( err.code == 2) {
+				if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
+			
                alert("Error: Position is unavailable!");
             }
          }
@@ -774,7 +780,7 @@ function errorHandler(err) {
 function cameraTakePicture(imagecaption,thisid,sourceType) { 
 	var imagecaption=imagecaption;//value passing from onclick button event
 	var thisid=thisid;
-	alert(thisid);
+	//alert(thisid));
 	
 	if(sourceType=="PHOTOLIBRARY") {
    navigator.camera.getPicture(onSuccess, onFail, {  
@@ -792,7 +798,7 @@ function cameraTakePicture(imagecaption,thisid,sourceType) {
 	  targetWidth: 712,
       targetHeight: 712,	  
       destinationType: Camera.DestinationType.FILE_URI,
-	  				   
+	  correctOrientation: true					   
 	  //sourceType : Camera.PictureSourceType.PHOTOLIBRARY ,
 	  //sourceType: Camera.PictureSource.CAMERA, 
 	  //popoverOptions : popover
@@ -806,13 +812,13 @@ function cameraTakePicture(imagecaption,thisid,sourceType) {
 	  /* var image = document.getElementById('myImage'); 
       image.src = imageData;//"data:image/jpeg;base64," +
 	  image.style.display = "block"; */
-	 alert("t");
+	 
 	//watermark
-	//var watermark;
-	//var canvasDom;
-	//var canvas;
-	//canvasDom = $("#myCanvas")[0];
-    //canvas = canvasDom.getContext("2d");
+	var watermark;
+	var canvasDom;
+	var canvas;
+	canvasDom = $("#myCanvas")[0];
+    canvas = canvasDom.getContext("2d");
     //Create a watermark image object
     /* watermark = new Image();
     watermark.src = "icon.png";

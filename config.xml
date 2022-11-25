@@ -38,10 +38,7 @@
         <variable name="CAMERA_USAGE_DESCRIPTION" value="Use Camera" />
         <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Select Photo" />
     </plugin>
-    <feature name="Camera">
-        <param name="ios-package" value="CDVCamera" />
-    </feature>
-    <plugin name="cordova-plugin-ios-camera-permissions" source="npm" spec="~1.2.0" />
+   
     <plugin name="cordova-plugin-media-capture" source="npm" spec="~3.0.3">
         <variable name="CAMERA_USAGE_DESCRIPTION" value="App would like to access the camera." />
         <variable name="MICROPHONE_USAGE_DESCRIPTION" value="App would like to access the microphone." />
