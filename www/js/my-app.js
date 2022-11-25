@@ -123,7 +123,7 @@ $$(document).on('pageInit', function (e) {
 		//if(viewname === "sitecleaningimage") getLocationUpdate();//only when geo location info is required on this page
 		//if(viewname.substring(0, 14) === "markattendance") getLocationUpdate();//only when geo location info is required on this page
 		
-		if(viewname.substring(0, 14) === "markattendance1") {
+		if(viewname.substring(0, 14) === "markattendance") {
 			getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page);//only when geo location info is required on this page
 			
 		} else {
@@ -774,7 +774,7 @@ function errorHandler(err) {
 function cameraTakePicture(imagecaption,thisid,sourceType) { 
 	var imagecaption=imagecaption;//value passing from onclick button event
 	var thisid=thisid;
-	//alert(thisid));
+	alert(thisid));
 	
 	if(sourceType=="PHOTOLIBRARY") {
    navigator.camera.getPicture(onSuccess, onFail, {  
@@ -792,7 +792,7 @@ function cameraTakePicture(imagecaption,thisid,sourceType) {
 	  targetWidth: 712,
       targetHeight: 712,	  
       destinationType: Camera.DestinationType.FILE_URI,
-	  correctOrientation: true					   
+	  				   
 	  //sourceType : Camera.PictureSourceType.PHOTOLIBRARY ,
 	  //sourceType: Camera.PictureSource.CAMERA, 
 	  //popoverOptions : popover
@@ -806,13 +806,13 @@ function cameraTakePicture(imagecaption,thisid,sourceType) {
 	  /* var image = document.getElementById('myImage'); 
       image.src = imageData;//"data:image/jpeg;base64," +
 	  image.style.display = "block"; */
-	 
+	 alert("t");
 	//watermark
-	var watermark;
-	var canvasDom;
-	var canvas;
-	canvasDom = $("#myCanvas")[0];
-    canvas = canvasDom.getContext("2d");
+	//var watermark;
+	//var canvasDom;
+	//var canvas;
+	//canvasDom = $("#myCanvas")[0];
+    //canvas = canvasDom.getContext("2d");
     //Create a watermark image object
     /* watermark = new Image();
     watermark.src = "icon.png";
