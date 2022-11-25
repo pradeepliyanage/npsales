@@ -1,136 +1,155 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.pradeepl.inframs" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>UNIQUE CONEX</name>
+<widget id="com.pradeepl.tantriuniqueconex" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>UNIQUEConex</name>
     <description>
-        UNIQUE CONEX
+        A basic Framework7 template for PhoneGap.
     </description>
-    <author email="pradeepshantha@gmail.com" href="#">
-       Pradeep Liyanage
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
     </author>
     <content src="index.html" />
-    <platform name="android" />
-    <platform name="ios" />
+	
+	
+	
+	<platform name="android"/>
+	<platform name="ios"/>
+	
+	
+	
+	 
+	<plugin name="cordova-plugin-battery-status" source="npm" spec="~2.0.3" />
+    <plugin name="cordova-plugin-camera" source="npm" spec="~5.0.1" >
+	 <variable name="CAMERA_USAGE_DESCRIPTION" value="Use Camera" />
+   <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Select Photo" />
+    </plugin>
+	<feature name="Camera">
+    <param name="ios-package" value="CDVCamera" />
+	</feature>
+	
+	
+	<plugin name="cordova-plugin-ios-camera-permissions" source="npm" spec="~1.2.0" />
+	
+	
+	<plugin name="cordova-plugin-media-capture" source="npm" spec="~3.0.3" >
+		<variable name="CAMERA_USAGE_DESCRIPTION" value="App would like to access the camera." />
+	  <variable name="MICROPHONE_USAGE_DESCRIPTION" value="App would like to access the microphone." />
+	  <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="App would like to access the library." />
+	</plugin>
+
+	
+	
+
+
+
+    <plugin name="cordova-plugin-console" source="npm" spec="~1.0.2" />
+    <plugin name="cordova-plugin-contacts" source="npm" spec="~2.0.1" />
+    <plugin name="cordova-plugin-device" source="npm" spec="~1.1.1" />
+    <plugin name="cordova-plugin-device-motion" source="npm" spec="~1.2.0" />
+    <plugin name="cordova-plugin-device-orientation" source="npm" spec="~1.0.2" />
+    <plugin name="cordova-plugin-dialogs" source="npm" spec="~1.2.0" />
+    <plugin name="cordova-plugin-file" source="npm" spec="~6.0.2" />
+	
+	<feature name="File">
+    <param name="android-package" value="org.apache.cordova.FileUtils" />
+	</feature>
+	
+    <plugin name="cordova-plugin-file-transfer" source="npm" spec="~1.7.1" />
+		
+	<feature name="File">
+		<param name="android-package" value="org.apache.cordova.FileUtils" />
+	</feature>
+	<feature name="FileTransfer">
+		<param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
+	</feature>
+
+    <plugin name="cordova-plugin-geolocation" source="npm" spec="~4.1.0" />
+    <plugin name="cordova-plugin-globalization" source="npm" spec="~1.0.3" />
+    
+	<plugin name="cordova-plugin-inappbrowser" source="npm" spec="~5.0.0" />
+	
+    <plugin name="cordova-plugin-media" source="npm" spec="~5.0.3" />
+    <plugin name="cordova-plugin-network-information" source="npm" spec="~1.2.0" />
+    <plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1" />
+    <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" />
+    <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
+    <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.3.4" />
+	
+	<plugin name="cordova-plugin-sms" source="npm" />
+	<plugin name="cordova-sms-plugin" source="npm" />
+	
+	<plugin name="cordova-plugin-cleartext" source="npm" spec="~1.0.0" />
+	
+	
+	
+<platform name="ios">
+<icon src="res/icon/ios/icon-1024.png" width="1024" height="1024"/>
+<icon src="res/icon/ios/icon-small.png" width="29" height="29"/>
+<icon src="res/icon/ios/icon-small@2x.png" width="58" height="58"/>
+<icon src="res/icon/ios/icon-small@3x.png" width="87" height="87"/>
+<icon src="res/icon/ios/icon-small-40.png" width="40" height="40"/>
+<icon src="res/icon/ios/icon-small-40@2x.png" width="80" height="80"/>
+<icon src="res/icon/ios/icon-small-40@3x.png" width="120" height="120"/>
+<icon src="res/icon/ios/icon-small-50.png" width="50" height="50"/>
+<icon src="res/icon/ios/icon-small-50@2x.png" width="100" height="100"/>
+<icon src="res/icon/ios/icon.png" width="57" height="57"/>
+<icon src="res/icon/ios/icon@2x.png" width="114" height="114"/>
+<icon src="res/icon/ios/icon-60.png" width="60" height="60"/>
+<icon src="res/icon/ios/icon-60@2x.png" width="120" height="120"/>
+<icon src="res/icon/ios/icon-60@3x.png" width="180" height="180"/>
+<icon src="res/icon/ios/icon-72.png" width="72" height="72"/>
+<icon src="res/icon/ios/icon-72@2x.png" width="144" height="144"/>
+<icon src="res/icon/ios/icon-76.png" width="76" height="76"/>
+<icon src="res/icon/ios/icon-76@2x.png" width="152" height="152"/>
+<icon src="res/icon/ios/icon-167.png" width="167" height="167"/>
+<icon src="res/icon/ios/icon-83.5@2x.png" width="167" height="167"/>
+<!--  Storyboard portrait  -->
+<splash src="res/screen/ios/Default@2x~iphone~anyany.png"/>
+<splash src="res/screen/ios/Default@2x~iphone~comany.png"/>
+<splash src="res/screen/ios/Default@3x~iphone~anyany.png"/>
+<splash src="res/screen/ios/Default@3x~iphone~comany.png"/>
+<splash src="res/screen/ios/Default@2x~ipad~anyany.png"/>
+<splash src="res/screen/ios/Default@2x~ipad~comany.png"/>
+
+</platform>
+<platform name="android">
+<preference name="SplashMaintainAspectRatio" value="true"/>
+<preference name="SplashShowOnlyFirstTime" value="true"/>
+<icon density="ldpi" src="res/icon/android/ldpi.png"/>
+<icon density="mdpi" src="res/icon/android/mdpi.png"/>
+<icon density="hdpi" src="res/icon/android/hdpi.png"/>
+<icon density="xhdpi" src="res/icon/android/xhdpi.png"/>
+<icon density="xxhdpi" src="res/icon/android/xxhdpi.png"/>
+<icon density="xxxhdpi" src="res/icon/android/xxxhdpi.png"/>
+<!--  Portrait  -->
+<splash density="port-ldpi" src="res/screen/android/splash-port-ldpi.png"/>
+<splash density="port-mdpi" src="res/screen/android/splash-port-mdpi.png"/>
+<splash density="port-hdpi" src="res/screen/android/splash-port-hdpi.png"/>
+<splash density="port-xhdpi" src="res/screen/android/splash-port-xhdpi.png"/>
+<splash density="port-xxhdpi" src="res/screen/android/splash-port-xxhdpi.png"/>
+<splash density="port-xxxhdpi" src="res/screen/android/splash-port-xxxhdpi.png"/>
+
+</platform>
+
+	
     <access origin="*" />
-    <allow-navigation href="http://*/*" />
-    <allow-navigation href="https://*/*" />
-    <allow-intent href="http://*/*" />
+	<allow-navigation href="http://*/*" />
+	<allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <platform name="ios">
+	
+
+	
+	<platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
-        <allow-navigation href="*" />
-        <allow-navigation href="http://localhost:8080/*" />
-        <allow-navigation href="httpsionic://*" />
-        <allow-navigation href="http://124.43.160.52/*" />
-        <allow-navigation href="http://cqrmjaela.usslk.com/*" />
-        <allow-navigation href="https://cqrmjaela.usslk.com/*" />
     </platform>
-
-
-    
-
-    <plugin name="cordova-plugin-battery-status" source="npm" spec="~2.0.3" />
-    <plugin name="cordova-plugin-camera" source="npm" spec="~6.0.0">
-        <variable name="CAMERA_USAGE_DESCRIPTION" value="Use Camera" />
-        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Select Photo" />
-    </plugin>
    
-    <plugin name="cordova-plugin-media-capture" source="npm" spec="~3.0.3">
-        <variable name="CAMERA_USAGE_DESCRIPTION" value="App would like to access the camera." />
-        <variable name="MICROPHONE_USAGE_DESCRIPTION" value="App would like to access the microphone." />
-        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="App would like to access the library." />
-    </plugin>
-    <plugin name="cordova-plugin-console" source="npm" spec="~1.1.0" />
-    <plugin name="cordova-plugin-contacts" source="npm" spec="~2.0.1" />
-    <plugin name="cordova-plugin-device" source="npm" spec="~2.0.3" />
-    <plugin name="cordova-plugin-device-motion" source="npm" spec="~1.2.0" />
-    <plugin name="cordova-plugin-device-orientation" source="npm" spec="~1.0.2" />
-    <plugin name="cordova-plugin-dialogs" source="npm" spec="~2.0.2" />
-    <plugin name="cordova-plugin-file" source="npm" spec="~6.0.2" />
-    <feature name="File">
-        <param name="android-package" value="org.apache.cordova.FileUtils" />
-    </feature>
-    <plugin name="cordova-plugin-file-transfer-ios-fix" source="npm" spec="~1.7.2" />
 
-    <plugin name="cordova-plugin-geolocation" source="npm" spec="~4.1.0" />
-    <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
-        <string>need location access</string>
-    </edit-config>
-    <edit-config file="*-Info.plist" mode="merge" target="NSLocationAlwaysAndWhenInUseUsageDescription">
-        <string>need location access</string>
-    </edit-config>
-    <edit-config file="*-Info.plist" mode="merge" target="NSLocationAlwaysUsageDescription">
-        <string>need location access</string>
-    </edit-config>
 
-    <plugin name="cordova-plugin-location-provider" source="npm" spec="~1.5.4" />
 
-    <plugin name="cordova-plugin-globalization" source="npm" spec="~1.11.0" />
-    <plugin name="cordova-plugin-inappbrowser" source="npm" spec="~5.0.0" />
-    <plugin name="cordova-plugin-media" source="npm" spec="~5.0.3" />
-    <plugin name="cordova-plugin-network-information" source="npm" spec="~3.0.0" />
-    <plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1" />
-    <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.4.3" />
-    <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
-    <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.3.5" />
-    <plugin name="cordova-plugin-sms" source="npm" />
-    <plugin name="cordova-sms-plugin" source="npm" />
-    <plugin name="cordova-plugin-cleartext" source="npm" spec="~1.0.0" />
-    <plugin name="cordova-plugin-ionic-webview" source="npm" spec="~5.0.0" />
-    <plugin name="cordova-plugin-fullscreen" source="npm" spec="~1.3.0" />
-    <platform name="ios">
-        <feature name="CDVWKWebViewEngine">
-            <param name="ios-package" value="CDVWKWebViewEngine" />
-        </feature>
-        <preference name="iosScheme" value="httpsionic" />
-        <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
-    </platform>
-    <platform name="ios">
-        <icon height="1024" src="res/icon/ios/icon-1024.png" width="1024" />
-        <icon height="29" src="res/icon/ios/icon-small.png" width="29" />
-        <icon height="58" src="res/icon/ios/icon-small@2x.png" width="58" />
-        <icon height="87" src="res/icon/ios/icon-small@3x.png" width="87" />
-        <icon height="40" src="res/icon/ios/icon-small-40.png" width="40" />
-        <icon height="80" src="res/icon/ios/icon-small-40@2x.png" width="80" />
-        <icon height="120" src="res/icon/ios/icon-small-40@3x.png" width="120" />
-        <icon height="50" src="res/icon/ios/icon-small-50.png" width="50" />
-        <icon height="100" src="res/icon/ios/icon-small-50@2x.png" width="100" />
-        <icon height="57" src="res/icon/ios/icon.png" width="57" />
-        <icon height="114" src="res/icon/ios/icon@2x.png" width="114" />
-        <icon height="60" src="res/icon/ios/icon-60.png" width="60" />
-        <icon height="120" src="res/icon/ios/icon-60@2x.png" width="120" />
-        <icon height="180" src="res/icon/ios/icon-60@3x.png" width="180" />
-        <icon height="72" src="res/icon/ios/icon-72.png" width="72" />
-        <icon height="144" src="res/icon/ios/icon-72@2x.png" width="144" />
-        <icon height="76" src="res/icon/ios/icon-76.png" width="76" />
-        <icon height="152" src="res/icon/ios/icon-76@2x.png" width="152" />
-        <icon height="167" src="res/icon/ios/icon-167.png" width="167" />
-        <icon height="167" src="res/icon/ios/icon-83.5@2x.png" width="167" />
-        <splash src="res/screen/ios/Default@2x~iphone~anyany.png" />
-        <splash src="res/screen/ios/Default@2x~iphone~comany.png" />
-        <splash src="res/screen/ios/Default@3x~iphone~anyany.png" />
-        <splash src="res/screen/ios/Default@3x~iphone~comany.png" />
-        <splash src="res/screen/ios/Default@2x~ipad~anyany.png" />
-        <splash src="res/screen/ios/Default@2x~ipad~comany.png" />
-    </platform>
-    <platform name="android">
-        <preference name="SplashMaintainAspectRatio" value="true" />
-        <preference name="SplashShowOnlyFirstTime" value="true" />
-        <icon density="ldpi" src="res/icon/android/ldpi.png" />
-        <icon density="mdpi" src="res/icon/android/mdpi.png" />
-        <icon density="hdpi" src="res/icon/android/hdpi.png" />
-        <icon density="xhdpi" src="res/icon/android/xhdpi.png" />
-        <icon density="xxhdpi" src="res/icon/android/xxhdpi.png" />
-        <icon density="xxxhdpi" src="res/icon/android/xxxhdpi.png" />
-        <splash density="port-ldpi" src="res/screen/android/splash-port-ldpi.png" />
-        <splash density="port-mdpi" src="res/screen/android/splash-port-mdpi.png" />
-        <splash density="port-hdpi" src="res/screen/android/splash-port-hdpi.png" />
-        <splash density="port-xhdpi" src="res/screen/android/splash-port-xhdpi.png" />
-        <splash density="port-xxhdpi" src="res/screen/android/splash-port-xxhdpi.png" />
-        <splash density="port-xxxhdpi" src="res/screen/android/splash-port-xxxhdpi.png" />
-    </platform>
+	
+	
 </widget>
