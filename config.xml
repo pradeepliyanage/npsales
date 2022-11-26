@@ -31,7 +31,7 @@
     </platform>
 
 
-    
+     <preference name="Fullscreen" value="true" />
 
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~2.0.3" />
     <plugin name="cordova-plugin-camera" source="npm" spec="~5.0.1" >

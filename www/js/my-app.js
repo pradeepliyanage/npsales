@@ -124,6 +124,7 @@ $$(document).on('pageInit', function (e) {
 		//if(viewname.substring(0, 14) === "markattendance") getLocationUpdate();//only when geo location info is required on this page
 		
 		if(viewname.substring(0, 14) === "markattendance") {
+			demo('1');
 			getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page);//only when geo location info is required on this page
 			
 		} else {
@@ -424,17 +425,17 @@ function errorHandlermapandopenurl(err) {
 
 function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 	
-	
+	demo('2');
 
 	cordova.plugins.LocationProvider.setConfiguration();
 	
 	 var options = {enableHighAccuracy: true,  maximumAge: 30000,  timeout: 27000};
 	 cordova.plugins.LocationProvider.getOwnPosition(options, successCallback, errorcallback);
 	 
-	 
+	 demo('3');
 	 function successCallback(position){
 		 
-
+		demo('4');
 		var locationlatold=locationlat;
 		var locationlonold=locationlon;
 		
@@ -461,12 +462,12 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 
 		if(viewname.substring(0, 14) === "markattendance") morevar=locationlon+"xxx"+locationlat+"xxx"+locationerror;
 		
-		
+		demo('5');
 		
 		var url = globeippath+"/phonegap-app/gatherdata_universal.php";
         $.getJSON(url,{viewname:viewname,empno:empnotemp,morevar:morevar,postval0:postval0}, function(result) {
             //console.log(result);
-             var display = result;
+             var display = result;demo('6');
 				// And insert generated list to page content
 				if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
         $$(page.container).find('.page-content').append(display);
@@ -484,7 +485,7 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 		 
 		if(navigator.geolocation){
 			getLocationUpdate();
-			getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) ;
+			getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) ;//
 		}
 	// alert('Please check whether the GPS Location is enabled!!!');
 
@@ -1458,6 +1459,22 @@ function sendSMSv2(numbers,message,mode) {//cordova-sms-plugin
 }
 		
 	
+
+function demo(val) {
+	var m = 1000 * 60;
+	var h = m * 60;
+	var d = h * 24;
+	var y = d * 365;
+	var dat = new Date();
+	var t= dat.getTime();
+	var result = Math.round(t / y);
+	
+	var time= Date.now();
+	
+	var date = new Date(time);
+	if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").innerHTML=date + " xxxxxx " +val;		
+			
+	}
 	
 ///test
 
