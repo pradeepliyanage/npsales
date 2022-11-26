@@ -484,7 +484,8 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 	 function errorcallback(err){
 		 
 		if(navigator.geolocation){
-			getLocationUpdate();
+			demo('e1');
+			getLocationUpdate();demo('e2');
 			getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) ;//
 		}
 	// alert('Please check whether the GPS Location is enabled!!!');
@@ -1472,7 +1473,7 @@ function demo(val) {
 	var time= Date.now();
 	
 	var date = new Date(time);
-	if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").innerHTML=date + " xxxxxx " +val;		
+	if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").innerHTML=date + " xxxxxx " +time + " @@@@@@@@@ " +val;		
 			
 	}
 	
