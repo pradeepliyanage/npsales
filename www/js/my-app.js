@@ -189,10 +189,14 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
 // swipe back event
 $$(document).on('pageAfterBack', function (e) { 
  
-	var page = e.detail.page;	
+	//var page = e.detail.page;	
 	//stop geo location update
 	//navigator.geolocation.clearWatch(watchID);//skipped this to avoid error msg in going to the page repeattedly
 	//delete geo values
+	$('.bannercenter').html(globebannertext);
+	$('.gather_bannercenter').html(globebannertext);
+	$('.view_bannercenter').html(globebannertext);
+
 	
 	locationtimenow=Date.now();	
 	if(locationtimenow-locationtime < 30000) {
@@ -203,10 +207,7 @@ $$(document).on('pageAfterBack', function (e) {
     locationerror = '';	
 	}
 
-	    $('.bannercenter').html(globebannertext);
-		$('.gather_bannercenter').html(globebannertext);
-		$('.view_bannercenter').html(globebannertext);
- 
+	   
  });
 
 
