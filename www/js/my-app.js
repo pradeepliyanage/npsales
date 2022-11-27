@@ -104,7 +104,9 @@ $$(document).on('pageInit', function (e) {
 				if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
         $$(page.container).find('.page-content').append(display);
 
-		$('.bannercenter').html(globebannertext);
+		if($('.bannercenter').is(":visible")) $('.bannercenter').html(globebannertext);
+		if($('.gather_bannercenter').is(":visible")) $('.gather_bannercenter').html(globebannertext);
+		if($('.view_bannercenter').is(":visible")) $('.view_bannercenter').html(globebannertext);
 		
 		
 		});
@@ -141,8 +143,10 @@ $$(document).on('pageInit', function (e) {
 					if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
 			$$(page.container).find('.page-content').append(display);
 
-			$('.bannercenter').html(globebannertext);
-			
+			if($('.bannercenter').is(":visible")) $('.bannercenter').html(globebannertext);
+			if($('.gather_bannercenter').is(":visible")) $('.gather_bannercenter').html(globebannertext);
+			if($('.view_bannercenter').is(":visible")) $('.view_bannercenter').html(globebannertext);
+				
 			});
 
 
@@ -199,7 +203,9 @@ $$(document).on('pageAfterBack', function (e) {
     locationerror = '';	
 	}
 
-	$('.bannercenter').html(globebannertext);
+	    if($('.bannercenter').is(":visible")) $('.bannercenter').html(globebannertext);
+		if($('.gather_bannercenter').is(":visible")) $('.gather_bannercenter').html(globebannertext);
+		if($('.view_bannercenter').is(":visible")) $('.view_bannercenter').html(globebannertext);
  
  });
 
@@ -468,7 +474,9 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 				if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
         $$(page.container).find('.page-content').append(display);
 
-		$('.bannercenter').html(globebannertext);
+		if($('.bannercenter').is(":visible")) $('.bannercenter').html(globebannertext);
+		if($('.gather_bannercenter').is(":visible")) $('.gather_bannercenter').html(globebannertext);
+		if($('.view_bannercenter').is(":visible")) $('.view_bannercenter').html(globebannertext);
 		
 		});
 		
@@ -516,7 +524,9 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 				if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
         $$(page.container).find('.page-content').append(display);
 
-		$('.bannercenter').html(globebannertext);
+		if($('.bannercenter').is(":visible")) $('.bannercenter').html(globebannertext);
+		if($('.gather_bannercenter').is(":visible")) $('.gather_bannercenter').html(globebannertext);
+		if($('.view_bannercenter').is(":visible")) $('.view_bannercenter').html(globebannertext);
 		
 		});
 			
