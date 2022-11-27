@@ -200,6 +200,7 @@ $$(document).on('pageAfterBack', function (e) {
     locationerror = '';	
 	}
 
+	if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
 	   
  });
 
@@ -466,7 +467,7 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 	if(document.getElementById('jasonhiddenvariable2sp') && +document.getElementById('jasonhiddenvariable2sp').innerHTML > 0 )  
 	 jasonhiddenvariable2 = document.getElementById('jasonhiddenvariable2sp').innerHTML;
 	
-	alert(jasonhiddenvariable0 + "xxx" + jasonhiddenvariable1 + "xxx" + jasonhiddenvariable2 );
+	
 	//cordova.plugins.LocationProvider.setConfiguration();
 	locationtimenow=Date.now();	
 	if(locationtimenow-locationtime < +jasonhiddenvariable2) {
@@ -724,8 +725,11 @@ function setviewmain(uuidoverlaydiv) {
 	var url = globeippath+"/phonegap-app/json.php";
 	$.getJSON(url,{setviewmain:uuidoverlaydiv}, function(result) {
 		//console.log(result);
-		if(result!="")	
+		if(result!="")	{
+		$("#viewmain").closest('.navbar').remove();
 		$("#viewmain").prepend(result);
+
+		}
 		
 	});
 }
