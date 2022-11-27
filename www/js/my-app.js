@@ -200,7 +200,7 @@ $$(document).on('pageAfterBack', function (e) {
 
 	var page = e.detail.page;	
 
-	alert(page.name); 
+	//alert(page.name); 
 
 	locationtimenow=Date.now();	
 	if(locationtimenow-locationtime < 30000) {
@@ -221,7 +221,7 @@ $$(document).on('pageAfterBack', function (e) {
 
 	var page = e.detail.page;	
 
-	alert(page.name + "ttttt"); 
+	//alert(page.name + "ttttt"); 
 	
 	
 	   
@@ -707,12 +707,12 @@ function getempname(uuid) {
 				//window.location.href= "home.html";
 				//document.getElementById("pendingcount").innerHTML = display;
 				//alert(display);
-				document.getElementById("index").innerHTML = display;
-				setoverlaydiv(uuid);
-				setviewmain(uuid);
-				setviewmain2(uuid);
-				setviews(uuid);
-				setglobebannertext(uuid);
+				document.getElementById("index").innerHTML = display;alert('1');
+				setoverlaydiv(uuid);alert('2');
+				setviewmain(uuid);alert('3');
+				setviewmain2(uuid);alert('4');
+				setviews(uuid);alert('5');
+				setglobebannertext(uuid);alert('6');
 				// document.getElementById("toolbardiv").innerHTML ="<a href=\"#\" onclick=\"openurl('main.php')\" class=\"link\"><i class = \"icon icon-form-url\"></i>System Home</a>";
 			}
         });
