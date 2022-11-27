@@ -153,8 +153,12 @@ $$(document).on('pageInit', function (e) {
 	
 	if (page.name === 'index') { // added other wise double back wont load the home page
         
-	if(uuidglobe!='')
-	getempname(uuidglobe);
+	if(uuidglobe!='') {
+		mainview.router.refreshPage();
+	//$("#viewmain").parents('.navbar').remove();
+	//getempname(uuidglobe);
+
+	}
 	if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
 	
     }
@@ -726,7 +730,7 @@ function setviewmain(uuidoverlaydiv) {
 	$.getJSON(url,{setviewmain:uuidoverlaydiv}, function(result) {
 		//console.log(result);
 		if(result!="")	{
-		$("#viewmain").parents('.navbar').remove();
+		
 		$("#viewmain").prepend(result);
 
 		}
