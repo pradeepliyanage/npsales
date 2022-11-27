@@ -94,8 +94,8 @@ $$(document).on('pageInit', function (e) {
 		var postval0 = page.query.val0;
         // Now we can generate some dummy list
 		
-		if(document.getElementById("view_centertext") && document.getElementById("view_centertext").innerHTML=="") 
-			document.getElementById("view_centertext").innerHTML="UNIQUE TEST";
+		if(document.getElementById("index_centertext") && document.getElementById("index_centertext").innerHTML=="") 
+			document.getElementById("index_centertext").innerHTML="UNIQUE TEST";
 
 
 		 var url = globeippath+"/phonegap-app/viewdetail_universal.php";
@@ -123,8 +123,8 @@ $$(document).on('pageInit', function (e) {
 		var postval0 = page.query.val0;
 		var morevar='';
 		
-		if(document.getElementById("gather_centertext") && document.getElementById("gather_centertext").innerHTML=="") 
-			document.getElementById("gather_centertext").innerHTML="UNIQUE TEST123";
+		if(document.getElementById("index_centertext") && document.getElementById("index_centertext").innerHTML=="") 
+			document.getElementById("index_centertext").innerHTML="UNIQUE TEST123";
 		//if want geo location info
 		//if(viewname === "sitecleaningimage") getLocationUpdate();//only when geo location info is required on this page
 		//if(viewname.substring(0, 14) === "markattendance") getLocationUpdate();//only when geo location info is required on this page
