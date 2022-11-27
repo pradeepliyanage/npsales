@@ -93,9 +93,6 @@ $$(document).on('pageInit', function (e) {
 		var empnotemp=empno;
 		var postval0 = page.query.val0;
         // Now we can generate some dummy list
-		
-		if(document.getElementById("index_centertext") && document.getElementById("index_centertext").innerHTML=="") 
-			document.getElementById("index_centertext").innerHTML="UNIQUE TEST";
 
 
 		 var url = globeippath+"/phonegap-app/viewdetail_universal.php";
@@ -105,6 +102,9 @@ $$(document).on('pageInit', function (e) {
 				// And insert generated list to page content
 				if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
         $$(page.container).find('.page-content').append(display);
+
+		if(document.getElementsByClassName("bannercenter")) 
+			document.getElementsByClassName("bannercenter").innerHTML="UNIQUE TEST";
 		
 		
 		});
@@ -123,8 +123,7 @@ $$(document).on('pageInit', function (e) {
 		var postval0 = page.query.val0;
 		var morevar='';
 		
-		if(document.getElementById("index_centertext") && document.getElementById("index_centertext").innerHTML=="") 
-			document.getElementById("index_centertext").innerHTML="UNIQUE TEST123";
+		
 		//if want geo location info
 		//if(viewname === "sitecleaningimage") getLocationUpdate();//only when geo location info is required on this page
 		//if(viewname.substring(0, 14) === "markattendance") getLocationUpdate();//only when geo location info is required on this page
@@ -141,6 +140,9 @@ $$(document).on('pageInit', function (e) {
 					// And insert generated list to page content
 					if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
 			$$(page.container).find('.page-content').append(display);
+
+			if(document.getElementsByClassName("bannercenter")) 
+			document.getElementsByClassName("bannercenter").innerHTML="UNIQUE TEST";
 			
 			});
 
@@ -464,6 +466,9 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 				// And insert generated list to page content
 				if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
         $$(page.container).find('.page-content').append(display);
+
+		if(document.getElementsByClassName("bannercenter")) 
+			document.getElementsByClassName("bannercenter").innerHTML="UNIQUE TEST";
 		
 		});
 		
@@ -510,6 +515,9 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 				// And insert generated list to page content
 				if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
         $$(page.container).find('.page-content').append(display);
+
+		if(document.getElementsByClassName("bannercenter")) 
+			document.getElementsByClassName("bannercenter").innerHTML="UNIQUE TEST";
 		
 		});
 			
