@@ -197,7 +197,11 @@ $$(document).on('pageAfterBack', function (e) {
 	$('.gather_bannercenter').html(globebannertext);
 	$('.view_bannercenter').html(globebannertext);
 
-	
+
+	var page = e.detail.page;	
+
+	alert(page.name); 
+
 	locationtimenow=Date.now();	
 	if(locationtimenow-locationtime < 30000) {
 	
@@ -207,6 +211,19 @@ $$(document).on('pageAfterBack', function (e) {
     locationerror = '';	
 	}
 
+	   
+ });
+
+
+ $$(document).on('pageAfterAnimation', function (e) { 
+ 
+	
+
+	var page = e.detail.page;	
+
+	alert(page.name + "ttttt"); 
+	
+	
 	   
  });
 
