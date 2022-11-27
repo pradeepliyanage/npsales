@@ -726,7 +726,7 @@ function setviewmain(uuidoverlaydiv) {
 	$.getJSON(url,{setviewmain:uuidoverlaydiv}, function(result) {
 		//console.log(result);
 		if(result!="")	{
-		$("#viewmain").closest('.navbar').remove();
+		$("#viewmain").parents('.navbar').remove();
 		$("#viewmain").prepend(result);
 
 		}
