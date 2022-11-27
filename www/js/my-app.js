@@ -103,8 +103,7 @@ $$(document).on('pageInit', function (e) {
 				if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
         $$(page.container).find('.page-content').append(display);
 
-		if(document.getElementsByClassName("bannercenter")) 
-			document.getElementsByClassName("bannercenter").innerHTML="UNIQUE TEST";
+		$('.bannercenter').html('UNIQUE TEST2222');
 		
 		
 		});
@@ -141,8 +140,7 @@ $$(document).on('pageInit', function (e) {
 					if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
 			$$(page.container).find('.page-content').append(display);
 
-			if(document.getElementsByClassName("bannercenter")) 
-			document.getElementsByClassName("bannercenter").innerHTML="UNIQUE TEST";
+			$('.bannercenter').html('UNIQUE TEST2222');
 			
 			});
 
@@ -467,8 +465,7 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 				if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
         $$(page.container).find('.page-content').append(display);
 
-		if(document.getElementsByClassName("bannercenter")) 
-			document.getElementsByClassName("bannercenter").innerHTML="UNIQUE TEST";
+		$('.bannercenter').html('UNIQUE TEST2222');
 		
 		});
 		
@@ -516,8 +513,7 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 				if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
         $$(page.container).find('.page-content').append(display);
 
-		if(document.getElementsByClassName("bannercenter")) 
-			document.getElementsByClassName("bannercenter").innerHTML="UNIQUE TEST";
+		$('.bannercenter').html('UNIQUE TEST2222');
 		
 		});
 			
