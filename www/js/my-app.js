@@ -94,6 +94,10 @@ $$(document).on('pageInit', function (e) {
 		var postval0 = page.query.val0;
         // Now we can generate some dummy list
 		
+		if(document.getElementById("view_centertext") && document.getElementById("view_centertext").innerHTML=="") 
+			document.getElementById("view_centertext").innerHTML="UNIQUE TEST";
+
+
 		 var url = globeippath+"/phonegap-app/viewdetail_universal.php";
         $.getJSON(url,{viewname:viewname,empno:empnotemp,postval0:postval0}, function(result) {
             //console.log(result);
@@ -119,6 +123,8 @@ $$(document).on('pageInit', function (e) {
 		var postval0 = page.query.val0;
 		var morevar='';
 		
+		if(document.getElementById("gather_centertext") && document.getElementById("gather_centertext").innerHTML=="") 
+			document.getElementById("gather_centertext").innerHTML="UNIQUE TEST123";
 		//if want geo location info
 		//if(viewname === "sitecleaningimage") getLocationUpdate();//only when geo location info is required on this page
 		//if(viewname.substring(0, 14) === "markattendance") getLocationUpdate();//only when geo location info is required on this page
@@ -430,6 +436,8 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 	if(document.getElementById('jasonhiddenvariable1')) var jasonhiddenvariable1 = document.getElementById('jasonhiddenvariable1').innerHTML;
 		else var jasonhiddenvariable1=10;	
 
+	if(document.getElementById('jasonhiddenvariable2')) var jasonhiddenvariable2 = document.getElementById('jasonhiddenvariable2').innerHTML;
+		else var jasonhiddenvariable2=30000;	
 
 	if(document.getElementById('jasonhiddenvariable0sp') && +document.getElementById('jasonhiddenvariable0sp').innerHTML > 0 )  
 	 jasonhiddenvariable0 = document.getElementById('jasonhiddenvariable0sp').innerHTML;
@@ -437,13 +445,33 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 	if(document.getElementById('jasonhiddenvariable1sp') && +document.getElementById('jasonhiddenvariable1sp').innerHTML > 0 )  
 	 jasonhiddenvariable1 = document.getElementById('jasonhiddenvariable1sp').innerHTML;
 	
+	if(document.getElementById('jasonhiddenvariable2sp') && +document.getElementById('jasonhiddenvariable2sp').innerHTML > 0 )  
+	 jasonhiddenvariable2 = document.getElementById('jasonhiddenvariable2sp').innerHTML;
+	
 	
 	//cordova.plugins.LocationProvider.setConfiguration();
+	locationtimenow=Date.now();	
+	if(locationtimenow-locationtime < +jasonhiddenvariable2) {
 	
+		if(viewname.substring(0, 14) === "markattendance") morevar=locationlon+"xxx"+locationlat+"xxx"+locationerror;
+		
+		
+		
+		var url = globeippath+"/phonegap-app/gatherdata_universal.php";
+        $.getJSON(url,{viewname:viewname,empno:empnotemp,morevar:morevar,postval0:postval0}, function(result) {
+            //console.log(result);
+             var display = result;
+				// And insert generated list to page content
+				if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
+        $$(page.container).find('.page-content').append(display);
+		
+		});
+		
+	} else {
 	 var options = {accuracy: jasonhiddenvariable0, timeout: jasonhiddenvariable1};
 	 cordova.plugins.LocationProvider.getOwnPosition(options, successCallback, errorcallback);
 	 
-	 
+	}
 	 function successCallback(position){
 		 
 
@@ -469,7 +497,7 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 		
 		locationlat= position.coords.latitude;
 		locationlon= position.coords.longitude;	
-		
+		locationtime=Date.now();	
 
 		if(viewname.substring(0, 14) === "markattendance") morevar=locationlon+"xxx"+locationlat+"xxx"+locationerror;
 		
