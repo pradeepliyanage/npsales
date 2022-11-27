@@ -103,10 +103,6 @@ $$(document).on('pageInit', function (e) {
 				// And insert generated list to page content
 				if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
         $$(page.container).find('.page-content').append(display);
-
-		$('.bannercenter').html(globebannertext);
-		$('.gather_bannercenter').html(globebannertext);
-		$('.view_bannercenter').html(globebannertext);
 		
 		
 		});
@@ -142,10 +138,6 @@ $$(document).on('pageInit', function (e) {
 					// And insert generated list to page content
 					if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
 			$$(page.container).find('.page-content').append(display);
-
-			$('.bannercenter').html(globebannertext);
-			$('.gather_bannercenter').html(globebannertext);
-			$('.view_bannercenter').html(globebannertext);
 				
 			});
 
@@ -193,10 +185,7 @@ $$(document).on('pageAfterBack', function (e) {
 	//stop geo location update
 	//navigator.geolocation.clearWatch(watchID);//skipped this to avoid error msg in going to the page repeattedly
 	//delete geo values
-	$('.bannercenter').html(globebannertext);
-	$('.gather_bannercenter').html(globebannertext);
-	$('.view_bannercenter').html(globebannertext);
-
+	
 
 	var page = e.detail.page;	
 
@@ -220,6 +209,8 @@ $$(document).on('pageAfterBack', function (e) {
 	
 
 	var page = e.detail.page;	
+
+	$('.title').html(globebannertext);
 
 	//alert(page.name + "ttttt"); 
 	
@@ -475,7 +466,7 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 	if(document.getElementById('jasonhiddenvariable2sp') && +document.getElementById('jasonhiddenvariable2sp').innerHTML > 0 )  
 	 jasonhiddenvariable2 = document.getElementById('jasonhiddenvariable2sp').innerHTML;
 	
-	
+	alert(jasonhiddenvariable0 + "xxx" + jasonhiddenvariable1 + "xxx" + jasonhiddenvariable2 );
 	//cordova.plugins.LocationProvider.setConfiguration();
 	locationtimenow=Date.now();	
 	if(locationtimenow-locationtime < +jasonhiddenvariable2) {
@@ -491,10 +482,6 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 				// And insert generated list to page content
 				if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
         $$(page.container).find('.page-content').append(display);
-
-		$('.bannercenter').html(globebannertext);
-		$('.gather_bannercenter').html(globebannertext);
-		$('.view_bannercenter').html(globebannertext);
 		
 		});
 		
@@ -541,10 +528,6 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 				// And insert generated list to page content
 				if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
         $$(page.container).find('.page-content').append(display);
-
-		$('.bannercenter').html(globebannertext);
-		$('.gather_bannercenter').html(globebannertext);
-		$('.view_bannercenter').html(globebannertext);
 		
 		});
 			
@@ -707,12 +690,12 @@ function getempname(uuid) {
 				//window.location.href= "home.html";
 				//document.getElementById("pendingcount").innerHTML = display;
 				//alert(display);
-				document.getElementById("index").innerHTML = display;alert('1');
-				setoverlaydiv(uuid);alert('2');
-				setviewmain(uuid);alert('3');
-				setviewmain2(uuid);alert('4');
-				setviews(uuid);alert('5');
-				setglobebannertext(uuid);alert('6');
+				document.getElementById("index").innerHTML = display;
+				setoverlaydiv(uuid);
+				setviewmain(uuid);
+				setviewmain2(uuid);
+				setviews(uuid);
+				setglobebannertext(uuid);
 				// document.getElementById("toolbardiv").innerHTML ="<a href=\"#\" onclick=\"openurl('main.php')\" class=\"link\"><i class = \"icon icon-form-url\"></i>System Home</a>";
 			}
         });
