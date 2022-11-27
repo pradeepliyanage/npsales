@@ -26,6 +26,7 @@ var locationlon = '';
 var locationerror = '';
 var locationtime = '';
 var globepage='';
+var globebannertext='';
 var globeippath='http://124.43.160.52/tantriconex';
 var nongeotag='';//nongeo //for no gps app put nongeo
 
@@ -103,7 +104,7 @@ $$(document).on('pageInit', function (e) {
 				if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
         $$(page.container).find('.page-content').append(display);
 
-		$('.bannercenter').html('UNIQUE TEST2222');
+		$('.bannercenter').html(globebannertext);
 		
 		
 		});
@@ -140,7 +141,7 @@ $$(document).on('pageInit', function (e) {
 					if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
 			$$(page.container).find('.page-content').append(display);
 
-			$('.bannercenter').html('UNIQUE TEST2222');
+			$('.bannercenter').html(globebannertext);
 			
 			});
 
@@ -197,6 +198,8 @@ $$(document).on('pageAfterBack', function (e) {
     locationlon = '';
     locationerror = '';	
 	}
+
+	$('.bannercenter').html(globebannertext);
  
  });
 
@@ -465,7 +468,7 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 				if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
         $$(page.container).find('.page-content').append(display);
 
-		$('.bannercenter').html('UNIQUE TEST2222');
+		$('.bannercenter').html(globebannertext);
 		
 		});
 		
@@ -513,7 +516,7 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 				if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
         $$(page.container).find('.page-content').append(display);
 
-		$('.bannercenter').html('UNIQUE TEST2222');
+		$('.bannercenter').html(globebannertext);
 		
 		});
 			
@@ -681,6 +684,7 @@ function getempname(uuid) {
 				setviewmain(uuid);
 				setviewmain2(uuid);
 				setviews(uuid);
+				setglobebannertext(uuid);
 				// document.getElementById("toolbardiv").innerHTML ="<a href=\"#\" onclick=\"openurl('main.php')\" class=\"link\"><i class = \"icon icon-form-url\"></i>System Home</a>";
 			}
         });
@@ -739,7 +743,14 @@ function setviews(uuidoverlaydiv) {
 	});
 }
 
-
+function setglobebannertext(uuid2) {	
+		
+	var url = globeippath+"/phonegap-app/json.php";
+	$.getJSON(url,{setglobebannertext:uuid2}, function(result) {
+		//console.log(result);
+			globebannertext= result;
+	});
+}
 //call from login page 	
 function firstlogin() {
             var idlogin = $("#idlogin").val();
