@@ -220,7 +220,7 @@ $$(document).on('pageAfterBack', function (e) {
 	
 	}
 	if(globebannertext!="") $('.title').html(globebannertext);
-	if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
+	//if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
 		
 
 	//alert(page.name + "ttttt"); 
