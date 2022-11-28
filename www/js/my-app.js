@@ -59,7 +59,7 @@ function onDeviceReady() {
 	//watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError);//getCurrentPosition //watchPosition //not required at the app load 
 	
 	setglobalempno(uuid2);
-	getempname(uuid);
+	getempname(uuid,'all');
 	
 	//setupPush();
 		
@@ -155,7 +155,7 @@ $$(document).on('pageInit', function (e) {
         
 	if(uuidglobe!='') {
 	
-	getempname(uuidglobe);
+	getempname(uuidglobe,'one');
 
 	}
 	if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
@@ -208,7 +208,7 @@ $$(document).on('pageAfterBack', function (e) {
  });
 
 
- $$(document).on('pageAfterAnimation', function (e) { 
+ $$(document).on('pageBeforeAnimation', function (e) { 
  
 	
 
@@ -685,7 +685,7 @@ function onError(error) {
 
 
 	
-function getempname(uuid) {	
+function getempname(uuid,type) {	
 		
         var url = globeippath+"/phonegap-app/json.php";
         $.getJSON(url,{uuid:uuid}, function(result) {
@@ -702,11 +702,13 @@ function getempname(uuid) {
 				//document.getElementById("pendingcount").innerHTML = display;
 				//alert(display);
 				document.getElementById("index").innerHTML = display;
+				if(type=="all"){
 				setoverlaydiv(uuid);
 				setviewmain(uuid);
 				setviewmain2(uuid);
 				setviews(uuid);
 				setglobebannertext(uuid);
+				}
 				// document.getElementById("toolbardiv").innerHTML ="<a href=\"#\" onclick=\"openurl('main.php')\" class=\"link\"><i class = \"icon icon-form-url\"></i>System Home</a>";
 			}
         });
