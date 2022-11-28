@@ -151,11 +151,10 @@ $$(document).on('pageInit', function (e) {
 	
     }
 	
-	if (page.name === 'indexnoneed') { // added other wise double back wont load the home page
+	if (page.name === 'index') { // added other wise double back wont load the home page
         
 	if(uuidglobe!='') {
 	
-	$('.navbar').remove();
 	getempname(uuidglobe);
 
 	}
@@ -217,10 +216,10 @@ $$(document).on('pageAfterBack', function (e) {
 
 	if(uuidglobe!='' && page.name=="index") {
 	
-		$('.navbar').remove();
-		getempname(uuidglobe);
+		setviewmain(uuidglobe);
 	
 	}
+	if(globebannertext!="") $('.title').html(globebannertext);
 	if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
 		
 
@@ -737,7 +736,7 @@ function setviewmain(uuidoverlaydiv) {
 	$.getJSON(url,{setviewmain:uuidoverlaydiv}, function(result) {
 		//console.log(result);
 		if(result!="")	{
-		
+		$('.navbar').remove();
 		$("#viewmain").prepend(result);
 
 		}
