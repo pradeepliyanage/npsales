@@ -800,8 +800,8 @@ function firstlogin() {
                 },
                 success: function(data) {
                    
-                        alert(data);
-                        $("#update").val("Update");
+                       // alert(data);
+                        //$("#update").val("Update");
 						if (data.trim().substr(0, 11)=="Successfull") window.location.href="index.html";
                     
                 }
@@ -1109,8 +1109,9 @@ function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodesca
 					
                     if (rescheck1=='logoutindex') {//force go to index //logout
 					    uuidglobe="";
-						window.location.href="index.html";
-						location.reload(true);
+						getempname(uuidglobe,'one');
+						//window.location.href="index.html";
+						//location.reload(true);
 						return false;
 					}
 					
