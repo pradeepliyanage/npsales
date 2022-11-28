@@ -27,8 +27,8 @@ var locationerror = '';
 var locationtime = '';
 var globepage='';
 var globebannertext='';
-var globeippath='http://124.43.160.52/tantriconex';
-var nongeotag='';//nongeo //for no gps app put nongeo
+var globeippath='http://124.43.160.52/npsales';
+var nongeotag='nongeo';//nongeo //for no gps app put nongeo
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -850,7 +850,7 @@ function errorHandler(err) {
             }
             
             else if( err.code == 2) {
-				if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
+				//if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
 			
                alert("Error: Position is unavailable!");
             }
