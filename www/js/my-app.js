@@ -1106,12 +1106,13 @@ function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodesca
 				if (res=="Successfully") {
 					
 					var rescheck1 = data.trim().substr(12, 1000);
-					alert(rescheck1);
+					
                     if (rescheck1=='logoutindex') {//force go to index //logout
 					    //uuidglobe="";
+						
+						window.location.href="index.html";
+						location.reload(true);
 						getempname(uuidglobe,'one');
-						//window.location.href="index.html";
-						//location.reload(true);
 						return false;
 					}
 					
