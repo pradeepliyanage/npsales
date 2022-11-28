@@ -151,7 +151,7 @@ $$(document).on('pageInit', function (e) {
 	
     }
 	
-	if (page.name === 'index') { // added other wise double back wont load the home page
+	if (page.name === 'indexnoneed') { // added other wise double back wont load the home page
         
 	if(uuidglobe!='') {
 	
@@ -215,7 +215,14 @@ $$(document).on('pageAfterBack', function (e) {
 
 	var page = e.detail.page;	
 
-	$('.title').html(globebannertext);
+	if(uuidglobe!='' && page.name=="index") {
+	
+		$('.navbar').remove();
+		getempname(uuidglobe);
+	
+	}
+	if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
+		
 
 	//alert(page.name + "ttttt"); 
 	
