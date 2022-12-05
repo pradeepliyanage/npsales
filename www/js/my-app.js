@@ -27,7 +27,7 @@ var locationerror = '';
 var locationtime = '';
 var globepage='';
 var globebannertext='';
-var globeippath='http://124.43.160.52/npsales';
+var globeippath='http://124.43.160.52/dppos';
 var nongeotag='nongeo';//nongeo //for no gps app put nongeo
 
 document.addEventListener("deviceready", onDeviceReady, false);
