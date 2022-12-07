@@ -72,7 +72,7 @@
         <string>need location access</string>
     </edit-config>
 
-    <plugin name="cordova-plugin-location-provider" source="npm" spec="~1.5.4" />
+    
 
     <plugin name="cordova-plugin-globalization" source="npm" spec="~1.11.0" />
     <plugin name="cordova-plugin-inappbrowser" source="npm" spec="~5.0.0" />
