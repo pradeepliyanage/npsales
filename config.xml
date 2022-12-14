@@ -34,8 +34,7 @@
      <preference name="Fullscreen" value="true" />
 
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~2.0.3" />
-    <plugin name="cordova-plugin-camera" source="npm" spec="~6.0.0" />
-    <!--ios specific 02
+    <plugin name="cordova-plugin-camera" source="npm" spec="~6.0.0" >
 	 <variable name="CAMERA_USAGE_DESCRIPTION" value="Use Camera" />
    <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Select Photo" />
     </plugin>
@@ -44,7 +43,7 @@
 	</feature>
 
     <plugin name="cordova-plugin-ios-camera-permissions" source="npm" spec="~1.2.0" />
-   -->
+   
     <plugin name="cordova-plugin-media-capture" source="npm" spec="~3.0.3">
         <variable name="CAMERA_USAGE_DESCRIPTION" value="App would like to access the camera." />
         <variable name="MICROPHONE_USAGE_DESCRIPTION" value="App would like to access the microphone." />
@@ -62,7 +61,7 @@
     </feature>
     <plugin name="cordova-plugin-file-transfer-ios-fix" source="npm" spec="~1.7.2" />
 
-    <!--<plugin name="cordova-plugin-geolocation" source="npm" spec="~4.1.0" />
+    <plugin name="cordova-plugin-geolocation" source="npm" spec="~4.1.0" />
     <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
         <string>need location access</string>
     </edit-config>
@@ -74,7 +73,7 @@
     </edit-config>
 
     <plugin name="cordova-plugin-location-provider" source="npm" spec="~1.5.4" />
--->
+
     <plugin name="cordova-plugin-globalization" source="npm" spec="~1.11.0" />
     <plugin name="cordova-plugin-inappbrowser" source="npm" spec="~5.0.0" />
     <plugin name="cordova-plugin-media" source="npm" spec="~5.0.3" />
