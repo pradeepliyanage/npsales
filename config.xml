@@ -34,7 +34,8 @@
      <preference name="Fullscreen" value="true" />
 
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~2.0.3" />
-    <plugin name="cordova-plugin-camera" source="npm" spec="~6.0.0" >
+    <plugin name="cordova-plugin-camera" source="npm" spec="~6.0.0" />
+    <!--ios specific 02
 	 <variable name="CAMERA_USAGE_DESCRIPTION" value="Use Camera" />
    <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Select Photo" />
     </plugin>
@@ -43,7 +44,7 @@
 	</feature>
 
     <plugin name="cordova-plugin-ios-camera-permissions" source="npm" spec="~1.2.0" />
-   
+   -->
     <plugin name="cordova-plugin-media-capture" source="npm" spec="~3.0.3">
         <variable name="CAMERA_USAGE_DESCRIPTION" value="App would like to access the camera." />
         <variable name="MICROPHONE_USAGE_DESCRIPTION" value="App would like to access the microphone." />
