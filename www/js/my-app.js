@@ -138,8 +138,10 @@ $$(document).on('pageInit', function (e) {
 					// And insert generated list to page content
 					if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
 			
-
-					$$(page.container).find('.page-content').html(display);
+					$('.content-block-title').remove();
+					$('.list-block').remove();	
+					
+					$$(page.container).find('.page-content').append(display);
 				
 			});
 
@@ -494,7 +496,11 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
              var display = result;
 				// And insert generated list to page content
 				if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
-        $$(page.container).find('.page-content').append(display);
+
+				$('.content-block-title').remove();
+				$('.list-block').remove();
+		
+				$$(page.container).find('.page-content').append(display);
 		
 		});
 		
@@ -540,7 +546,11 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
              var display = result;
 				// And insert generated list to page content
 				if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
-        $$(page.container).find('.page-content').append(display);
+        
+				$('.content-block-title').remove();
+				$('.list-block').remove();
+
+				$$(page.container).find('.page-content').append(display);
 		
 		});
 			
