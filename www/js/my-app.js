@@ -1121,6 +1121,10 @@ function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodesca
 						return false;
 					}
 					
+					if (rescheck1.indexOf("gatherdata") >= 0 ) {//force go to gatherdata
+						window.location.href=rescheck1;
+						return false;
+					}
 					
 									
 					//send sms
