@@ -137,7 +137,9 @@ $$(document).on('pageInit', function (e) {
 				var display = result;
 					// And insert generated list to page content
 					if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
-			$$(page.container).find('.page-content').append(display);
+			
+
+					$$(page.container).find('.page-content').html(display);
 				
 			});
 
