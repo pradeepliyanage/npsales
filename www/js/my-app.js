@@ -1122,6 +1122,7 @@ function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodesca
 					}
 					
 					if (rescheck1.indexOf("gatherdata") >= 0 ) {//force go to gatherdata
+						alert(rescheck1);
 						window.location.href=rescheck1;
 						return false;
 					}
