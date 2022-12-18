@@ -1122,12 +1122,19 @@ function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodesca
 					}
 					
 					if (rescheck1.indexOf("gatherdata") >= 0 ) {//force go to gatherdata
-						alert(rescheck1);
+						//alert(rescheck1);
 						window.location.href=rescheck1;
 						return false;
 					}
 					
-									
+					if (rescheck1.indexOf("formsubmitfunction") >= 0 ) {//force go to gatherdata
+						rescheck1 = rescheck1.split("#");
+						for(i in rescheck1) {
+							rescheck1[i] = rescheck1[i].trim();
+						}
+						formsubmitfunction( rescheck1[1],rescheck1[2] ,rescheck1[3] ,rescheck1[4] ,rescheck1[5] );
+						return false;
+					}				
 					//send sms
 					if(rescheck1.indexOf("###") >=0) {
 					rescheck1 = rescheck1.split("###");
