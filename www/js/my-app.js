@@ -1050,7 +1050,17 @@ function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodesca
 							document.getElementById(thisid).classList.remove('bg-red');
 							document.getElementById(thisid).classList.add('bg-green');
 						
-
+							var rescheck1 = data.trim().substr(14, 1000);
+							if (rescheck1.indexOf("formsubmitfunction") >= 0 ) {//force go to gatherdata
+								rescheck1 = rescheck1.split("#");
+								for(i in rescheck1) {
+									rescheck1[i] = rescheck1[i].trim();
+								}
+								formsubmitfunction( rescheck1[1],rescheck1[2] ,rescheck1[3] ,rescheck1[4] ,rescheck1[5] );
+								return false;
+							}	
+							
+							
 							//hide unhide items
 							var hideitem = data.trim().substr(14, 500);
 							var hideitemarray=hideitem.split("xxx");
@@ -1106,15 +1116,7 @@ function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodesca
 							}
 							
 							
-							var rescheck1 = data.trim().substr(14, 1000);
-							if (rescheck1.indexOf("formsubmitfunction") >= 0 ) {//force go to gatherdata
-								rescheck1 = rescheck1.split("#");
-								for(i in rescheck1) {
-									rescheck1[i] = rescheck1[i].trim();
-								}
-								formsubmitfunction( rescheck1[1],rescheck1[2] ,rescheck1[3] ,rescheck1[4] ,rescheck1[5] );
-								return false;
-							}	
+							
 							
 							
 						}
