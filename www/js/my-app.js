@@ -1106,8 +1106,15 @@ function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodesca
 							}
 							
 							
-							
-							
+							var rescheck1 = data.trim().substr(14, 1000);
+							if (rescheck1.indexOf("formsubmitfunction") >= 0 ) {//force go to gatherdata
+								rescheck1 = rescheck1.split("#");
+								for(i in rescheck1) {
+									rescheck1[i] = rescheck1[i].trim();
+								}
+								formsubmitfunction( rescheck1[1],rescheck1[2] ,rescheck1[3] ,rescheck1[4] ,rescheck1[5] );
+								return false;
+							}	
 							
 							
 						}
