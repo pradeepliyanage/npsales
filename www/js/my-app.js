@@ -90,7 +90,7 @@ $$(document).on('pageInit', function (e) {
 	if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="block";
 
 	myApp.closePanel();
-	
+
 	 if (page.name === 'viewdetail_universal') {
         // We need to get count GET parameter from URL (about.html?count=10)
         var viewname = page.query.viewname;
@@ -1060,8 +1060,7 @@ function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodesca
 						//$("#update").prop('disabled', false);
 						
 						if (res3=="Successfull!!!") {
-							document.getElementById(thisid).classList.remove('bg-red');
-							document.getElementById(thisid).classList.add('bg-green');
+							
 						
 							var rescheck1 = data.trim().substr(14, 1000);
 							if (rescheck1.indexOf("formsubmitfunction") >= 0 ) {//force go to gatherdata
@@ -1073,6 +1072,8 @@ function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodesca
 								return false;
 							}	
 							
+							document.getElementById(thisid).classList.remove('bg-red');
+							document.getElementById(thisid).classList.add('bg-green');
 							
 							//hide unhide items
 							var hideitem = data.trim().substr(14, 500);
