@@ -1022,6 +1022,14 @@ function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodesca
 			
 			thisvalue=thisvalue.replace(/&/g,"#and#"); 
 
+			if (document.getElementById("beforeajaxfunction")) {//force go to before ajax function
+				
+				beforeajaxformfunction(textcaption,thisid,thisvalue,saveto,type,barcodescan,multipleyes,siteid);
+				
+			}
+
+			
+
 			var dataString = "&username=" + username + "&textcaption=" + textcaption + "&thisvalue=" + thisvalue + "&thisid=" + thisid + "&siteid=" + siteid +  "&saveto=" + saveto +  "&type=" + type +  "&morevar=" + morevar + "&updatetabelonchange=";
             
 			$.ajax({
