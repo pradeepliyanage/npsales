@@ -85,9 +85,12 @@ $$(document).on('pageInit', function (e) {
     // Get page data from event data
     var page = e.detail.page;
 
+	
+
 	if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="block";
 
-
+	myApp.closePanel();
+	
 	 if (page.name === 'viewdetail_universal') {
         // We need to get count GET parameter from URL (about.html?count=10)
         var viewname = page.query.viewname;
@@ -142,6 +145,8 @@ $$(document).on('pageInit', function (e) {
 					$('.list-block').remove();	
 					
 					$$(page.container).find('.page-content').append(display);
+
+					
 				
 			});
 
