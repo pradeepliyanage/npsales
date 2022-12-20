@@ -1044,7 +1044,15 @@ function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodesca
                 crossDomain: true,
                 cache: false,
                 beforeSend: function() {
-                    $("#update").val("<img src='css/buttonloading.gif' style='width:50px;height:20px;>");
+                    //$("#update").val("<img src='css/buttonloading.gif' style='width:50px;height:20px;>");
+					$("#update").button({
+
+						icons: {primary: null},
+						text: false
+					
+					}).addClass("SubmitButtonClass");
+
+
                 },
                 success: function(data) {
                    
@@ -1056,7 +1064,7 @@ function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodesca
 						
 						if(res4=="Error!!!") alert(res2);
                         
-                        $("#update").val("Submit &raquo;");
+                        $("#update").val("Submit");
 						$("#update").prop('disabled', false);
 						
 						if (res3=="Successfull!!!") {

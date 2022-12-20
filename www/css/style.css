@@ -63,3 +63,12 @@ position: relative;
 
 
 }
+
+.SubmitButtonClass{
+  background-image: url(buttonloading.gif);   
+  background-repeat: no-repeat; 
+  border: none; 
+
+
+
+}
