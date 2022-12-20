@@ -1005,7 +1005,7 @@ function uploadFile(imageData,imagecaption,thisid,sourceType) {
 
 //call from gather data universal to update form data to the tabels when onchange	
 function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodescan,multipleyes) {
-	//$("#update").prop('disabled', true);
+	$("#update").prop('disabled', true);
             var textcaption = textcaption;
             var thisid = thisid;
             var thisvalue = thisvalue;
@@ -1044,7 +1044,7 @@ function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodesca
                 crossDomain: true,
                 cache: false,
                 beforeSend: function() {
-                    $("#update").val('Connecting...');
+                    $("#update").val("<img src='css/buttonloading.gif' style='width:50px;height:20px;>");
                 },
                 success: function(data) {
                    
@@ -1056,8 +1056,8 @@ function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodesca
 						
 						if(res4=="Error!!!") alert(res2);
                         
-                        $("#update").val("Submit");
-						//$("#update").prop('disabled', false);
+                        $("#update").val("Submit &raquo;");
+						$("#update").prop('disabled', false);
 						
 						if (res3=="Successfull!!!") {
 							
@@ -1074,7 +1074,7 @@ function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodesca
 							
 							document.getElementById(thisid).classList.remove('bg-red');
 							document.getElementById(thisid).classList.add('bg-green');
-							
+
 							//hide unhide items
 							var hideitem = data.trim().substr(14, 500);
 							var hideitemarray=hideitem.split("xxx");
