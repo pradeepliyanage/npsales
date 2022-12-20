@@ -1045,12 +1045,7 @@ function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodesca
                 cache: false,
                 beforeSend: function() {
                     //$("#update").val("<img src='css/buttonloading.gif' style='width:50px;height:20px;>");
-					$("#update").button({
-
-						icons: {primary: null},
-						text: false
-					
-					}).addClass("SubmitButtonClass");
+					document.getElementById('update').classList.add('SubmitButtonClass');
 
 
                 },
@@ -1064,6 +1059,7 @@ function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodesca
 						
 						if(res4=="Error!!!") alert(res2);
                         
+						document.getElementById('update').classList.remove('SubmitButtonClass');
                         $("#update").val("Submit");
 						$("#update").prop('disabled', false);
 						
