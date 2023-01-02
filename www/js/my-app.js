@@ -27,8 +27,8 @@ var locationerror = '';
 var locationtime = '';
 var globepage='';
 var globebannertext='';
-var globeippath='http://124.43.160.52/dppos';
-var nongeotag='nongeo';//nongeo //for no gps app put nongeo
+var globeippath='http://124.43.160.52/kndfeex';
+var nongeotag='';//nongeo //for no gps app put nongeo
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -958,7 +958,10 @@ function cameraTakePicture(imagecaption,thisid,sourceType) {
 function uploadFile(imageData,imagecaption,thisid,sourceType) {
    var fileURL = imageData;
    var imagecaption=imagecaption;//value passing from onclick button event
+   if(document.getElementById("siteid"))
    var siteid=document.getElementById("siteid").value;//document.getElementById("siteid").value;
+   else 
+   var siteid="";
    var morevar=locationlat+"xxx"+locationlon+"xxx"+locationerror+"xxx"+empno+"xxx"+siteid+"xxx"+imagecaption+"xxx"+sourceType;
    
 	if(document.getElementById('id_of_element'))
