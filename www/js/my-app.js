@@ -27,7 +27,7 @@ var locationerror = '';
 var locationtime = '';
 var globepage='';
 var globebannertext='';
-var globeippath='http://124.43.160.52/kndfeex';
+var globeippath='http://124.43.160.52/control';
 var nongeotag='';//nongeo //for no gps app put nongeo
 
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -57,7 +57,8 @@ function onDeviceReady() {
 	}
 	
 	//watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError);//getCurrentPosition //watchPosition //not required at the app load 
-	
+	getserviceurl(uuid2);
+
 	setglobalempno(uuid2);
 	getempname(uuid,'all');
 	
@@ -65,6 +66,15 @@ function onDeviceReady() {
 		
 				
     
+}
+
+function getserviceurl(uuid2) {	
+		
+	var url = "http://124.43.160.52/control"+"/phonegap-app/json.php";
+	$.getJSON(url,{getserviceurl:uuid2}, function(result) {
+		
+		globeippath= result;
+	});
 }
 
 
