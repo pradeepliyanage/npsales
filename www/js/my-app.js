@@ -71,10 +71,10 @@ function getserviceurl(uuid2) {
 		
 	var url = "http://124.43.160.52/control"+"/phonegap-app/json.php";
 	$.getJSON(url,{getserviceurl:uuid2}, function(result) {
-		
+		alert(result);
 		globeippath= result;
 		setglobalempno(uuid2);
-		getempname(uuid,'all');
+		getempname(uuid2,'all');
 
 
 	});
