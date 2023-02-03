@@ -59,8 +59,7 @@ function onDeviceReady() {
 	//watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError);//getCurrentPosition //watchPosition //not required at the app load 
 	getserviceurl(uuid2);
 
-	setglobalempno(uuid2);
-	getempname(uuid,'all');
+	
 	
 	//setupPush();
 		
@@ -74,6 +73,10 @@ function getserviceurl(uuid2) {
 	$.getJSON(url,{getserviceurl:uuid2}, function(result) {
 		
 		globeippath= result;
+		setglobalempno(uuid2);
+		getempname(uuid,'all');
+
+
 	});
 }
 
