@@ -289,7 +289,7 @@ function openurl2(page){
 		
 		ref.addEventListener('loadstart', function(e) {
 		  var url = e.url;
-		  alert("ddd");
+		  
 		  var extension = url.substr(url.length - 11);
 		 
 		  if (extension == 'openurl2mod') {
@@ -398,11 +398,11 @@ function openurl2gps(page,latlong){
 		
 		ref2gps.addEventListener('loadstart', function(e) {
 			var url = e.url;
-		  alert("iii");
+		  
 			var extension = url.substr(url.length - 11);
 		   
 			if (extension == "openurl2mod" ) {
-			  var args = url.replace(globeippath+"/", "").replace(/&/g, "xxx");//.substr(0,url.length - 11)
+			  var args = url.substr(0,url.length - 11).replace(globeippath+"/", "").replace(/&/g, "xxx");//
 			  
 			  ref2gps.close(); // close window or you get exception
 			  document.addEventListener('deviceready', function () {
