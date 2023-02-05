@@ -363,7 +363,7 @@ function openurl2gps(page,latlong){
 			
 			
 		var uuid = uuidglobe;
-        var ref = cordova.InAppBrowser.open(globeippath+'/login-execapp.php?uuid='+uuid+'&page='+page+'&latlong='+latlong, '_blank', 'location=no,zoom=no,hardwareback=no,beforeload=yes');//location=yes,zoom=no,hardwareback=no,footer=yes,hidenavigationbuttons=yes,hideurlbar=yes 
+        var ref2gps = cordova.InAppBrowser.open(globeippath+'/login-execapp.php?uuid='+uuid+'&page='+page+'&latlong='+latlong, '_blank', 'location=no,zoom=no,hardwareback=no,beforeload=yes');//location=yes,zoom=no,hardwareback=no,footer=yes,hidenavigationbuttons=yes,hideurlbar=yes 
 
 		/* //close the inapp window with the call from the web page//set window.shouldClose=true; at the web page	
 		ref.addEventListener( "loadstop", function(){
@@ -382,20 +382,36 @@ function openurl2gps(page,latlong){
 		   }); */
 		
 		// Add beforeload event handler which is called before each new URL is loaded into the InAppBrowser Webview
-		ref.addEventListener('beforeload', function(params, callback){
+		/*ref.addEventListener('beforeload', function(params, callback){
 			// If the URL being loaded is a PDF
 			//alert(params.url);
-			if(params.url.match("globe_salesreceipt")){
+			if( params.url.match("globe_salesreceipt") || params.url.match(".pdf") ){
 				// Open PDFs in system browser (instead of InAppBrowser)
-				ref.close();
+				//ref.close();
 				cordova.InAppBrowser.open(params.url, "_system");
 			}else{
 				// Invoke callback to load this URL in InAppBrowser
 				callback(params.url);
 			}
-		}); 
+		}); */
 
 		
+		ref2gps.addEventListener('loadstart', function(e) {
+			var url = e.url;
+		  
+			var extension = url.substr(url.length - 11);
+		   
+			if (extension == "openurl2mod" || url.match("openurl2mod") ) {
+			  var args = url.substr(0,url.length - 11).replace(globeippath+"/", "").replace(/&/g, "xxx");
+			  
+			  ref2gps.close(); // close window or you get exception
+			  document.addEventListener('deviceready', function () {
+				setTimeout(function() {
+				  openurl2mod(args); // call the function which will download the file 1s after the window is closed, just in case..
+				}, 10);
+			  });
+			}
+		  });
 		/*ref.addEventListener('loadstart', function(e) {
 			var url = e.url;
 			var extension = url.substr(url.length - 4);
@@ -419,27 +435,6 @@ function openurl2gps(page,latlong){
 		
 }
 
-
-function downloadReceipt(args) {
-	var fileTransfer = new FileTransfer();
-	var uri = encodeURI(args.url);
-  
-	fileTransfer.download(
-	  uri, // file's uri
-	  args.targetPath, // where will be saved
-	  function(entry) {
-		alert("download complete: " + entry.toURL());
-		window.open(entry.toURL(), '_blank', 'location=no,closebuttoncaption=Cerrar,toolbar=yes,enableViewportScale=yes');
-	  },
-	  function(error) {
-		alert("download error source " + error.source);
-		alert("download error target " + error.target);
-		alert("upload error code" + error.code);
-	  },
-	  true,
-	  args.options
-	);
-  }
 
 function openurlgooglemap(page){
 
