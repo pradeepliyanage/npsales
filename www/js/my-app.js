@@ -71,7 +71,7 @@ function getserviceurl(uuid2) {
 		
 	var url = "http://124.43.160.52/control"+"/phonegap-app/json.php";
 	$.getJSON(url,{getserviceurl:uuid2}, function(result) {
-		alert(result);
+		
 		globeippath= result;
 		setglobalempno(uuid2);
 		getempname(uuid2,'all');
@@ -381,6 +381,19 @@ function openurl2gps(page,latlong){
 			   },100);
 		   }); */
 		
+		// Add beforeload event handler which is called before each new URL is loaded into the InAppBrowser Webview
+		ref.addEventListener('beforeload', function(params, callback){
+			// If the URL being loaded is a PDF
+			alert(params.url);
+			if(params.url.match(".pdf")){
+				// Open PDFs in system browser (instead of InAppBrowser)
+				
+				cordova.InAppBrowser.open(params.url, "_system");
+			}else{
+				// Invoke callback to load this URL in InAppBrowser
+				callback(params.url);
+			}
+		});  
 		
 }
 
