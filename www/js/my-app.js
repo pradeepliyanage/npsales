@@ -384,10 +384,10 @@ function openurl2gps(page,latlong){
 		// Add beforeload event handler which is called before each new URL is loaded into the InAppBrowser Webview
 		ref.addEventListener('beforeload', function(params, callback){
 			// If the URL being loaded is a PDF
-			alert(params.url);
-			if(params.url.match(".pdf")){
+			//alert(params.url);
+			if(params.url.match("globe_salesreceipt")){
 				// Open PDFs in system browser (instead of InAppBrowser)
-				
+				ref.close();
 				cordova.InAppBrowser.open(params.url, "_system");
 			}else{
 				// Invoke callback to load this URL in InAppBrowser
