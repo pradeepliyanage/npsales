@@ -112,7 +112,7 @@ $$(document).on('pageInit', function (e) {
         // Now we can generate some dummy list
 
 
-		 var url = globeippath+"/phonegap-app/viewdetail_universal.php";
+		 var url = globeippath+"/viewdetail_universal.php";
         $.getJSON(url,{viewname:viewname,empno:empnotemp,postval0:postval0}, function(result) {
             //console.log(result);
              var display = result;
@@ -147,7 +147,7 @@ $$(document).on('pageInit', function (e) {
 			
 		} else {
 
-			var url = globeippath+"/phonegap-app/gatherdata_universal.php";
+			var url = globeippath+"/gatherdata_universal.php";
 			$.getJSON(url,{viewname:viewname,empno:empnotemp,morevar:morevar,postval0:postval0}, function(result) {
 				//console.log(result);
 				var display = result;
@@ -560,7 +560,7 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 		
 		
 		
-		var url = globeippath+"/phonegap-app/gatherdata_universal.php";
+		var url = globeippath+"/gatherdata_universal.php";
         $.getJSON(url,{viewname:viewname,empno:empnotemp,morevar:morevar,postval0:postval0}, function(result) {
             //console.log(result);
              var display = result;
@@ -610,7 +610,7 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 		
 		
 		
-		var url = globeippath+"/phonegap-app/gatherdata_universal.php";
+		var url = globeippath+"/gatherdata_universal.php";
         $.getJSON(url,{viewname:viewname,empno:empnotemp,morevar:morevar,postval0:postval0}, function(result) {
             //console.log(result);
              var display = result;
@@ -769,7 +769,7 @@ function onError(error) {
 	
 function getempname(uuid,type) {	
 		
-        var url = globeippath+"/phonegap-app/json.php";
+        var url = globeippath+"/json.php";
         $.getJSON(url,{uuid:uuid}, function(result) {
             //console.log(result);
             var display = result;
@@ -798,7 +798,7 @@ function getempname(uuid,type) {
 	
 function setglobalempno(uuid2) {	
 		
-        var url = globeippath+"/phonegap-app/json.php";
+        var url = globeippath+"/json.php";
         $.getJSON(url,{uuid2:uuid2}, function(result) {
             //console.log(result);
                 empno= result;
@@ -807,7 +807,7 @@ function setglobalempno(uuid2) {
 
 function setoverlaydiv(uuidoverlaydiv) {	
 		
-        var url = globeippath+"/phonegap-app/json.php";
+        var url = globeippath+"/json.php";
         $.getJSON(url,{uuidoverlaydiv:uuidoverlaydiv}, function(result) {
             //console.log(result);
                 document.getElementById("overlaydiv").innerHTML = result;
@@ -816,7 +816,7 @@ function setoverlaydiv(uuidoverlaydiv) {
 
 function setviewmain(uuidoverlaydiv) {	
 		
-	var url = globeippath+"/phonegap-app/json.php";
+	var url = globeippath+"/json.php";
 	$.getJSON(url,{setviewmain:uuidoverlaydiv}, function(result) {
 		//console.log(result);
 		if(result!="")	{
@@ -830,7 +830,7 @@ function setviewmain(uuidoverlaydiv) {
 
 function setviewmain2(uuidoverlaydiv) {	
 		
-	var url = globeippath+"/phonegap-app/json.php";
+	var url = globeippath+"/json.php";
 	$.getJSON(url,{setviewmain2:uuidoverlaydiv}, function(result) {
 		//console.log(result);
 		if(result!="")	
@@ -841,7 +841,7 @@ function setviewmain2(uuidoverlaydiv) {
 
 function setviews(uuidoverlaydiv) {	
 		
-	var url = globeippath+"/phonegap-app/json.php";
+	var url = globeippath+"/json.php";
 	$.getJSON(url,{setviews:uuidoverlaydiv}, function(result) {
 		//console.log(result);
 		if(result!="")	{ 
@@ -854,7 +854,7 @@ function setviews(uuidoverlaydiv) {
 
 function setglobebannertext(uuid2) {	
 		
-	var url = globeippath+"/phonegap-app/json.php";
+	var url = globeippath+"/json.php";
 	$.getJSON(url,{setglobebannertext:uuid2}, function(result) {
 		//console.log(result);
 			globebannertext= result;
@@ -873,7 +873,7 @@ function firstlogin() {
             
 			$.ajax({
                 type: "POST",
-                url: globeippath+"/phonegap-app/update.php",
+                url: globeippath+"/update.php",
                 data: dataString,
                 crossDomain: true,
                 cache: false,
@@ -1034,7 +1034,7 @@ function uploadFile(imageData,imagecaption,thisid,sourceType) {
 		alert('element exists!');
 	}
    
-   var uri = encodeURI(globeippath+"/phonegap-app/fileupload.php?val0="+morevar);
+   var uri = encodeURI(globeippath+"/fileupload.php?val0="+morevar);
    var options = new FileUploadOptions();
    options.chunkedMode = false,
    options.fileKey = "file";
@@ -1107,7 +1107,7 @@ function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodesca
             
 			$.ajax({
                 type: "POST",
-                url: globeippath+"/phonegap-app/update.php",
+                url: globeippath+"/update.php",
                 data: dataString,
                 crossDomain: true,
                 cache: false,
@@ -1340,7 +1340,7 @@ function updatetabelonchangeallformdata(textcaption,thisid,thisvalue,saveto,type
             
 			$.ajax({
                 type: "POST",
-                url: globeippath+"/phonegap-app/update.php",
+                url: globeippath+"/update.php",
                 data: dataString,
                 crossDomain: true,
                 cache: false,
@@ -1495,7 +1495,7 @@ function uploadFilecompareimages(imageData,imagecaption,thisid,type) {
 		alert('element exists!');
 	}
    
-   var uri = encodeURI(globeippath+"/phonegap-app/fileupload.php?val0="+morevar);
+   var uri = encodeURI(globeippath+"/fileupload.php?val0="+morevar);
    var options = new FileUploadOptions();
    options.chunkedMode = false,
    options.fileKey = "file";
@@ -1585,7 +1585,7 @@ var n=0;
 		var postval0 = '';
         // Now we can generate some dummy list
 		
-		 var url = globeippath+"/phonegap-app/viewdetail_universal.php";
+		 var url = globeippath+"/viewdetail_universal.php";
         $.getJSON(url,{viewname:viewname,empno:empnotemp,postval0:postval0}, function(result) {
             //console.log(result);
              var display = result;
