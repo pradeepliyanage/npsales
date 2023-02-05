@@ -289,7 +289,7 @@ function openurl2(page){
 		
 		ref.addEventListener('loadstart', function(e) {
 		  var url = e.url;
-		
+		  alert("ddd");
 		  var extension = url.substr(url.length - 11);
 		 
 		  if (extension == 'openurl2mod') {
@@ -363,7 +363,7 @@ function openurl2gps(page,latlong){
 			
 			
 		var uuid = uuidglobe;
-        var ref2gps = cordova.InAppBrowser.open(globeippath+'/login-execapp.php?uuid='+uuid+'&page='+page+'&latlong='+latlong, '_blank', 'location=no,zoom=no,hardwareback=no,beforeload=yes');//location=yes,zoom=no,hardwareback=no,footer=yes,hidenavigationbuttons=yes,hideurlbar=yes 
+        var ref2gps = cordova.InAppBrowser.open(globeippath+'/login-execapp.php?uuid='+uuid+'&page='+page+'&latlong='+latlong, '_blank', 'location=no,zoom=no,hardwareback=no');//location=yes,zoom=no,hardwareback=no,footer=yes,hidenavigationbuttons=yes,hideurlbar=yes 
 
 		/* //close the inapp window with the call from the web page//set window.shouldClose=true; at the web page	
 		ref.addEventListener( "loadstop", function(){
@@ -398,11 +398,11 @@ function openurl2gps(page,latlong){
 		
 		ref2gps.addEventListener('loadstart', function(e) {
 			var url = e.url;
-		  
+		  alert("iii");
 			var extension = url.substr(url.length - 11);
 		   
-			if (extension == "openurl2mod" || url.match("openurl2mod") ) {
-			  var args = url.substr(0,url.length - 11).replace(globeippath+"/", "").replace(/&/g, "xxx");
+			if (extension == "openurl2mod" ) {
+			  var args = url.replace(globeippath+"/", "").replace(/&/g, "xxx");//.substr(0,url.length - 11)
 			  
 			  ref2gps.close(); // close window or you get exception
 			  document.addEventListener('deviceready', function () {
