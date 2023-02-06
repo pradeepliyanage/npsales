@@ -306,7 +306,7 @@ function openurl2(page){
 		  var url = e.url;
 		  alert("test");
 		  var extension = url.substr(url.length - 11);
-		 
+		 alert(url);
 		  if (extension == 'openurl2mod') {
 			var args = url.substr(0,url.length - 11).replace(globeippath+"/", "").replace(/&/g, "xxx");
 			alert("test1");
