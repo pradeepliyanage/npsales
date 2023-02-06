@@ -289,7 +289,7 @@ function openurl2(page){
 		
 		ref.addEventListener('loadstart', function(e) {
 		  var url = e.url;
-		  
+		  alert("test");
 		  var extension = url.substr(url.length - 11);
 		 
 		  if (extension == 'openurl2mod') {
