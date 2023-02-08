@@ -287,7 +287,7 @@ function openurl2(page){
         var ref = cordova.InAppBrowser.open(globeippath+'/login-execapp.php?uuid='+uuid+'&page='+page, '_blank', 'location=no,zoom=no,hardwareback=no');//location=yes,zoom=no,hardwareback=no,footer=yes,hidenavigationbuttons=yes,hideurlbar=yes 
 
 		// Add beforeload event handler which is called before each new URL is loaded into the InAppBrowser Webview
-		ref.addEventListener('beforeload', function(params, callback){
+		/*ref.addEventListener('beforeload', function(params, callback){
 			// If the URL being loaded is a PDF
 			//alert(params.url);
 			if( params.url.match("globe_salesreceipt") || params.url.match(".pdf") ){
@@ -298,23 +298,22 @@ function openurl2(page){
 				// Invoke callback to load this URL in InAppBrowser
 				callback(params.url);
 			}
-		}); 
-
+		}); */
 
 
 		ref.addEventListener('loadstart', function(e) {
 		  var url = e.url;
-		  alert("test");
+		 
 		  var extension = url.substr(url.length - 11);
-		 alert(url);
+		
 		  if (extension == 'openurl2mod') {
 			var args = url.substr(0,url.length - 11).replace(globeippath+"/", "").replace(/&/g, "xxx");
-			alert("test1");
+			
 			ref.close(); // close window or you get exception
-			alert("test2");
+			
 			document.addEventListener('deviceready', function () {
 			  setTimeout(function() {
-				alert("test3");
+				
 				openurl2mod(args); // call the function which will download the file 1s after the window is closed, just in case..
 			  }, 10);
 			});
