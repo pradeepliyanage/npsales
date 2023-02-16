@@ -462,6 +462,15 @@ function openurlgooglemap(page){
 
 }
 
+function opensproute(link1,link2){
+
+	window.location.href = link1;
+	openurl2mod(link2);
+
+
+}
+	
+
 ///////////////////////location on google map
 function getLocationUpdatemapandopenurl(page,itag){
 	
