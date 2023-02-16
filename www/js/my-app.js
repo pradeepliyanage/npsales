@@ -465,7 +465,7 @@ function openurlgooglemap(page){
 function opensproute(link1,link2,link3){
 
 	if(link1!="") window.location.href = link1;
-	if(link3!="") document.getElementById(link3).onclick();
+	if(link3!="") document.getElementById(link3).click();
 	if(link2!="") openurl2mod(link2);
 
 
