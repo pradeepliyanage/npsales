@@ -61,6 +61,10 @@ function onDeviceReady() {
 
 	
 	
+		$('select').selectize({
+			sortField: 'text'
+		});
+	
 	//setupPush();
 		
 				
