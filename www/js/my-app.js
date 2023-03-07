@@ -58,12 +58,6 @@ function onDeviceReady() {
 	
 	//watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError);//getCurrentPosition //watchPosition //not required at the app load 
 	getserviceurl(uuid2);
-
-	
-	
-		$('select').selectize({
-			sortField: 'text'
-		});
 	
 	//setupPush();
 		
