@@ -647,33 +647,6 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 				$$(page.container).find('.page-content').append(display);
 
 
-
-				//if continuouse monitoring required
-				for(var io=0;io<100;io++) {
-				var options = {accuracy: jasonhiddenvariable0, timeout: jasonhiddenvariable1};
-				cordova.plugins.LocationProvider.getOwnPosition(options, successCallbackcont, errorcallbackcont);
-
-				function successCallbackcont(position){
-					locationlat= position.coords.latitude;
-					locationlon= position.coords.longitude;	
-					locationtime=Date.now();
-
-					alert(locationlat + " - " + locationlon+" - " + locationtime);
-
-				}
-
-
-				function errorcallbackcont(err){
-
-						alert("ERROR!!!"+err);
-
-				}
-
-
-				}
-
-				////////////
-		
 		});
 			
 
