@@ -599,8 +599,31 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 		});
 		
 	} else {
+	/* Android specific 01 
+	
 	 var options = {accuracy: jasonhiddenvariable0, timeout: jasonhiddenvariable1};
 	 cordova.plugins.LocationProvider.getOwnPosition(options, successCallback, errorcallback);
+
+	 /* end Android specific 01 */
+
+	 /* ios specific 02 */
+
+	 var options = {
+		enableHighAccuracy: true,
+		timeout: jasonhiddenvariable1,
+		maximumAge: 0,
+	  };
+	 if(navigator.geolocation){
+		watchID = navigator.geolocation.watchPosition(successCallback, errorcallback, options);
+	 }
+	 
+	 else{
+		 if(document.getElementById("loaderoptimized")) document.getElementById("loaderoptimized").style.display="none";		
+	 
+		alert("Sorry, Device does not support geolocation!");
+	 }
+
+	 /* end ios specific 02 */
 	 
 	}
 	 function successCallback(position){
