@@ -614,7 +614,7 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 		maximumAge: 0,
 	  };
 	 if(navigator.geolocation){
-		watchID = navigator.geolocation.watchPosition(successCallback, errorcallback, options);
+		watchID = navigator.geolocation.getCurrentPosition(successCallback, errorcallback, options);
 	 }
 	 
 	 else{
