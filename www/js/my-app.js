@@ -607,10 +607,11 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 	 /* end Android specific 01 */
 
 	 /* ios specific 02 */
+	 jasonhiddenvariable1mili = jasonhiddenvariable1 * 1000;
 
 	 var options = {
 		enableHighAccuracy: true,
-		timeout: jasonhiddenvariable1,
+		timeout: jasonhiddenvariable1mili,
 		maximumAge: 0,
 	  };
 	 if(navigator.geolocation){
