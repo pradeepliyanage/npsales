@@ -35,19 +35,22 @@
 
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~2.0.3" />
     <plugin name="cordova-plugin-camera" source="npm" spec="~6.0.0" >
-	 <variable name="CAMERA_USAGE_DESCRIPTION" value="Use Camera" />
-   <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Select Photo" />
+	 <variable name="CAMERA_USAGE_DESCRIPTION" value="Allow access to the camera so that you can upload photos directly from the app" />
+   <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Allow access to the photos so that you can upload photos directly from your library" />
     </plugin>
 	<feature name="Camera">
     <param name="ios-package" value="CDVCamera" />
 	</feature>
 
-    <plugin name="cordova-plugin-ios-camera-permissions" source="npm" spec="~1.2.0" />
+    <plugin name="cordova-plugin-ios-camera-permissions" source="npm" spec="~1.2.0" >
+    <variable name="CAMERA_USAGE_DESCRIPTION" value="Allow access to the camera so that you can upload photos directly from the app" />
+    <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Allow access to the photos so that you can upload photos directly from your library" />
+    </plugin>
    
     <plugin name="cordova-plugin-media-capture" source="npm" spec="~3.0.3">
-        <variable name="CAMERA_USAGE_DESCRIPTION" value="App would like to access the camera." />
+        <variable name="CAMERA_USAGE_DESCRIPTION" value="Allow access to the camera so that you can upload photos directly from the app" />
         <variable name="MICROPHONE_USAGE_DESCRIPTION" value="App would like to access the microphone." />
-        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="App would like to access the library." />
+        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Allow access to the photos so that you can upload photos directly from your library" />
     </plugin>
     <plugin name="cordova-plugin-console" source="npm" spec="~1.1.0" />
     <plugin name="cordova-plugin-contacts" source="npm" spec="~2.0.1" />
@@ -63,13 +66,13 @@
 
     <plugin name="cordova-plugin-geolocation" source="npm" spec="~4.1.0" />
     <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
-        <string>need location access</string>
+        <string>Turning on location services allow us to assign you correct task and to validate wherther you executed the task at the correct location </string>
     </edit-config>
     <edit-config file="*-Info.plist" mode="merge" target="NSLocationAlwaysAndWhenInUseUsageDescription">
-        <string>need location access</string>
+        <string>Turning on location services allow us to assign you correct task and to validate wherther you executed the task at the correct location</string>
     </edit-config>
     <edit-config file="*-Info.plist" mode="merge" target="NSLocationAlwaysUsageDescription">
-        <string>need location access</string>
+        <string>Turning on location services allow us to assign you correct task and to validate wherther you executed the task at the correct location</string>
     </edit-config>
 
     <plugin name="cordova-plugin-location-provider" source="npm" spec="~1.5.4" />
@@ -85,8 +88,9 @@
   <variable name="MOTION_USAGE_DESCRIPTION" value="App requires motion detection" /> 
   </plugin>-->
 
+<!-- Android specific 02
   <plugin name="cordova-plugin-background-mode" source="npm" spec="~0.7.3" />
-
+-->
     <plugin name="cordova-plugin-globalization" source="npm" spec="~1.11.0" />
     <plugin name="cordova-plugin-inappbrowser" source="npm" spec="~5.0.0" />
     <plugin name="cordova-plugin-media" source="npm" spec="~5.0.3" />
