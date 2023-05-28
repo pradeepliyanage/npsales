@@ -599,14 +599,14 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 		});
 		
 	} else {
-	/* Android specific 01 
+	/* Android specific 01 */
 	
 	 var options = {accuracy: jasonhiddenvariable0, timeout: jasonhiddenvariable1};
 	 cordova.plugins.LocationProvider.getOwnPosition(options, successCallback, errorcallback);
 
 	 /* end Android specific 01 */
 
-	 /* ios specific 02 */
+	 /* ios specific 02 
 	 jasonhiddenvariable1mili = jasonhiddenvariable1 * 1000;
 
 	 var options = {
