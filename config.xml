@@ -10,7 +10,7 @@
     <content src="index.html" />
     <platform name="android" />
     <platform name="ios" />
-    <preference name="android-targetSdkVersion" value="32" />
+    <preference name="android-targetSdkVersion" value="31" />
     <access origin="*" />
     <allow-navigation href="http://*/*" />
     <allow-navigation href="https://*/*" />
@@ -180,11 +180,13 @@ end Android specific 02 -->
         <icon density="xhdpi" src="res/icon/android/xhdpi.png" />
         <icon density="xxhdpi" src="res/icon/android/xxhdpi.png" />
         <icon density="xxxhdpi" src="res/icon/android/xxxhdpi.png" />
+       <!--
         <splash density="port-ldpi" src="res/screen/android/splash-port-ldpi.png" />
         <splash density="port-mdpi" src="res/screen/android/splash-port-mdpi.png" />
         <splash density="port-hdpi" src="res/screen/android/splash-port-hdpi.png" />
         <splash density="port-xhdpi" src="res/screen/android/splash-port-xhdpi.png" />
         <splash density="port-xxhdpi" src="res/screen/android/splash-port-xxhdpi.png" />
         <splash density="port-xxxhdpi" src="res/screen/android/splash-port-xxxhdpi.png" />
+        -->
     </platform>
 </widget>
