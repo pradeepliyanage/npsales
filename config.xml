@@ -144,12 +144,13 @@ end Android specific 02 -->
 <icon src="res/icon/ios/icon-167.png" width="167" height="167"/>
 <icon src="res/icon/ios/icon-83.5@2x.png" width="167" height="167"/>
 <!--  Storyboard portrait  -->
-<splash src="res/screen/ios/Default@2x~iphone~anyany.png"/>
+<!--<splash src="res/screen/ios/Default@2x~iphone~anyany.png"/>
 <splash src="res/screen/ios/Default@2x~iphone~comany.png"/>
 <splash src="res/screen/ios/Default@3x~iphone~anyany.png"/>
 <splash src="res/screen/ios/Default@3x~iphone~comany.png"/>
 <splash src="res/screen/ios/Default@2x~ipad~anyany.png"/>
 <splash src="res/screen/ios/Default@2x~ipad~comany.png"/>
+-->
 <!--  Storyboard landscape  -->
 <!-- 
         <splash src="res/screen/ios/Default@2x~iphone~comcom.png"/>
