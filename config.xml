@@ -30,7 +30,11 @@
         <allow-navigation href="https://cqrmjaela.usslk.com/*" />
     </platform>
 
-    <preference name="android:targetSdkVersion" value="31" />
+    <platform name="android">
+    <preference name="targetSdkVersion" value="S" />
+    </platform>
+
+
      
     <preference name="Fullscreen" value="true" />
 
