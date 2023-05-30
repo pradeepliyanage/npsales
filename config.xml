@@ -31,7 +31,7 @@
     </platform>
 
     <platform name="android">
-    <preference name="targetSdkVersion" value="S" />
+    <preference name="targetSdkVersion" value="31" />
     </platform>
 
 
