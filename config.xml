@@ -30,10 +30,10 @@
         <allow-navigation href="https://cqrmjaela.usslk.com/*" />
     </platform>
 
-
+    <preference name="targetSdkVersion" value="31" />
+     
     <!--<preference name="Fullscreen" value="true" />-->
 
-     <!--<preference name="android-targetSdkVersion" value="31" />-->
      
 
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~2.0.3" />
