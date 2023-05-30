@@ -10,7 +10,7 @@
     <content src="index.html" />
     <platform name="android" />
     <platform name="ios" />
-    <preference name="android-targetSdkVersion" value="31" />
+    <!--<preference name="android-targetSdkVersion" value="31" />-->
     <access origin="*" />
     <allow-navigation href="http://*/*" />
     <allow-navigation href="https://*/*" />
