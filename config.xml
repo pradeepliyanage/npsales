@@ -10,7 +10,6 @@
     <content src="index.html" />
     <platform name="android" />
     <platform name="ios" />
-    <!--<preference name="maxSdkVersion" value="5" />-->
     <access origin="*" />
     <allow-navigation href="http://*/*" />
     <allow-navigation href="https://*/*" />
@@ -30,32 +29,20 @@
         <allow-navigation href="http://cqrmjaela.usslk.com/*" />
         <allow-navigation href="https://cqrmjaela.usslk.com/*" />
     </platform>
-
-    
-
-      <preference name="android-targetSdkVersion" value="31" />
-     <!--<edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application/activity">
-   <application android:exported="true" />
-</edit-config>-->
-
+    <preference name="android-targetSdkVersion" value="31" />
     <preference name="Fullscreen" value="true" />
-
-     
-
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~2.0.3" />
-    <plugin name="cordova-plugin-camera" source="npm" spec="~6.0.0" >
-	 <variable name="CAMERA_USAGE_DESCRIPTION" value="Allow access to the camera so that you can upload photos directly from the app" />
-   <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Allow access to the photos so that you can upload photos directly from your library" />
+    <plugin name="cordova-plugin-camera" source="npm" spec="~6.0.0">
+        <variable name="CAMERA_USAGE_DESCRIPTION" value="Allow access to the camera so that you can upload photos directly from the app" />
+        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Allow access to the photos so that you can upload photos directly from your library" />
     </plugin>
-	<feature name="Camera">
-    <param name="ios-package" value="CDVCamera" />
-	</feature>
-
-    <plugin name="cordova-plugin-ios-camera-permissions" source="npm" spec="~1.2.0" >
-    <variable name="CAMERA_USAGE_DESCRIPTION" value="Allow access to the camera so that you can upload photos directly from the app" />
-    <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Allow access to the photos so that you can upload photos directly from your library" />
+    <feature name="Camera">
+        <param name="ios-package" value="CDVCamera" />
+    </feature>
+    <plugin name="cordova-plugin-ios-camera-permissions" source="npm" spec="~1.2.0">
+        <variable name="CAMERA_USAGE_DESCRIPTION" value="Allow access to the camera so that you can upload photos directly from the app" />
+        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Allow access to the photos so that you can upload photos directly from your library" />
     </plugin>
-   
     <plugin name="cordova-plugin-media-capture" source="npm" spec="~3.0.3">
         <variable name="CAMERA_USAGE_DESCRIPTION" value="Allow access to the camera so that you can upload photos directly from the app" />
         <variable name="MICROPHONE_USAGE_DESCRIPTION" value="App would like to access the microphone." />
@@ -71,11 +58,6 @@
     <feature name="File">
         <param name="android-package" value="org.apache.cordova.FileUtils" />
     </feature>
-
-    <!--IOS specific 03
-    <plugin name="cordova-plugin-file-transfer-ios-fix" source="npm" spec="~1.7.2" />
-    end ios specific-->
-
     <plugin name="cordova-plugin-geolocation" source="npm" spec="~4.1.0" />
     <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
         <string>Turning on location services allow us to assign you correct task and to validate wherther you executed the task at the correct location </string>
@@ -86,40 +68,19 @@
     <edit-config file="*-Info.plist" mode="merge" target="NSLocationAlwaysUsageDescription">
         <string>Turning on location services allow us to assign you correct task and to validate wherther you executed the task at the correct location</string>
     </edit-config>
-
     <plugin name="cordova-plugin-location-provider" source="npm" spec="~1.5.4" />
-
-    <!--<plugin name="cordova-background-geolocation-plugin" source="npm" spec="~2.0.8" />-->
-
-   <!-- <plugin name="cordova-plugin-background-geolocation" spec="@mauron85/cordova-plugin-background-geolocation@~3.1.0">
-  <variable name="GOOGLE_PLAY_SERVICES_VERSION" value="11+" />
-  <variable name="ANDROID_SUPPORT_LIBRARY_VERSION" value="26+" />
-  <variable name="ICON" value="@mipmap/icon" />
-  <variable name="SMALL_ICON" value="@mipmap/icon" />
-  <variable name="ALWAYS_USAGE_DESCRIPTION" value="App requires background tracking " />
-  <variable name="MOTION_USAGE_DESCRIPTION" value="App requires motion detection" /> 
-  </plugin>-->
-
-<!-- Android specific 02 
-  <plugin name="cordova-plugin-background-mode" source="npm" spec="~0.7.3" />
-end Android specific 02 -->
-
     <plugin name="cordova-plugin-globalization" source="npm" spec="~1.11.0" />
     <plugin name="cordova-plugin-inappbrowser" source="npm" spec="~5.0.0" />
     <plugin name="cordova-plugin-media" source="npm" spec="~5.0.3" />
     <plugin name="cordova-plugin-network-information" source="npm" spec="~3.0.0" />
-    <!--<plugin name="cordova-plugin-splashscreen" source="npm" spec="~6.0.2" />-->
     <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.4.3" />
     <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
-   <!-- <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.3.5" />-->
     <plugin name="cordova-plugin-sms" source="npm" />
     <plugin name="cordova-sms-plugin" source="npm" />
     <plugin name="cordova-plugin-cleartext" source="npm" spec="~1.0.0" />
     <plugin name="cordova-plugin-ionic-webview" source="npm" spec="~5.0.0" />
     <plugin name="cordova-plugin-fullscreen" source="npm" spec="~1.3.0" />
-
-  <preference name="AndroidXEnabled" value="true" />
-
+    <preference name="AndroidXEnabled" value="true" />
     <platform name="ios">
         <feature name="CDVWKWebViewEngine">
             <param name="ios-package" value="CDVWKWebViewEngine" />
@@ -127,81 +88,27 @@ end Android specific 02 -->
         <preference name="iosScheme" value="httpsionic" />
         <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
     </platform>
-
-
-<platform name="ios">
-<icon src="res/icon/ios/icon-1024.png" width="1024" height="1024"/>
-<icon src="res/icon/ios/icon-small.png" width="29" height="29"/>
-<icon src="res/icon/ios/icon-small@2x.png" width="58" height="58"/>
-<icon src="res/icon/ios/icon-small@3x.png" width="87" height="87"/>
-<icon src="res/icon/ios/icon-40.png" width="40" height="40"/>
-<icon src="res/icon/ios/icon-40@2x.png" width="80" height="80"/>
-<icon src="res/icon/ios/icon-50.png" width="50" height="50"/>
-<icon src="res/icon/ios/icon-50@2x.png" width="100" height="100"/>
-<icon src="res/icon/ios/icon.png" width="57" height="57"/>
-<icon src="res/icon/ios/icon@2x.png" width="114" height="114"/>
-<icon src="res/icon/ios/icon-60.png" width="60" height="60"/>
-<icon src="res/icon/ios/icon-60@2x.png" width="120" height="120"/>
-<icon src="res/icon/ios/icon-60@3x.png" width="180" height="180"/>
-<icon src="res/icon/ios/icon-72.png" width="72" height="72"/>
-<icon src="res/icon/ios/icon-72@2x.png" width="144" height="144"/>
-<icon src="res/icon/ios/icon-76.png" width="76" height="76"/>
-<icon src="res/icon/ios/icon-76@2x.png" width="152" height="152"/>
-<icon src="res/icon/ios/icon-167.png" width="167" height="167"/>
-<icon src="res/icon/ios/icon-83.5@2x.png" width="167" height="167"/>
-<!--  Storyboard portrait  -->
-<!--<splash src="res/screen/ios/Default@2x~iphone~anyany.png"/>
-<splash src="res/screen/ios/Default@2x~iphone~comany.png"/>
-<splash src="res/screen/ios/Default@3x~iphone~anyany.png"/>
-<splash src="res/screen/ios/Default@3x~iphone~comany.png"/>
-<splash src="res/screen/ios/Default@2x~ipad~anyany.png"/>
-<splash src="res/screen/ios/Default@2x~ipad~comany.png"/>
--->
-<!--  Storyboard landscape  -->
-<!-- 
-        <splash src="res/screen/ios/Default@2x~iphone~comcom.png"/>
-        <splash src="res/screen/ios/Default@3x~iphone~anycom.png"/>
-         -->
-<!--  Legacy portrait  -->
-<!-- 
-        <splash src="res/screen/ios/Default~iphone.png" width="320" height="480"/>
-        <splash src="res/screen/ios/Default@2x~iphone.png" width="640" height="960"/>
-        <splash src="res/screen/ios/Default-Portrait~ipad.png" width="768" height="1024"/>
-        <splash src="res/screen/ios/Default-Portrait@2x~ipad.png" width="1536" height="2048"/>
-        <splash src="res/screen/ios/Default-568h@2x~iphone.png" width="640" height="1136"/>
-        <splash src="res/screen/ios/Default-667h.png" width="750" height="1334"/>
-        <splash src="res/screen/ios/Default-736h.png" width="1242" height="2208"/>
-         -->
-<!--  Legacy landscape  -->
-<!-- 
-        <splash src="res/screen/ios/Default-Landscape~ipad.png" width="1024" height="768"/>
-        <splash src="res/screen/ios/Default-Landscape@2x~ipad.png" width="2048" height="1536"/>
-         -->
+    <platform name="ios">
+        <icon height="1024" src="res/icon/ios/icon-1024.png" width="1024" />
+        <icon height="29" src="res/icon/ios/icon-small.png" width="29" />
+        <icon height="58" src="res/icon/ios/icon-small@2x.png" width="58" />
+        <icon height="87" src="res/icon/ios/icon-small@3x.png" width="87" />
+        <icon height="40" src="res/icon/ios/icon-40.png" width="40" />
+        <icon height="80" src="res/icon/ios/icon-40@2x.png" width="80" />
+        <icon height="50" src="res/icon/ios/icon-50.png" width="50" />
+        <icon height="100" src="res/icon/ios/icon-50@2x.png" width="100" />
+        <icon height="57" src="res/icon/ios/icon.png" width="57" />
+        <icon height="114" src="res/icon/ios/icon@2x.png" width="114" />
+        <icon height="60" src="res/icon/ios/icon-60.png" width="60" />
+        <icon height="120" src="res/icon/ios/icon-60@2x.png" width="120" />
+        <icon height="180" src="res/icon/ios/icon-60@3x.png" width="180" />
+        <icon height="72" src="res/icon/ios/icon-72.png" width="72" />
+        <icon height="144" src="res/icon/ios/icon-72@2x.png" width="144" />
+        <icon height="76" src="res/icon/ios/icon-76.png" width="76" />
+        <icon height="152" src="res/icon/ios/icon-76@2x.png" width="152" />
+        <icon height="167" src="res/icon/ios/icon-167.png" width="167" />
+        <icon height="167" src="res/icon/ios/icon-83.5@2x.png" width="167" />
     </platform>
     <platform name="android">
-         <!-- <preference name="SplashMaintainAspectRatio" value="true" />
-        <preference name="SplashShowOnlyFirstTime" value="true" />
-        <icon density="ldpi" src="res/icon/android/ldpi.png" />
-        <icon density="mdpi" src="res/icon/android/mdpi.png" />
-        <icon density="hdpi" src="res/icon/android/hdpi.png" />
-        <icon density="xhdpi" src="res/icon/android/xhdpi.png" />
-        <icon density="xxhdpi" src="res/icon/android/xxhdpi.png" />
-        <icon density="xxxhdpi" src="res/icon/android/xxxhdpi.png" />
-     
-        <splash density="port-ldpi" src="res/screen/android/splash-port-ldpi.png" />
-        <splash density="port-mdpi" src="res/screen/android/splash-port-mdpi.png" />
-        <splash density="port-hdpi" src="res/screen/android/splash-port-hdpi.png" />
-        <splash density="port-xhdpi" src="res/screen/android/splash-port-xhdpi.png" />
-        <splash density="port-xxhdpi" src="res/screen/android/splash-port-xxhdpi.png" />
-        <splash density="port-xxxhdpi" src="res/screen/android/splash-port-xxxhdpi.png" />
-
-        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="res/screen/android/splash-port-xxxhdpi.png" />
-        -->
     </platform>
-
-    
-
-
-
-
 </widget>
