@@ -10,7 +10,7 @@
     <content src="index.html" />
     <platform name="android" />
     <platform name="ios" />
-    <preference name="maxSdkVersion" value="5" />
+    <!--<preference name="maxSdkVersion" value="5" />-->
     <access origin="*" />
     <allow-navigation href="http://*/*" />
     <allow-navigation href="https://*/*" />
@@ -33,7 +33,10 @@
 
     
 
-     
+     <uses-sdk android:minSdkVersion="31"
+          android:targetSdkVersion="31"
+          android:maxSdkVersion="31" />
+
     <preference name="Fullscreen" value="true" />
 
      
