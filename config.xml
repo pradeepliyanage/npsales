@@ -33,7 +33,7 @@
 
     
 
-     <!-- <preference name="android-targetSdkVersion" value="31" />-->
+     <preference name="android-targetSdkVersion" value="31" />
      <!--<edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application/activity">
    <application android:exported="true" />
 </edit-config>-->
@@ -179,7 +179,7 @@ end Android specific 02 -->
          -->
     </platform>
     <platform name="android">
-         <!-- <preference name="SplashMaintainAspectRatio" value="true" />
+         <preference name="SplashMaintainAspectRatio" value="true" />
         <preference name="SplashShowOnlyFirstTime" value="true" />
         <icon density="ldpi" src="res/icon/android/ldpi.png" />
         <icon density="mdpi" src="res/icon/android/mdpi.png" />
@@ -195,7 +195,7 @@ end Android specific 02 -->
         <splash density="port-xxhdpi" src="res/screen/android/splash-port-xxhdpi.png" />
         <splash density="port-xxxhdpi" src="res/screen/android/splash-port-xxxhdpi.png" />
 
-      --> 
+     
     </platform>
 
     
