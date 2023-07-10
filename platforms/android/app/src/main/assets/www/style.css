@@ -1,0 +1,184 @@
+@charset "UTF-8";
+:root {
+  --mobile-width: 370px;
+  --mobile-height: 650px;
+}
+
+body {
+  height: 100vh;
+  padding: 10px;
+  background-image: linear-gradient(to bottom right, #848faf, #515b7e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+body .main-container {
+  position: relative;
+  width: var(--mobile-width);
+  height: var(--mobile-height);
+  background: #3f496c;
+  font-family: "Poppins";
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+body .main-container .menu {
+  position: absolute;
+  top: 40px;
+  left: 35px;
+  width: 20px;
+  height: 2px;
+  background-color: white;
+  border-radius: 1px;
+  z-index: 1;
+}
+body .main-container .menu::before, body .main-container .menu::after {
+  content: "";
+  position: relative;
+  display: inline-block;
+  background-color: white;
+  width: 10px;
+  height: 2px;
+  border-radius: 1px;
+  z-index: 2;
+}
+body .main-container .menu::before {
+  top: -5.5px;
+  transform: translatex(50%);
+}
+body .main-container .menu::after {
+  top: -20px;
+  transform: translatex(-50%);
+}
+body .main-container .wallet-amount {
+  position: relative;
+  padding: 30px;
+  color: white;
+  background-image: linear-gradient(to right, #9f80f4, #f96cab);
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 10px 5px -5px rgba(202, 119, 209, 0.5);
+}
+body .main-container .wallet-amount svg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 0 0 10px 10px;
+}
+body .main-container .wallet-amount svg .wave {
+  fill-opacity: 0.1;
+  margin: 0;
+}
+body .main-container .wallet-amount .qr-code {
+  position: absolute;
+  right: 40px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid white;
+}
+body .main-container .wallet-amount h3 {
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  font-size: 0.5em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+body .main-container .wallet-amount .total {
+  font-size: 1.8em;
+  font-weight: 300;
+  line-height: 0;
+}
+body .main-container .wallet-amount .total::before {
+  content: "$";
+  font-size: 0.7em;
+}
+body .main-container .wallet-amount .total::after {
+  content: ". " attr(dec);
+  font-size: 0.7em;
+}
+body .main-container .wallet-amount .increment {
+  font-size: 0.8em;
+  font-weight: 500;
+  line-height: 0;
+}
+body .main-container .wallet-amount .increment::before {
+  content: "+";
+}
+body .main-container .wallet-amount .increment::after {
+  content: "↑";
+}
+body .main-container .wallet-amount .action-btn {
+  position: absolute;
+  background-color: #fff;
+  bottom: 0;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  transform: translatey(50%);
+  z-index: 1;
+}
+body .main-container .wallet-details {
+  display: grid;
+  color: white;
+  padding: 3em;
+  grid-template-areas: "title   title   button" "details details button";
+}
+body .main-container .wallet-details h2 {
+  grid-area: title;
+  font-weight: 300;
+  line-height: 0;
+}
+body .main-container .wallet-details .amount {
+  grid-area: details;
+  color: #BBB;
+  font-size: 0.85em;
+  line-height: 0;
+}
+body .main-container .wallet-details .amount::before {
+  content: "$";
+}
+body .main-container .wallet-details .amount::after {
+  content: "↑";
+  color: #90e69d;
+}
+body .main-container .wallet-details .add-coin {
+  grid-area: button;
+  color: #82c4ea;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  font-weight: 600;
+  border: none;
+}
+body .main-container .wallet-details .add-coin::after {
+  content: "";
+  padding: 5px 15px;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABmJLR0QA/wD/AP+gvaeTAAABYklEQVQokaWQvyuEcRzHX5+v5851ZfDjMCklA6ssR7rRKHUYLAajskmOJ6UMlJj8ATYTIiWUxGBjoyySH9edK8qde74fk3P39JzFe3p/P9/3q88P+Iek/OGe3EeME51AZEBEPatyqF+xLTchxT/hpcvnFq/IMUiXL3Nqvz4G3UT7px82P8YrynoAaIE7p7ausWpn9+oxaj6dNyBU9qcKYxFkv6BMKtqmyNFCf2y3orNTCNf7QETYrjP5nTxcqOgKwpSI7iyevcxVwJ0PjU+gmXJYre69a3gYtNs36+zmlYZKcDIpHshqZcZkQBoCVo1kyUZLMICNx5aBNcADsGJ7pcgB4L/y0UxPQ64CdkXsfF/ztK3xOhAdx3CeGmi+FWUIuAZyKNs1jo7/ThegxfPXUVQ3QF+s6Igbb70JypmgIqrrQBNIl1GTCsxUh0mXvJR5n5ygojU2adSkENIhG54Lyvxb3+ZffIj8rNuUAAAAAElFTkSuQmCC") no-repeat center;
+}
+body .main-container .cryptos {
+  color: white;
+}
+body .main-container .cryptos div {
+  display: grid;
+  margin: 10px 20px;
+  background-image: linear-gradient(to right, #7784b0, #384162);
+  grid-template-areas: "name value" "name amount";
+  place-items: center;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+body .main-container .cryptos div h4 {
+  grid-area: name;
+  margin: 0;
+}
+body .main-container .cryptos div .value {
+  grid-area: value;
+  line-height: 0;
+}
+body .main-container .cryptos div .amount {
+  grid-area: amount;
+  line-height: 0;
+}

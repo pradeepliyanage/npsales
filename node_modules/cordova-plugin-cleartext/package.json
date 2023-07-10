@@ -1,0 +1,20 @@
+{
+  "name": "cordova-plugin-cleartext",
+  "version": "1.0.0",
+  "description": "",
+  "cordova": {
+    "id": "cordova-plugin-cleartext",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "cleartext",
+    "usesCleartextTraffic",
+    "android9",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "JiaWei",
+  "license": "Apache 2.0 License"
+}
