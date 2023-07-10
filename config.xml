@@ -33,7 +33,7 @@
 
     
 
-     <preference name="android-targetSdkVersion" value="31" />
+     <!--<preference name="android-targetSdkVersion" value="31" />-->
 
     <preference name="Fullscreen" value="true" />
 
