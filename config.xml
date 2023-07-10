@@ -33,10 +33,10 @@
 
     
 
-    
-     <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application/activity">
+     <preference name="android-targetSdkVersion" value="32" />
+     <!--<edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application/activity">
    <application android:exported="true" />
-</edit-config>
+</edit-config>-->
 
     <preference name="Fullscreen" value="true" />
 
@@ -194,10 +194,12 @@ end Android specific 02 -->
         <splash density="port-xhdpi" src="res/screen/android/splash-port-xhdpi.png" />
         <splash density="port-xxhdpi" src="res/screen/android/splash-port-xxhdpi.png" />
         <splash density="port-xxxhdpi" src="res/screen/android/splash-port-xxxhdpi.png" />
+
+        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="res/screen/android/splash-port-xxxhdpi.png" />
         -->
     </platform>
 
-    <preference name="AndroidWindowSplashScreenAnimatedIcon" value="res/screen/android/splash-port-xxxhdpi.png" />
+    
 
 
 
