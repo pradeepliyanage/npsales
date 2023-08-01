@@ -1712,11 +1712,11 @@ function sendSMSv2(numbers,message,mode) {//cordova-sms-plugin
 
 ///test
 
-
+$$(document).on('pageInit', function (e) {
 
 function googlemapinitialize(mapdiv1,map1,mapsearchInput1,val0,textcaption,thisid,saveto,type) {
 
-	$$(document).on('pageInit', function (e) {
+	
 	
 	if(document.getElementById(mapdiv1).style.display=="none")
 	document.getElementById(mapdiv1).style.display="block";
@@ -1797,8 +1797,10 @@ function googlemapinitialize(mapdiv1,map1,mapsearchInput1,val0,textcaption,thisi
         });
     });
 	
-});	
+
 }
+})
+
 function bindDataToForm(address,lat,lng,val0,textcaption,thisid,saveto,type){
 	address = address.replace(', Sri Lanka','');
 	document.getElementById(val0).value = address + '#Latlng : ' + lng + ',' +lat;
