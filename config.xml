@@ -204,7 +204,7 @@ end Android specific 02 -->
         <preference name="AndroidWindowSplashScreenBackground" value="#007fbf" />
         <preference name="AndroidWindowSplashScreenIconBackgroundColor" value="#007fbf" />
 
-        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="res/screen/android/xxxhdpi.png" />
+        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="res/screen/android/splash-square.png" />
      
     </platform>
 
