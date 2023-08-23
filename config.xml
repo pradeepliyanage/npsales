@@ -200,11 +200,14 @@ end Android specific 02 -->
         <splash density="port-xxhdpi" src="res/screen/android/splash-port-xxhdpi.png" />
         <splash density="port-xxxhdpi" src="res/screen/android/splash-port-xxxhdpi.png" />
 
+
+        <preference name="AndroidWindowSplashScreenBackground" value="#007fbf" />
+        <preference name="AndroidWindowSplashScreenIconBackgroundColor" value="#007fbf" />
      
     </platform>
 
     
- <preference name="AndroidWindowSplashScreenAnimatedIcon" value="res/screen/android/splash-port-xxxhdpi.png" />
+ <!--<preference name="AndroidWindowSplashScreenAnimatedIcon" value="res/screen/android/splash-port-xxxhdpi.png" />-->
        
 
 
