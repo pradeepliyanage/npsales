@@ -120,6 +120,12 @@ end Android specific 02 -->
 
   <preference name="AndroidXEnabled" value="true" />
 
+  <platform name="android">
+  <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+      <application android:usesCleartextTraffic="true" />
+  </edit-config>
+</platform>
+
     <platform name="ios">
         <feature name="CDVWKWebViewEngine">
             <param name="ios-package" value="CDVWKWebViewEngine" />
