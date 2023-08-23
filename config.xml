@@ -74,7 +74,7 @@
 
    
      <!--Android specific 03-->
-	<!--<plugin name="cordova-plugin-file-transfer" source="npm" spec="~1.7.1" />-->
+	<plugin name="cordova-plugin-file-transfer" source="npm" spec="~1.7.1" />
 	
 <!---	<feature name="File">
 		<param name="android-package" value="org.apache.cordova.FileUtils" />
@@ -134,7 +134,7 @@ end Android specific 02 -->
     <plugin name="cordova-plugin-ionic-webview" source="npm" spec="~5.0.0" />
     <plugin name="cordova-plugin-fullscreen" source="npm" spec="~1.3.0" />
 
-  <preference name="AndroidXEnabled" value="true" />
+  <!--<preference name="AndroidXEnabled" value="true" />-->
 
    <preference name="AndroidInsecureFileModeEnabled" value="true"/><!--to get image icon properly in android after cordova 12 update-->
 
