@@ -72,6 +72,9 @@
         <param name="android-package" value="org.apache.cordova.FileUtils" />
     </feature>
 
+   
+
+
     <!--IOS specific 03
     <plugin name="cordova-plugin-file-transfer-ios-fix" source="npm" spec="~1.7.2" />
     end ios specific-->
@@ -103,6 +106,19 @@
 <!-- Android specific 02 
   <plugin name="cordova-plugin-background-mode" source="npm" spec="~0.7.3" />
 end Android specific 02 -->
+
+ <!--Android specific 03-->
+	<plugin name="cordova-plugin-file-transfer" source="npm" spec="~1.7.1" />
+	
+	<feature name="File">
+		<param name="android-package" value="org.apache.cordova.FileUtils" />
+	</feature>
+	<feature name="FileTransfer">
+		<param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
+	</feature>
+	
+	
+	<!--android specific end-->
 
     <plugin name="cordova-plugin-globalization" source="npm" spec="~1.11.0" />
     <plugin name="cordova-plugin-inappbrowser" source="npm" spec="~5.0.0" />
