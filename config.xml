@@ -120,7 +120,7 @@ end Android specific 02 -->
 
   <preference name="AndroidXEnabled" value="true" />
 
-  
+  <plugin name="cordova-plugin-enable-cleartext-traffic" source="npm" spec="~2.1.0" />
 
     <platform name="ios">
         <feature name="CDVWKWebViewEngine">
