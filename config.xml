@@ -120,7 +120,7 @@ end Android specific 02 -->
 
   <preference name="AndroidXEnabled" value="true" />
 
-   <preference name="AndroidInsecureFileModeEnabled" value="true"/>
+   <preference name="AndroidInsecureFileModeEnabled" value="true"/><!--to get image icon properly in android after cordova 12 update-->
 
 
   <!--<plugin name="cordova-plugin-enable-cleartext-traffic" source="npm" spec="~2.1.0" />-->
@@ -203,6 +203,8 @@ end Android specific 02 -->
 
         <preference name="AndroidWindowSplashScreenBackground" value="#007fbf" />
         <preference name="AndroidWindowSplashScreenIconBackgroundColor" value="#007fbf" />
+
+        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="res/screen/android/splashscreen.xml" />
      
     </platform>
 
