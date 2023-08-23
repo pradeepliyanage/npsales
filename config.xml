@@ -74,7 +74,7 @@
 
    
      <!--Android specific 03-->
-	<plugin name="cordova-plugin-pvt-file-transfer" source="npm" spec="~2.0.0" />
+	<plugin name="cordova-plugin-file-transfer" source="npm" spec="~1.7.1" />
 	
 <!---	<feature name="File">
 		<param name="android-package" value="org.apache.cordova.FileUtils" />
