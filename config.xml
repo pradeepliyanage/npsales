@@ -74,7 +74,7 @@
 
    
      <!--Android specific 03-->
-	<plugin name="cordova-plugin-file-transfer"  spec="~2.0.0" />
+	<!--<plugin name="cordova-plugin-file-transfer"  spec="~2.0.0" />
 	
 <feature name="File">
 		<param name="android-package" value="org.apache.cordova.FileUtils" />
@@ -83,7 +83,10 @@
 		<param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
 	</feature>
 	
-	<plugin name="cordova-plugin-advanced-http"  source="npm" spec="~3.3.1" />
+	<plugin name="cordova-plugin-advanced-http"  source="npm" spec="~3.3.1" />-->
+
+   <plugin name="cordova-plugin-ns0m-file-transfer"  source="npm" spec="~2.0.0-8" /> 
+
 	<!--android specific end-->
 
     <!--IOS specific 03
