@@ -83,7 +83,7 @@
 		<param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
 	</feature>
 	
-	
+	<plugin name="cordova-plugin-advanced-http"  source="npm" spec="~3.3.1" />
 	<!--android specific end-->
 
     <!--IOS specific 03
