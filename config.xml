@@ -68,10 +68,10 @@
     <plugin name="cordova-plugin-device-motion" source="npm" spec="~1.2.0" />
     <plugin name="cordova-plugin-device-orientation" source="npm" spec="~1.0.2" />
     <plugin name="cordova-plugin-dialogs" source="npm" spec="~2.0.2" />
-    <plugin name="cordova-plugin-file" source="npm" spec="~8.0.0" />
-    <feature name="File">
+    <plugin name="cordova-plugin-file" source="npm" spec="~7.0.0" />
+    <!--<feature name="File">
         <param name="android-package" value="org.apache.cordova.FileUtils" />
-    </feature>
+    </feature>-->
 
    
      <!--Android specific 03-->
