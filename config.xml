@@ -144,6 +144,8 @@ end Android specific 02 -->
 
    <preference name="AndroidInsecureFileModeEnabled" value="true"/><!--to get image icon properly in android after cordova 12 update-->
 
+    
+    <preference name="requestLegacyExternalStorage" value="true"/>
 
   <!--<plugin name="cordova-plugin-enable-cleartext-traffic" source="npm" spec="~2.1.0" />-->
 
