@@ -57,7 +57,7 @@
     <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Allow access to the photos so that you can upload photos directly from your library" />
     </plugin>
    
-    <plugin name="cordova-plugin-media-capture" source="npm" spec="~3.0.3">
+    <plugin name="cordova-plugin-media-capture" source="npm" spec="~5.0.0">
         <variable name="CAMERA_USAGE_DESCRIPTION" value="Allow access to the camera so that you can upload photos directly from the app" />
         <variable name="MICROPHONE_USAGE_DESCRIPTION" value="App would like to access the microphone." />
         <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Allow access to the photos so that you can upload photos directly from your library" />
@@ -69,9 +69,9 @@
     <plugin name="cordova-plugin-device-orientation" source="npm" spec="~1.0.2" />
     <plugin name="cordova-plugin-dialogs" source="npm" spec="~2.0.2" />
     <plugin name="cordova-plugin-file" source="npm" spec="~7.0.0" />
-    <!--<feature name="File">
+    <feature name="File">
         <param name="android-package" value="org.apache.cordova.FileUtils" />
-    </feature>-->
+    </feature>
 
    
      <!--Android specific 03-->
@@ -128,7 +128,7 @@ end Android specific 02 -->
 
     <plugin name="cordova-plugin-globalization" source="npm" spec="~1.11.0" />
     <plugin name="cordova-plugin-inappbrowser" source="npm" spec="~5.0.0" />
-    <plugin name="cordova-plugin-media" source="npm" spec="~5.0.3" />
+    <plugin name="cordova-plugin-media" source="npm" spec="~6.1.0" />
     <plugin name="cordova-plugin-network-information" source="npm" spec="~3.0.0" />
     <!--<plugin name="cordova-plugin-splashscreen" source="npm" spec="~6.0.2" />-->
     <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.4.3" />
