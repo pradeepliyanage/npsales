@@ -34,7 +34,7 @@
 
     
 
-     <preference name="android-targetSdkVersion" value="32" />
+     <preference name="android-targetSdkVersion" value="31" />
      <!--<edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application/activity">
    <application android:exported="true" />
 </edit-config>-->
@@ -142,7 +142,7 @@ end Android specific 02 -->
 
   <preference name="AndroidXEnabled" value="true" />
 
-   <!--<preference name="AndroidInsecureFileModeEnabled" value="true"/>--><!--to get image icon properly in android after cordova 12 update-->
+   <preference name="AndroidInsecureFileModeEnabled" value="true"/><!--to get image icon properly in android after cordova 12 update-->
 
     
    <!--- <preference name="requestLegacyExternalStorage" value="true"/>-->
