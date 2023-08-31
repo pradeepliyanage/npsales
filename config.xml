@@ -75,7 +75,7 @@
 
    
      <!--Android specific 03-->
-	<plugin name="cordova-plugin-file-transfer-latest"  source="npm" spec="~2.0.2" />
+	<plugin name="cordova-plugin-file-transfer"  source="npm" spec="~1.7.1" />
 
     
 	
