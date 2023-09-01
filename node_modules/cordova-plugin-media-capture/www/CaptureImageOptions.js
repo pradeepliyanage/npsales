@@ -22,7 +22,7 @@
 /**
  * Encapsulates all image capture operation configuration options.
  */
-const CaptureImageOptions = function () {
+var CaptureImageOptions = function () {
     // Upper limit of images user can take. Value must be equal or greater than 1.
     this.limit = 1;
 };
