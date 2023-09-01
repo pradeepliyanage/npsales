@@ -57,7 +57,7 @@
     <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Allow access to the photos so that you can upload photos directly from your library" />
     </plugin>
    
-    <plugin name="cordova-plugin-media-capture" source="npm" spec="~5.0.0">
+    <plugin name="cordova-plugin-media-capture" source="npm" spec="~4.0.0">
         <variable name="CAMERA_USAGE_DESCRIPTION" value="Allow access to the camera so that you can upload photos directly from the app" />
         <variable name="MICROPHONE_USAGE_DESCRIPTION" value="App would like to access the microphone." />
         <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Allow access to the photos so that you can upload photos directly from your library" />
