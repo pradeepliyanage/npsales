@@ -934,6 +934,7 @@ function firstlogin() {
                        // alert(data);
                         //$("#update").val("Update");
 						if (data.trim().substr(0, 11)=="Successfull") window.location.href="index.html";
+						if (data.trim().substr(0, 8)=="Error!!!") alert(data);
                     
                 }
             }); 
