@@ -1218,7 +1218,7 @@ function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodesca
 							//
 							
 							
-							//dynamic dropdown creation
+							//dynamic dropdown creation//
 							var dynamicdropdown=hideitemarray[2].split("YYY");
 														
 							tempvalid=dynamicdropdown[0];
