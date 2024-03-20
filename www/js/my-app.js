@@ -27,7 +27,7 @@ var locationerror = '';
 var locationtime = '';
 var globepage='';
 var globebannertext='';
-var globeippath='http://124.43.160.52/control';
+var globeippath='http://134.195.208.144/control';
 var nongeotag='';//nongeo //for no gps app put nongeo
 
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -67,7 +67,7 @@ function onDeviceReady() {
 
 function getserviceurl(uuid2) {	
 		
-	var url = "http://124.43.160.52/control"+"/phonegap-app/json.php";
+	var url = "http://134.195.208.144/control"+"/phonegap-app/json.php";
 	$.getJSON(url,{getserviceurl:uuid2}, function(result) {
 		
 		globeippath= result;
@@ -1194,9 +1194,11 @@ function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodesca
 								return false;
 							}	
 							
+							if(document.getElementById(thisid)){
 							document.getElementById(thisid).classList.remove('bg-red');
 							document.getElementById(thisid).classList.add('bg-green');
-
+							}
+							
 							//hide unhide items
 							var hideitem = data.trim().substr(14, 500);
 							var hideitemarray=hideitem.split("xxx");
@@ -1218,7 +1220,7 @@ function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodesca
 							//
 							
 							
-							//dynamic dropdown creation//
+							//dynamic dropdown creation
 							var dynamicdropdown=hideitemarray[2].split("YYY");
 														
 							tempvalid=dynamicdropdown[0];
