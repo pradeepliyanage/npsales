@@ -1,8 +1,8 @@
 <?xml version='6.0' encoding='utf-8'?>
 <widget id="com.pradeepl.uniqueerp" version="6.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>UNIQUE ERP</name>
+    <name>NPSales</name>
     <description>
-        UNIQUE ERP
+        NPSales
     </description>
     <author email="pradeepshantha@gmail.com" href="#">
        Pradeep Liyanage
@@ -74,7 +74,7 @@
     </feature>
 
    
-     <!--Android specific 03
+     <!--Android specific 03-->
 	<plugin name="cordova-plugin-pvt-file-transfer"  source="npm" spec="~2.0.0" />
 
     
@@ -90,11 +90,11 @@
 
    
 
-	android specific end-->
+	<!--android specific end-->
 
-    <!--IOS specific 03-->
+    <!--IOS specific 03
     <plugin name="cordova-plugin-file-transfer-ios-fix" source="npm" spec="~1.7.2" />
-    <!--end ios specific-->
+    end ios specific-->
 
     <plugin name="cordova-plugin-geolocation" source="npm" spec="~4.1.0" />
     <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
