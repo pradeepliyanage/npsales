@@ -67,7 +67,7 @@ function onDeviceReady() {
 
 function getserviceurl(uuid2) {	
 		
-	var url = "http://134.195.208.144/control"+"/phonegap-app/json.php";
+	var url = "http://134.195.208.144/npsales"+"/phonegap-app/json.php";
 	$.getJSON(url,{getserviceurl:uuid2}, function(result) {
 		
 		globeippath= result;
