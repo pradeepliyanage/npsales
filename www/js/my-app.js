@@ -337,7 +337,7 @@ function openurl2(page){
 		
 }
 
-
+//
 // opening pages on app itself
 function openurl2mod(page){
 
