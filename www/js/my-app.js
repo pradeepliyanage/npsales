@@ -393,7 +393,7 @@ function openurl2gps(page,latlong){
 					   }
 				   );
 			   },100);
-		   }); */
+		   }); *///
 		
 		// Add beforeload event handler which is called before each new URL is loaded into the InAppBrowser Webview
 		/*ref.addEventListener('beforeload', function(params, callback){
