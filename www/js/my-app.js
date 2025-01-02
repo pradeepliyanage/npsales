@@ -67,7 +67,7 @@ function onDeviceReady() {
 
 function getserviceurl(uuid2) {	
 		
-	var url = "http://134.195.208.144/npsales"+"/phonegap-app/json.php";//
+	var url = "http://134.195.208.144/control"+"/phonegap-app/json.php";//
 	$.getJSON(url,{getserviceurl:uuid2}, function(result) {
 		
 		globeippath= result;
@@ -599,14 +599,14 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 		});
 		
 	} else {
-	/* Android specific 01 
+	/* Android specific 01 */
 	
 	 var options = {accuracy: jasonhiddenvariable0, timeout: jasonhiddenvariable1};
 	 cordova.plugins.LocationProvider.getOwnPosition(options, successCallback, errorcallback);
 
 	 /* end Android specific 01 */
 
-	 /* ios specific 02 */
+	 /* ios specific 02 
 	 var jasonhiddenvariable1mili = jasonhiddenvariable1 * 1000;
 
 	 var options = {
@@ -624,7 +624,7 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 		alert("Sorry, Device does not support geolocation!");
 	 }
 
-	 /* end ios specific 02 */
+	 end ios specific 02 */
 	 
 	}
 	 function successCallback(position){

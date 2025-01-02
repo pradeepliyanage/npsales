@@ -1,9 +1,9 @@
 <?xml version='6.0' encoding='utf-8'?>
-<widget id="com.pradeepl.inframs" version="6.0.0" xmlns="http://www.w3.org/ns/widgets"
+<widget id="com.pradeepl.uniqueerp" version="6.0.0" xmlns="http://www.w3.org/ns/widgets"
     xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>NPSales</name>
+    <name>ERP</name>
     <description>
-        NPSales
+        ERP
     </description>
     <author email="pradeepshantha@gmail.com" href="#">
         Pradeep Liyanage
@@ -82,7 +82,7 @@
 
 
     <!--Android
-    specific 03
+    specific 03-->
 	<plugin name="cordova-plugin-pvt-file-transfer"  source="npm" spec="~2.0.0" />
 
     
@@ -98,12 +98,12 @@
 
    
 
-	android specific end-->
+	<!--android specific end-->
 
     <!--IOS
-    specific 03 -->
+    specific 03
     <plugin name="cordova-plugin-file-transfer-ios-fix" source="npm" spec="~1.7.2" />
-    <!--end
+    end
     ios specific-->
 
     <plugin name="cordova-plugin-geolocation" source="npm" spec="~4.1.0" />
