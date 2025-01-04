@@ -176,7 +176,7 @@ end Android specific 02 -->
     </platform>
 
 
-    <plugin name="cordova-plugin-ble-central" source="npm" spec="~1.7.8" />
+    <plugin name="cordova-plugin-bluetoothle" source="npm" spec="~6.7.4" />
 
   
 
