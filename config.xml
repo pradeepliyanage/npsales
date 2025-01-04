@@ -176,6 +176,10 @@ end Android specific 02 -->
     </platform>
 
 
+    <plugin name="cordova-plugin-ble-central" source="npm" spec="~1.7.8" />
+
+  
+
     <platform name="ios">
         <icon src="res/icon/ios/icon-1024.png" width="1024" height="1024" />
         <icon src="res/icon/ios/icon-small.png" width="29" height="29" />
