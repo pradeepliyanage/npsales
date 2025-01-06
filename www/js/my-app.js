@@ -1009,9 +1009,9 @@ function cameraTakePicture(imagecaption,thisid,sourceType) {
    });  // if need to view the image data DATA_URL//FILE_URI
 	} else {
 	navigator.camera.getPicture(onSuccess, onFail, {  
-      quality: 95,
-	  targetWidth: 1500,
-      targetHeight: 1500,	  
+      quality: 100,
+	  targetWidth: 712,
+      targetHeight: 712,	  
       destinationType: Camera.DestinationType.FILE_URI,
 	  correctOrientation: true					   
 	  //sourceType : Camera.PictureSourceType.PHOTOLIBRARY ,
