@@ -45,7 +45,7 @@
 
       <!-- Permissions (Android 12+ Bluetooth Support) -->
     <platform name="android">
-        <config-file target="AndroidManifest.xml" parent="/*">
+        <config-file target="AndroidManifest.xml" parent="manifest">
             <uses-permission android:name="android.permission.BLUETOOTH" />
             <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
             <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
