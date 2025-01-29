@@ -265,15 +265,15 @@ end Android specific 02 -->
             value="res/screen/android/splash-square.png" />
 
 
-          <!-- Add Bluetooth permissions for Android 12+ //-->
-    <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest">
-        <!-- Bluetooth Permissions -->
-       
-        <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+     
+   <config-file target="AndroidManifest.xml" parent="/manifest">
+        <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" android:maxSdkVersion="28" />
+        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" android:maxSdkVersion="30" />
+        <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
+        <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30" />
+        <uses-permission android:name="android.permission.BLUETOOTH_SCAN" android:usesPermissionFlags="neverForLocation" />
         <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
-       
-    </edit-config>
-  
+    </config-file>
 
     </platform>
 
