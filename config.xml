@@ -163,7 +163,18 @@ end Android specific 02 -->
    
 
    
-    
+    <platform name="android">
+    <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest">
+        <!-- Required Bluetooth Permissions for Android 12+ -->
+        <uses-permission android:name="android.permission.BLUETOOTH" />
+        <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+        <uses-permission android:name="android.permission.BLUETOOTH_SCAN" android:usesPermissionFlags="neverForLocation"/>
+        <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+        <!-- Foreground Service Permission (for Background BLE use) -->
+        <uses-permission android:name="android.permission.FOREGROUND_SERVICE_BLUETOOTH" />
+    </edit-config>
+    </platform>
 
 
     <plugin name="cronapp-cordova-plugin-barcodescanner" source="npm" spec="~3.2.0-SP.9" />
