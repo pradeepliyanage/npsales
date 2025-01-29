@@ -161,7 +161,7 @@ end Android specific 02 -->
     <plugin name="cordova-plugin-bluetoothle" source="npm" spec="~6.7.4" />
 
     <platform name="android">
-    <!-- Add Bluetooth permissions for Android 12+ -->
+    <!-- Add Bluetooth permissions for Android 12+ //-->
     <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest">
         <!-- Bluetooth Permissions -->
         <uses-permission android:name="android.permission.BLUETOOTH" />
