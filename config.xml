@@ -43,6 +43,18 @@
     <preference name="Fullscreen" value="true" />
 
 
+      <!-- Permissions (Android 12+ Bluetooth Support) -->
+    <platform name="android">
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.BLUETOOTH" />
+            <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+            <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+            <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+        </config-file>
+    </platform>
+
+
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~2.0.3" />
     <plugin name="cordova-plugin-camera" source="npm" spec="~6.0.0">
         <variable name="CAMERA_USAGE_DESCRIPTION"
