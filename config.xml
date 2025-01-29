@@ -45,13 +45,14 @@
 
       <!-- Permissions (Android 12+ Bluetooth Support) -->
     <platform name="android">
-        <config-file target="AndroidManifest.xml" parent="manifest">
-            <uses-permission android:name="android.permission.BLUETOOTH" />
-            <!-- <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-            <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
-            <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
-            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />-->
-        </config-file>
+    <!-- Android 12+ Bluetooth Permissions -->
+    <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest">
+        <uses-permission android:name="android.permission.BLUETOOTH" />
+        <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+        <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+        <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    </edit-config>
     </platform>
 
 
