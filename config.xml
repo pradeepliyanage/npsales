@@ -109,6 +109,7 @@
     end
     ios specific-->
 
+    <!-- temp block for ble central chekc
     <plugin name="cordova-plugin-geolocation" source="npm" spec="~4.1.0" />
     <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
         <string>Turning on location services allow us to assign you correct task and to validate
@@ -125,6 +126,9 @@
     </edit-config>
 
     <plugin name="cordova-plugin-location-provider" source="npm" spec="~1.5.4" />
+    -->
+
+
 
     <!--<plugin
     name="cordova-background-geolocation-plugin" source="npm" spec="~2.0.8" />-->
@@ -160,9 +164,7 @@ end Android specific 02 -->
     <plugin name="cordova-plugin-fullscreen" source="npm" spec="~1.3.0" />
     <plugin name="cordova-plugin-ble-central" source="npm" spec="~1.7.8" />
     
-   <platform name="android">
-    <edit-config file="AndroidManifest.xml" mode="overwrite" target="/manifest/uses-permission[@android:name='android.permission.ACCESS_COARSE_LOCATION']" />
-</platform>
+   
 
    
     
