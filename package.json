@@ -19,6 +19,7 @@
   "devDependencies": {
     "cordova-android": "^11.0.0",
     "cordova-plugin-battery-status": "~2.0.3",
+    "cordova-plugin-ble-central": "^1.7.8-slim",
     "cordova-plugin-camera": "~6.0.0",
     "cordova-plugin-cleartext": "~1.0.0",
     "cordova-plugin-console": "~1.1.0",
@@ -80,7 +81,8 @@
         "CAMERA_USAGE_DESCRIPTION": "Allow access to the camera so that you can upload photos directly from the app",
         "MICROPHONE_USAGE_DESCRIPTION": "App would like to access the microphone.",
         "PHOTOLIBRARY_USAGE_DESCRIPTION": "Allow access to the photos so that you can upload photos directly from your library"
-      }
+      },
+      "cordova-plugin-ble-central": {}
     },
     "platforms": [
       "android"
