@@ -140,7 +140,7 @@ $$(document).on('pageInit', function (e) {
 		//if(viewname === "sitecleaningimage") getLocationUpdate();//only when geo location info is required on this page
 		//if(viewname.substring(0, 14) === "markattendance") getLocationUpdate();//only when geo location info is required on this page
 		
-		if(viewname.substring(0, 14) === "markattendance" || viewname.substring(0, 17)  === "sitecleaningimage") {
+		if(viewname.substring(0, 14) === "markattendance") {
 			getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page);//only when geo location info is required on this page
 			
 		} else {
@@ -580,7 +580,7 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 	locationtimenow=Date.now();	
 	if(locationtimenow-locationtime < +jasonhiddenvariable2) {
 	
-		if(viewname.substring(0, 14) === "markattendance" || viewname.substring(0, 17)  === "sitecleaningimage") morevar=locationlon+"xxx"+locationlat+"xxx"+locationerror;
+		if(viewname.substring(0, 14) === "markattendance") morevar=locationlon+"xxx"+locationlat+"xxx"+locationerror;
 		
 		
 		
@@ -819,7 +819,7 @@ function onError(error) {
 function getempname(uuid,type) {	
 		
         var url = globeippath+"/phonegap-app/json.php";
-        $.getJSON(url,{uuid:uuid,version:"3"}, function(result) {
+        $.getJSON(url,{uuid:uuid}, function(result) {
             //console.log(result);
             var display = result;
 			
@@ -992,7 +992,7 @@ function errorHandler(err) {
 
 
 // camera take picture
-function cameraTakePicturemobitelchanges(imagecaption,thisid,sourceType) { //mobitelchanges
+function cameraTakePicture(imagecaption,thisid,sourceType) { 
 	var imagecaption=imagecaption;//value passing from onclick button event
 	var thisid=thisid;
 	//alert(thisid));
@@ -1069,87 +1069,8 @@ function cameraTakePicturemobitelchanges(imagecaption,thisid,sourceType) { //mob
     
 }	
 
-
-function cameraTakePicture(imagecaption,thisid,type,sourceType) { //mobitelchanges
-	var imagecaption=imagecaption;//value passing from onclick button event
-	var thisid=thisid;
-	//alert(thisid));
-	
-	if(sourceType=="PHOTOLIBRARY") {
-   navigator.camera.getPicture(onSuccess, onFail, {  
-      quality: 100,
-	  targetWidth: 712,
-      targetHeight: 712,	  
-      destinationType: Camera.DestinationType.FILE_URI,
-	  sourceType : Camera.PictureSourceType.PHOTOLIBRARY ,
-	  //sourceType: Camera.PictureSource.CAMERA, 
-	  //popoverOptions : popover
-   });  // if need to view the image data DATA_URL//FILE_URI
-	} else {
-	navigator.camera.getPicture(onSuccess, onFail, {  
-      quality: 100,
-	  targetWidth: 712,
-      targetHeight: 712,	  
-      destinationType: Camera.DestinationType.FILE_URI,
-	  correctOrientation: true					   
-	  //sourceType : Camera.PictureSourceType.PHOTOLIBRARY ,
-	  //sourceType: Camera.PictureSource.CAMERA, 
-	  //popoverOptions : popover
-   });  // if need to view the image data DATA_URL//FILE_URI	
-		
-		
-	}
-	
-   function onSuccess(imageData) { 
-      //load image to html img //not used as image load to canvas
-	  /* var image = document.getElementById('myImage'); 
-      image.src = imageData;//"data:image/jpeg;base64," +
-	  image.style.display = "block"; */
-	 
-	//watermark
-	var watermark;
-	var canvasDom;
-	var canvas;
-	canvasDom = $("#myCanvas")[0];
-    canvas = canvasDom.getContext("2d");
-    //Create a watermark image object
-    /* watermark = new Image();
-    watermark.src = "icon.png";
-	 */ //if logo to be inserted
-	
-	//canvas load is not required
-	  /* var img = new Image();
-        img.src=imageData;
-        img.onload = function(e) {
-            canvas.drawImage(img, 0, 0);
-            //canvas.drawImage(watermark, 0, canvasDom.height - watermark.height);//to add logo
-			canvas.fillStyle = '#fff';
-			canvas.fillRect(0, 0, 100, 30);
-			canvas.fillStyle = "black";
-			canvas.font = "12px Calibri";
-			canvas.fillText("My TEXT!", 5, 15);
-        } */
-	  
-	  
-	 // var dataURL = canvas.toDataURL(); 
-	 // alert(imageData);
-	 	  
-	  //upload file
-	  uploadFile(imageData,imagecaption,thisid,type,sourceType);
-	  
-	  
-   }  
-   
-   function onFail(message) { 
-      alert('Failed because: ' + message); 
-   } 
-   
-    
-}	
-
 // file transfer
-
-function uploadFilemobitelchanges(imageData,imagecaption,thisid,sourceType) {//mobitelchanges
+function uploadFile(imageData,imagecaption,thisid,sourceType) {
    var fileURL = imageData;
    var imagecaption=imagecaption;//value passing from onclick button event
    if(document.getElementById("siteid"))
@@ -1198,59 +1119,10 @@ function uploadFilemobitelchanges(imageData,imagecaption,thisid,sourceType) {//m
 	
 }
 
-function uploadFile(imageData,imagecaption,thisid,type,sourceType) {//mobitelchanges
-   var fileURL = imageData;
-   var imagecaption=imagecaption;//value passing from onclick button event
-   if(document.getElementById("siteid"))
-   var siteid=document.getElementById("siteid").value;//document.getElementById("siteid").value;
-   else 
-   var siteid="";
-   var morevar=locationlat+"xxx"+locationlon+"xxx"+locationerror+"xxx"+empno+"xxx"+siteid+"xxx"+imagecaption+"xxx"+type+"xxx"+sourceType;
-   
-	if(document.getElementById('id_of_element'))
-	{
-		alert('element exists!');
-	}
-   
-   var uri = encodeURI(globeippath+"/phonegap-app/fileupload.php?val0="+morevar);
-   var options = new FileUploadOptions();
-   options.chunkedMode = false,
-   options.fileKey = "file";
-   options.fileName = fileURL.substr(fileURL.lastIndexOf('/')+1);//alert(options.fileName);
-   options.mimeType = "image/jpg";
-   
-   var headers = {'headerParam':'headerValue'};
-   options.headers = headers;
-   var ft = new FileTransfer();
-   ft.upload(fileURL, uri, onSuccessfileupload, onErrorfileupload, options);
-
-   function onSuccessfileupload(r) {
-	   alert(r.response);
-		
-		var str = r.response;
-		var n = str.search("Successfull");
-		
-		if(n>0) {
-		document.getElementById(thisid).classList.remove('color-red');
-		document.getElementById(thisid).classList.add('color-green');
-		}
-      /* console.log("Code = " + r.responseCode);
-      console.log("Response = " + r.response);
-      console.log("Sent = " + r.bytesSent); */
-   }
-
-   function onErrorfileupload(error) {
-      alert("An error has occurred: Code = " + error.code);
-     // console.log("upload error source " + error.source);
-     // console.log("upload error target " + error.target);
-   }
-	
-}
-
 
 
 //call from gather data universal to update form data to the tabels when onchange	
-function updatetabelonchange_npsalesorg(textcaption,thisid,thisvalue,saveto,type,barcodescan,multipleyes) {//get mobitel cjhnages as below
+function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodescan,multipleyes) {
 	$("#update").prop('disabled', true);
             var textcaption = textcaption;
             var thisid = thisid;
@@ -1457,239 +1329,6 @@ function updatetabelonchange_npsalesorg(textcaption,thisid,thisvalue,saveto,type
 
         }
 		
-function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodescan,multipleyes) {
-	$("#update").prop('disabled', true);
-            var textcaption = textcaption;
-            var thisid = thisid;
-            var thisvalue = thisvalue;
-			var username = empno;
-			var saveto = saveto;
-			var type = type;
-			var siteid=document.getElementById("siteid").value;
-			if(document.getElementById("siteid")) {
-			var siteid=document.getElementById("siteid").value;
-			}
-			var morevar=locationlat+"xxx"+locationlon+"xxx"+locationerror;
-			
-			if(multipleyes=="multipleyes" && thisvalue!="") {
-				var valuesa = "#"+$('#'+barcodescan).val()+"#";
-				var values=valuesa.toString();
-				thisvalue=values.replace(/,/g, "#");
-				
-			}
-			
-			thisvalue=thisvalue.replace(/&/g,"#and#"); 
-
-			if (document.getElementById("beforeajaxfunction")) {//force go to before ajax function
-				
-				beforeajaxformfunction(textcaption,thisid,thisvalue,saveto,type,barcodescan,multipleyes,siteid);
-				
-			}
-
-			
-
-			var dataString = "&username=" + username + "&textcaption=" + textcaption + "&thisvalue=" + thisvalue + "&thisid=" + thisid + "&siteid=" + siteid +  "&saveto=" + saveto +  "&type=" + type +  "&barcodescan=" + barcodescan + "&morevar=" + morevar + "&updatetabelonchange=";
-            
-			$.ajax({
-                type: "POST",
-                url: globeippath+"/phonegap-app/update.php",
-                data: dataString,
-                crossDomain: true,
-                cache: false,
-                beforeSend: function() {
-                    //$("#update").val("<img src='css/buttonloading.gif' style='width:50px;height:20px;>");
-					document.getElementById('update').classList.add('SubmitButtonClass');
-
-
-                },
-                success: function(data) {
-                   
-						var res = data.trim().substr(0, 12);
-						var res2 = data.trim().substr(0, 100);
-						var res3 = data.trim().substr(0, 14);
-						var res4 = data.trim().substr(0, 8);
-						
-						
-						if(res4=="Error!!!") alert(res2);
-                        
-						document.getElementById('update').classList.remove('SubmitButtonClass');
-                        $("#update").val("Submit");
-						$("#update").prop('disabled', false);
-						
-						if (res3=="Successfull!!!") {
-							
-						
-							var rescheck1 = data.trim().substr(14, 1000);
-							if (rescheck1.indexOf("formsubmitfunction") >= 0 ) {//force go to gatherdata
-								rescheck1 = rescheck1.split("#");
-								for(i in rescheck1) {
-									rescheck1[i] = rescheck1[i].trim();
-								}
-								formsubmitfunction( rescheck1[1],rescheck1[2] ,rescheck1[3] ,rescheck1[4] ,rescheck1[5] );
-								return false;
-							}	
-							
-							if(document.getElementById(thisid)){
-							document.getElementById(thisid).classList.remove('bg-red');
-							document.getElementById(thisid).classList.add('bg-green');
-							} else {
-							document.getElementById(thisid).classList.remove('bg-green');
-							document.getElementById(thisid).classList.add('bg-red');	
-							}
-
-							if (data.trim().substring(0, 22)=="Successfull!!!alertyes")  alert(data.trim().substring(22, 1000));
-										
-							
-							
-							//hide unhide items
-							var hideitem = data.trim().substr(14, 50000);
-							var hideitemarray=hideitem.split("xxx");
-							
-							var hideitemarrayunhide=hideitemarray[0].split("###");
-							var hideitemarrayhide=hideitemarray[1].split("###");
-							
-							for(var i2=0;i2<hideitemarrayhide.length;i2++) {
-							tempval=hideitemarrayhide[i2];
-							if(document.getElementById(tempval))	
-							document.getElementById(tempval).style.display="none";
-							}
-							
-							for(var i2=0;i2<hideitemarrayunhide.length;i2++) {
-							tempval=hideitemarrayunhide[i2];
-							if(document.getElementById(tempval))							
-							document.getElementById(tempval).style.display="block";
-							}
-							//
-							
-							
-							//dynamic dropdown creation
-							var dynamicdropdown=hideitemarray[2].split("YYY");
-														
-							tempvalid=dynamicdropdown[0];
-							
-							if(tempvalid!="") {
-								var select123=document.getElementById(tempvalid);
-							
-								while (select123.firstChild) {
-									select123.removeChild(select123.firstChild);
-								}
-								if(dynamicdropdown.length>2) { //if only one item,then no need to chhose option
-								var o = document.createElement("option");
-								o.value = "";
-								o.text = "";
-								select123.appendChild(o);
-								} else if(dynamicdropdown.length==2) {
-									
-								select123.classList.remove('bg-red');
-								select123.classList.add('bg-green');	
-								}
-		
-							for(var i2=1;i2<dynamicdropdown.length;i2++) {
-							tempval=dynamicdropdown[i2];
-							
-							if(document.getElementById(tempvalid)) {
-								
-								
-							var o = document.createElement("option");
-							o.value = tempval;
-							o.text = tempval;
-							select123.appendChild(o);
-							//select123.insertBefore(o, select123.childNodes[0]); 
-							}
-		
-							}
-							
-							}
-							
-							
-							
-							
-							
-						}
-
-				
-				//if (res=="Successfully") window.location.href="index.html";	
-				
-				if (res=="Successfully") {
-					
-					var rescheck1 = data.trim().substr(12, 1000);
-					
-                    if (rescheck1=='logoutindex') {//force go to index //logout
-					    //uuidglobe="";
-						
-						window.location.href="index.html";
-						location.reload(true);
-						getempname(uuidglobe,'one');
-						return false;
-					}
-					
-                    if (rescheck1=='index') {//force go to index
-						window.location.href="index.html";
-						return false;
-					}
-					
-					if (rescheck1.indexOf("gatherdata") >= 0 ) {//force go to gatherdata
-						//alert(rescheck1);
-						window.location.href=rescheck1;
-						return false;
-					}
-					
-					if (rescheck1.indexOf("formsubmitfunction") >= 0 ) {//force go to gatherdata
-						rescheck1 = rescheck1.split("#");
-						for(i in rescheck1) {
-							rescheck1[i] = rescheck1[i].trim();
-						}
-						formsubmitfunction( rescheck1[1],rescheck1[2] ,rescheck1[3] ,rescheck1[4] ,rescheck1[5] );
-						return false;
-					}				
-					//send sms
-					if(rescheck1.indexOf("###") >=0) {
-					rescheck1 = rescheck1.split("###");
-					for(i in rescheck1) {
-						rescheck1[i] = rescheck1[i].trim();
-					}
-					}
-					var numbers=rescheck1[1];
-					var message=rescheck1[2];
-					var mode=rescheck1[3];
-					
-					if(rescheck1[0]=='smsv1') sendSMSv1(numbers,message,mode);
-					if(rescheck1[0]=='smsv2') sendSMSv2(numbers,message,mode);
-					//	
-					
-					document.querySelector('.back').click();//else if back to prv page
-					/* 
-					if (confirm('Completed!!! \n\nWant to return to the HOME Page?')) {
-						window.location.href="index.html";//if cancel , go to index
-						document.querySelector('.back').click();//else if back to prv page
-					} else {
-						document.querySelector('.back').click();//else if back to prv page
-						
-					} */
-						
-						
-				}
-
-				if(res4=="ErrorPOP") {
-						
-
-						$('.page-content').hide();
-						$('.page-content2').empty();
-						$('.page-content2').show();
-						$('.page-content2').append("<label id='datalisttargetid' display='none' >"+thisid+"</label>"); 
-						$('.page-content2').append("<label id='dlt_textcaption' display='none' >"+textcaption+"</label>"); 
-						$('.page-content2').append("<label id='dlt_saveto' display='none' >"+saveto+"</label>"); 
-						$('.page-content2').append("<label id='dlt_type' display='none' >"+type+"</label>"); 
-						$('.page-content2').append("<label id='dlt_barcodescan' display='none' >"+barcodescan+"</label>"); 
-						$('.page-content2').append("<label id='dlt_multipleyes' display='none' >"+multipleyes+"</label>"); 
-						$('.page-content2').append(data.trim().substr(8, 1000000)); 
-	 
-				}
-                    
-                }
-            }); 
-
-        }
 		
 //photo browser to view images
 
@@ -2145,194 +1784,4 @@ function sendSMSv2(numbers,message,mode) {//cordova-sms-plugin
 		
 
 ///test
-
-////inframs itmes
-
-function updatetabelonmodalchange(valdata) {//addtonp
-
-
-	var tempval = document.getElementById('datalisttargetid').innerHTML.replace("divval", "val");
-	var thisid = document.getElementById('datalisttargetid').innerHTML;
-	var textcaption = document.getElementById('dlt_textcaption').innerHTML;
-	var saveto = document.getElementById('dlt_saveto').innerHTML;
-	var type = document.getElementById('dlt_type').innerHTML;
-	var barcodescan = document.getElementById('dlt_barcodescan').innerHTML;
-	var multipleyes = document.getElementById('dlt_multipleyes').innerHTML;
-	var thisvalue  = valdata;
-	
-	document.getElementById(tempval).value  = valdata;
-	
-	$('.page-content').show();
-	$('.page-content2').hide();
-	$('.page-content2').empty();
-	
-	updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodescan,multipleyes);
-	
-	
-}
-
-
-
-var dynamicPopup = myapp.popup.create({//addtonp
-        content: `
-          <div class="popup">
-            <div class="block">
-              <p>Popup created dynamically.</p>
-              <p><a href="#" class="link popup-close">Close me</a></p>
-            </div>
-          </div>
-        `,
-        // Events
-        on: {
-          open: function (popup) {
-            console.log('Popup open');
-          },
-          opened: function (popup) {
-            console.log('Popup opened');
-          },
-        }
-      });
-	  
-// Events also can be assigned on instance later
-      dynamicPopup.on('close', function (popup) {//addtonp
-        console.log('Popup close');
-      });
-      dynamicPopup.on('closed', function (popup) {//addtonp
-        console.log('Popup closed');
-      });
-
-      // Open dynamic popup
-      $('.dynamic-popup').on('click', function () {//addtonp
-        dynamicPopup.open();
-      });	  
-
-
-
-//////m parking
-
-
-
-// camera take picture
-function cameraTakePictureimagecompare2(imagecaption,thisid,type) { //addtonp
-	var imagecaption=imagecaption;//value passing from onclick button event
-	var thisid=thisid;
-	//alert(thisid));
-   navigator.camera.getPicture(onSuccess, onFail, {  
-      quality: 75,
-	  targetWidth: 712,
-      targetHeight: 712,	  
-      destinationType: Camera.DestinationType.FILE_URI,
-	  //sourceType: Camera.PictureSource.CAMERA, 
-	  //popoverOptions : popover
-   });  // if need to view the image data DATA_URL//FILE_URI
-   
-   function onSuccess(imageData) { 
-      //load image to html img //not used as image load to canvas
-	  /* var image = document.getElementById('myImage'); 
-      image.src = imageData;//"data:image/jpeg;base64," +
-	  image.style.display = "block"; */
-	 
-	//watermark
-	var watermark;
-	var canvasDom;
-	var canvas;
-	//canvasDom = $("#myCanvas")[0];
-    //canvas = canvasDom.getContext("2d");
-	
-    //Create a watermark image object
-    /* watermark = new Image();
-    watermark.src = "icon.png";
-	 */ //if logo to be inserted
-	
-	//canvas load is not required
-	  /* var img = new Image();
-        img.src=imageData;
-        img.onload = function(e) {
-            canvas.drawImage(img, 0, 0);
-            //canvas.drawImage(watermark, 0, canvasDom.height - watermark.height);//to add logo
-			canvas.fillStyle = '#fff';
-			canvas.fillRect(0, 0, 100, 30);
-			canvas.fillStyle = "black";
-			canvas.font = "12px Calibri";
-			canvas.fillText("My TEXT!", 5, 15);
-        } */
-	  
-	  
-	 // var dataURL = canvas.toDataURL(); 
-	 // alert(imageData);
-	 	  
-	  //upload file
-	  uploadFilecompareimages2(imageData,imagecaption,thisid,type);
-	  
-	  
-   }  
-   
-   function onFail(message) { 
-      alert('Failed because: ' + message); 
-   } 
-   
-    
-}	
-
-// file transfer
-function uploadFilecompareimages2(imageData,imagecaption,thisid,type) {//addtonp
-   var fileURL = imageData;
-   var imagecaption=imagecaption;//value passing from onclick button event
-   var siteid="";//document.getElementById("info3").value;
-   var morevar=locationlat+"xxx"+locationlon+"xxx"+locationerror+"xxx"+empno+"xxx"+siteid+"xxx"+imagecaption+"xxx"+type+"xxxcompareimages2";
-   
-	if(document.getElementById('id_of_element'))
-	{
-		alert('element exists!');
-	}
-   
-   var uri = encodeURI("http://134.195.208.144/CarParking/phonegap-app/nodejs/fileupload.php?val0="+morevar);
-   var options = new FileUploadOptions();
-   options.chunkedMode = false,
-   options.fileKey = "file";
-   options.fileName = fileURL.substr(fileURL.lastIndexOf('/')+1);//alert(options.fileName);
-   options.mimeType = "image/jpg";
-   
-   var headers = {'headerParam':'headerValue'};
-   options.headers = headers;
-   var ft = new FileTransfer();
-   ft.upload(fileURL, uri, onSuccessfileupload, onErrorfileupload, options);
-
-   function onSuccessfileupload(r) {
-	   
-		
-		var str = r.response;
-		var n = str.search("ERROR");
-		
-		if(n>=0) {
-		alert(r.response);
-		} else {
-			//alert(r.response);
-			mainView.router.loadPage("gatherdata_universal.html?viewname=vehicleowner&val0="+type+"###"+str);
-				 
-		}
-      /* console.log("Code = " + r.responseCode);
-      console.log("Response = " + r.response);
-      console.log("Sent = " + r.bytesSent); */
-   }
-
-   function onErrorfileupload(error) {
-      alert("An error has occurred: Code = " + error.code);
-      console.log("upload error source " + error.source);
-      console.log("upload error target " + error.target);
-   }
-	
-}
-
-
-function showdisplayblock(targetid) {//addtonp
-
-if(document.getElementById(targetid).style.display=="none")
-document.getElementById(targetid).style.display="block";
-else 
-document.getElementById(targetid).style.display="none";
-
-
-
-}
 
