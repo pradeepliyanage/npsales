@@ -1457,7 +1457,7 @@ function updatetabelonchange_npsalesorg(textcaption,thisid,thisvalue,saveto,type
 
         }
 		
-function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodescan,multipleyes) {
+function updatetabelonchange_npmobitelcombined(textcaption,thisid,thisvalue,saveto,type,barcodescan,multipleyes) {
 	$("#update").prop('disabled', true);
             var textcaption = textcaption;
             var thisid = thisid;
@@ -1690,7 +1690,175 @@ function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodesca
             }); 
 
         }
+
 		
+		function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodescan,multipleyes) {
+            var textcaption = textcaption;
+            var thisid = thisid;
+            var thisvalue = thisvalue;
+			var username = empno;
+			var saveto = saveto;
+			var type = type;
+			var siteid=document.getElementById("siteid").value;
+			if(document.getElementById("siteid")) {
+			var siteid=document.getElementById("siteid").value;
+			}
+			var morevar=locationlat+"xxx"+locationlon+"xxx"+locationerror;
+   
+			
+			
+			if(multipleyes=="multipleyes" && thisvalue!="") {
+				var valuesa = "#"+$('#'+barcodescan).val()+"#";
+				var values=valuesa.toString();
+				thisvalue=values.replace(/,/g, "#");
+				
+			}
+			
+			thisvalue=thisvalue.replace(/&/g,"#and#"); 
+			var dataString = "&username=" + username + "&textcaption=" + textcaption + "&thisvalue=" + thisvalue + "&thisid=" + thisid + "&siteid=" + siteid +  "&saveto=" + saveto +  "&type=" + type +  "&barcodescan=" + barcodescan + "&morevar=" + morevar + "&updatetabelonchange=";
+            
+			$.ajax({
+                type: "POST",
+                url: "https://inframs.mobitel.lk/phonegap-app/update.php",
+                data: dataString,
+                crossDomain: true,
+                cache: false,
+                beforeSend: function() {
+                    $("#update").val('Connecting...');
+                },
+                success: function(data) {
+                   
+					var res = data.trim().substr(0, 12);
+						var res2 = data.trim().substr(0, 100);
+						var res3 = data.trim().substr(0, 14);
+						var res4 = data.trim().substr(0, 8);
+						
+						
+						if(res4=="Error!!!") alert(res2);						
+                        
+                        $("#update").val("Submit");
+						if (res3=="Successfull!!!") {
+							if(thisvalue!="") {
+							document.getElementById(thisid).classList.remove('bg-red');
+							document.getElementById(thisid).classList.add('bg-green');
+							} else {
+							document.getElementById(thisid).classList.remove('bg-green');
+							document.getElementById(thisid).classList.add('bg-red');	
+							}
+							
+							if (data.trim().substring(0, 22)=="Successfull!!!alertyes")  alert(data.trim().substring(22, 1000));
+							
+							
+							//hide unhide items
+							var hideitem = data.trim().substr(14, 50000);
+							var hideitemarray=hideitem.split("xxx");
+							
+							var hideitemarrayunhide=hideitemarray[0].split("###");
+							var hideitemarrayhide=hideitemarray[1].split("###");
+							
+							for(var i2=0;i2<hideitemarrayhide.length;i2++) {
+							tempval=hideitemarrayhide[i2];
+							if(document.getElementById(tempval))	
+							document.getElementById(tempval).style.display="none";
+							}
+							
+							for(var i2=0;i2<hideitemarrayunhide.length;i2++) {
+							tempval=hideitemarrayunhide[i2];
+							if(document.getElementById(tempval))							
+							document.getElementById(tempval).style.display="block";
+							}
+							//
+							
+							
+							//dynamic dropdown creation
+							var dynamicdropdown=hideitemarray[2].split("YYY");
+														
+							tempvalid=dynamicdropdown[0];
+							
+							if(tempvalid!="") {
+								var select123=document.getElementById(tempvalid);
+							
+								while (select123.firstChild) {
+									select123.removeChild(select123.firstChild);
+								}
+								
+								if(dynamicdropdown.length>2) { //if only one item,then no need to chhose option
+								var o = document.createElement("option");
+								o.value = "";
+								o.text = "";
+								select123.appendChild(o);
+								} else if(dynamicdropdown.length==2) {
+									
+								select123.classList.remove('bg-red');
+								select123.classList.add('bg-green');	
+								}
+		
+							for(var i2=1;i2<dynamicdropdown.length;i2++) {
+							tempval=dynamicdropdown[i2];
+							
+							if(document.getElementById(tempvalid)) {
+								
+								
+							var o = document.createElement("option");
+							o.value = tempval;
+							o.text = tempval;
+							select123.appendChild(o);
+							//select123.insertBefore(o, select123.childNodes[0]); 
+							}
+		
+							}
+							
+							}
+							
+							
+							
+							
+						} else if (data.trim().substring(0, 34)=="Successfully Completed The Task!!!") { //final submit
+							alert(data.trim().substring(0, 34));
+							
+							//force redirection
+							if(data.trim().substring(0, 43)=="Successfully Completed The Task!!!forcepage"){
+								
+								$('.content-block-title').remove();
+								$('.list-block').remove();
+											
+								
+								$('.page-content').append(data.trim().substring(43, 1000));
+								
+							} else {
+							
+							window.location.href="index.html";
+							
+							}
+						}
+						
+
+					
+
+						else if(res4=="ErrorPOP") {
+						
+
+						$('.page-content').hide();
+						$('.page-content2').empty();
+						$('.page-content2').show();
+						$('.page-content2').append("<label id='datalisttargetid' display='none' >"+thisid+"</label>"); 
+						$('.page-content2').append("<label id='dlt_textcaption' display='none' >"+textcaption+"</label>"); 
+						$('.page-content2').append("<label id='dlt_saveto' display='none' >"+saveto+"</label>"); 
+						$('.page-content2').append("<label id='dlt_type' display='none' >"+type+"</label>"); 
+						$('.page-content2').append("<label id='dlt_barcodescan' display='none' >"+barcodescan+"</label>"); 
+						$('.page-content2').append("<label id='dlt_multipleyes' display='none' >"+multipleyes+"</label>"); 
+						$('.page-content2').append(data.trim().substr(8, 1000000)); 
+						
+							
+						}
+						
+						else alert(data.trim());
+                    
+                }
+            }); 
+
+        }
+			
 //photo browser to view images
 
 function photoviewer(imagelist) {
