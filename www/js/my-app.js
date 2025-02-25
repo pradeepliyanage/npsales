@@ -1692,7 +1692,7 @@ function updatetabelonchange_npmobitelcombined(textcaption,thisid,thisvalue,save
         }
 
 		
-		function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodescan,multipleyes) {
+function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodescan,multipleyes) {
             var textcaption = textcaption;
             var thisid = thisid;
             var thisvalue = thisvalue;
@@ -1719,7 +1719,7 @@ function updatetabelonchange_npmobitelcombined(textcaption,thisid,thisvalue,save
             
 			$.ajax({
                 type: "POST",
-                url: "https://inframs.mobitel.lk/phonegap-app/update.php",
+                url: globeippath+"/phonegap-app/update.php",
                 data: dataString,
                 crossDomain: true,
                 cache: false,
