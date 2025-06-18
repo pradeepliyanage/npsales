@@ -1,0 +1,76 @@
+name: Build Ionic Cordova App
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-android:
+    name: Build Android APK
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Cordova globally
+        run: npm install -g cordova
+
+      - name: Restore Cordova platforms and plugins
+        run: |
+          cordova prepare android
+
+      - name: Build Android APK
+        run: |
+          cordova build android -- --gradleArg=-PcdvBuildArch=all
+        # run: |
+        #   cordova build android --release
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-apk
+          path: platforms/android/app/build/outputs/apk/release/*.apk
+
+#   build-ios:
+#     name: Build iOS (IPA)
+#     runs-on: macos-latest
+#     steps:
+#       - uses: actions/checkout@v4
+
+#       - name: Set up Node.js
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: 20
+
+#       - name: Install dependencies
+#         run: npm install
+
+#       - name: Install Cordova globally
+#         run: npm install -g cordova
+
+#       - name: Restore Cordova platforms and plugins
+#         run: |
+#           cordova prepare ios
+
+#       - name: Build iOS app
+#         run: |
+#           cordova build ios --release
+
+#       # To get .ipa, you may need to run xcodebuild or use fastlane.
+#       # This step only produces the Xcode archive (.xcarchive).
+#       # Code signing is not included; to sign and export .ipa, add secrets and codesigning steps.
+
+#       - name: Upload iOS Xcode build
+#         uses: actions/upload-artifact@v4
+#         with:
+#           name: ios-xcode-build
+#           path: platforms/ios/build/
