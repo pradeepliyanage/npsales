@@ -30,7 +30,7 @@ jobs:
 
       - name: Build Android APK
         run: |
-          cordova build android -- --gradleArg=-PcdvBuildArch=all
+          cordova build android --debug
         # run: |
         #   cordova build android --release
 
