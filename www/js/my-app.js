@@ -992,7 +992,7 @@ function errorHandler(err) {
 
 
 // camera take picture
-function cameraTakePicturemobitelchanges(imagecaption,thisid,sourceType) { //mobitelchanges
+function cameraTakePicture(imagecaption,thisid,sourceType) { //mobitelchanges
 	var imagecaption=imagecaption;//value passing from onclick button event
 	var thisid=thisid;
 	//alert(thisid));
@@ -1070,7 +1070,7 @@ function cameraTakePicturemobitelchanges(imagecaption,thisid,sourceType) { //mob
 }	
 
 
-function cameraTakePicture(imagecaption,thisid,type,sourceType) { //mobitelchanges
+function cameraTakePicture_mobitel(imagecaption,thisid,type,sourceType) { //mobitelchanges
 	var imagecaption=imagecaption;//value passing from onclick button event
 	var thisid=thisid;
 	//alert(thisid));
@@ -1149,7 +1149,7 @@ function cameraTakePicture(imagecaption,thisid,type,sourceType) { //mobitelchang
 
 // file transfer
 
-function uploadFilemobitelchanges(imageData,imagecaption,thisid,sourceType) {//mobitelchanges
+function uploadFile(imageData,imagecaption,thisid,sourceType) {//mobitelchanges
    var fileURL = imageData;
    var imagecaption=imagecaption;//value passing from onclick button event
    if(document.getElementById("siteid"))
@@ -1198,7 +1198,7 @@ function uploadFilemobitelchanges(imageData,imagecaption,thisid,sourceType) {//m
 	
 }
 
-function uploadFile(imageData,imagecaption,thisid,type,sourceType) {//mobitelchanges
+function uploadFile_mobitelchanges(imageData,imagecaption,thisid,type,sourceType) {//mobitelchanges
    var fileURL = imageData;
    var imagecaption=imagecaption;//value passing from onclick button event
    if(document.getElementById("siteid"))
