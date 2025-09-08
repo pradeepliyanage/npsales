@@ -999,21 +999,24 @@ function cameraTakePicturemobitelchanges(imagecaption,thisid,sourceType) { //mob
 	
 	if(sourceType=="PHOTOLIBRARY") {
    navigator.camera.getPicture(onSuccess, onFail, {  
-      quality: 75,
-	  targetWidth: 712,
-      targetHeight: 712,	  
+      quality: 70,
+	  targetWidth: 1600,	  
       destinationType: Camera.DestinationType.FILE_URI,
 	  sourceType : Camera.PictureSourceType.PHOTOLIBRARY ,
+	  encodingType: Camera.EncodingType.JPEG,
+      mediaType: Camera.MediaType.PICTURE,
+      correctOrientation: true
 	  //sourceType: Camera.PictureSource.CAMERA, 
 	  //popoverOptions : popover
    });  // if need to view the image data DATA_URL//FILE_URI
 	} else {
 	navigator.camera.getPicture(onSuccess, onFail, {  
-      quality: 100,
-	  targetWidth: 712,
-      targetHeight: 712,	  
+      quality: 70,
+	  targetWidth: 1600,	  
       destinationType: Camera.DestinationType.FILE_URI,
-	  correctOrientation: true					   
+	  encodingType: Camera.EncodingType.JPEG,
+      mediaType: Camera.MediaType.PICTURE,
+      correctOrientation: true			   
 	  //sourceType : Camera.PictureSourceType.PHOTOLIBRARY ,
 	  //sourceType: Camera.PictureSource.CAMERA, 
 	  //popoverOptions : popover
@@ -1077,21 +1080,24 @@ function cameraTakePicture(imagecaption,thisid,type,sourceType) { //mobitelchang
 	
 	if(sourceType=="PHOTOLIBRARY") {
    navigator.camera.getPicture(onSuccess, onFail, {  
-      quality: 100,
-	  targetWidth: 712,
-      targetHeight: 712,	  
+      quality: 70,
+	  targetWidth: 1600,  
       destinationType: Camera.DestinationType.FILE_URI,
 	  sourceType : Camera.PictureSourceType.PHOTOLIBRARY ,
+	  encodingType: Camera.EncodingType.JPEG,
+      mediaType: Camera.MediaType.PICTURE,
+      correctOrientation: true
 	  //sourceType: Camera.PictureSource.CAMERA, 
 	  //popoverOptions : popover
    });  // if need to view the image data DATA_URL//FILE_URI
 	} else {
 	navigator.camera.getPicture(onSuccess, onFail, {  
-      quality: 100,
-	  targetWidth: 712,
-      targetHeight: 712,	  
+      quality: 70,
+	  targetWidth: 1600,	  
       destinationType: Camera.DestinationType.FILE_URI,
-	  correctOrientation: true					   
+	  correctOrientation: true,
+	  encodingType: Camera.EncodingType.JPEG,
+      mediaType: Camera.MediaType.PICTURE,
 	  //sourceType : Camera.PictureSourceType.PHOTOLIBRARY ,
 	  //sourceType: Camera.PictureSource.CAMERA, 
 	  //popoverOptions : popover
@@ -2079,10 +2085,12 @@ function cameraTakePictureimagecompare(imagecaption,thisid,type) {
 	var thisid=thisid;
 	//alert(thisid));
    navigator.camera.getPicture(onSuccess, onFail, {  
-      quality: 75,
-	  targetWidth: 712,
-      targetHeight: 712,	  
+      quality: 70,
+	  targetWidth: 1600,	  
       destinationType: Camera.DestinationType.FILE_URI,
+	  encodingType: Camera.EncodingType.JPEG,
+      mediaType: Camera.MediaType.PICTURE,
+      correctOrientation: true,
 	  //sourceType: Camera.PictureSource.CAMERA, 
 	  //popoverOptions : popover
    });  // if need to view the image data DATA_URL//FILE_URI
@@ -2386,10 +2394,12 @@ function cameraTakePictureimagecompare2(imagecaption,thisid,type) { //addtonp
 	var thisid=thisid;
 	//alert(thisid));
    navigator.camera.getPicture(onSuccess, onFail, {  
-      quality: 75,
-	  targetWidth: 712,
-      targetHeight: 712,	  
+      quality: 70,
+	  targetWidth: 1600,	  
       destinationType: Camera.DestinationType.FILE_URI,
+	  encodingType: Camera.EncodingType.JPEG,
+      mediaType: Camera.MediaType.PICTURE,
+      correctOrientation: true,
 	  //sourceType: Camera.PictureSource.CAMERA, 
 	  //popoverOptions : popover
    });  // if need to view the image data DATA_URL//FILE_URI
