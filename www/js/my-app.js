@@ -1680,15 +1680,25 @@ function updatetabelonchange_npmobitelcombined(textcaption,thisid,thisvalue,save
 						
 
 						$('.page-content').hide();
+						console.log("Debug: 1");
 						$('.page-content2').empty();
+						console.log("Debug: 2");
 						$('.page-content2').show();
+						console.log("Debug: 3");
 						$('.page-content2').append("<label id='datalisttargetid' display='none' >"+thisid+"</label>"); 
+						console.log("Debug: 4");
 						$('.page-content2').append("<label id='dlt_textcaption' display='none' >"+textcaption+"</label>"); 
+						console.log("Debug: 5");
 						$('.page-content2').append("<label id='dlt_saveto' display='none' >"+saveto+"</label>"); 
+						console.log("Debug: 6");
 						$('.page-content2').append("<label id='dlt_type' display='none' >"+type+"</label>"); 
+						console.log("Debug: 7");
 						$('.page-content2').append("<label id='dlt_barcodescan' display='none' >"+barcodescan+"</label>"); 
+						console.log("Debug: 8");
 						$('.page-content2').append("<label id='dlt_multipleyes' display='none' >"+multipleyes+"</label>"); 
+						console.log("Debug: 9");
 						$('.page-content2').append(data.trim().substr(8, 1000000)); 
+						console.log("Debug: 10");
 	 
 				}
                     
@@ -1845,15 +1855,25 @@ function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodesca
 						
 
 						$('.page-content').hide();
+						console.log("Debug: 11");
 						$('.page-content2').empty();
+						console.log("Debug: 12");
 						$('.page-content2').show();
+						console.log("Debug: 13");
 						$('.page-content2').append("<label id='datalisttargetid' display='none' >"+thisid+"</label>"); 
+						console.log("Debug: 14");
 						$('.page-content2').append("<label id='dlt_textcaption' display='none' >"+textcaption+"</label>"); 
+						console.log("Debug: 15");
 						$('.page-content2').append("<label id='dlt_saveto' display='none' >"+saveto+"</label>"); 
+						console.log("Debug: 16");
 						$('.page-content2').append("<label id='dlt_type' display='none' >"+type+"</label>"); 
+						console.log("Debug: 17");
 						$('.page-content2').append("<label id='dlt_barcodescan' display='none' >"+barcodescan+"</label>"); 
+						console.log("Debug: 18");
 						$('.page-content2').append("<label id='dlt_multipleyes' display='none' >"+multipleyes+"</label>"); 
+						console.log("Debug: 19");
 						$('.page-content2').append(data.trim().substr(8, 1000000)); 
+						console.log("Debug: 20");
 						
 							
 						}
