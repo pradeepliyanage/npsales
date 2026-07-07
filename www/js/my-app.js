@@ -27,7 +27,7 @@ var locationerror = '';
 var locationtime = '';
 var globepage='';
 var globebannertext='';
-var globeippath='http://134.195.208.144/control';
+var globeippath='https://appurl.digitrans.lk/control';
 var nongeotag='';//nongeo //for no gps app put nongeo
 
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -67,7 +67,7 @@ function onDeviceReady() {
 
 function getserviceurl(uuid2) {	
 		
-	var url = "http://134.195.208.144/control"+"/phonegap-app/json.php";//
+	var url = "https://appurl.digitrans.lk/control"+"/phonegap-app/json.php";//
 	$.getJSON(url,{getserviceurl:uuid2}, function(result) {
 		
 		globeippath= result;
@@ -2484,7 +2484,7 @@ function uploadFilecompareimages2(imageData,imagecaption,thisid,type) {//addtonp
 		alert('element exists!');
 	}
    
-   var uri = encodeURI("http://134.195.208.144/CarParking/phonegap-app/nodejs/fileupload.php?val0="+morevar);
+   var uri = encodeURI("https://appurl.digitrans.lk/CarParking/phonegap-app/nodejs/fileupload.php?val0="+morevar);
    var options = new FileUploadOptions();
    options.chunkedMode = false,
    options.fileKey = "file";
