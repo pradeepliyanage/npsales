@@ -27,7 +27,7 @@ var locationerror = '';
 var locationtime = '';
 var globepage='';
 var globebannertext='';
-var globeippath='https://appurl.digitrans.lk/control';
+var globeippath='https://appurl.digitrans.lk';
 var nongeotag='';//nongeo //for no gps app put nongeo
 
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -67,7 +67,7 @@ function onDeviceReady() {
 
 function getserviceurl(uuid2) {	
 		
-	var url = "https://appurl.digitrans.lk/control"+"/phonegap-app/json.php";//
+	var url = "https://appurl.digitrans.lk"+"/phonegap-app/json.php";//
 	$.getJSON(url,{getserviceurl:uuid2}, function(result) {
 		
 		globeippath= result;
