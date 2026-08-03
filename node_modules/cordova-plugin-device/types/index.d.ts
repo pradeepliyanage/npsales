@@ -1,4 +1,4 @@
-// Type definitions for cordova-plugin-device 2.0
+// Type definitions for cordova-plugin-device
 // Project: https://github.com/apache/cordova-plugin-device
 // Definitions by: Microsoft Open Technologies Inc <http://msopentech.com>
 //                 Tim Brust <https://github.com/timbru31>
@@ -30,6 +30,8 @@ interface Device {
     isVirtual: boolean;
     /** Get the device hardware serial number. */
     serial: string;
+    /** Get the Android device's SDK version. (Android-only) */
+    sdkVersion?: string;
 }
 
 declare var device: Device;
