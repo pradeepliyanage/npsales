@@ -6788,6 +6788,7 @@
             function targetNeedsFastClick(el) {
                 var $el = $(el);
                 if (el.nodeName.toLowerCase() === 'input' && el.type === 'file') return false;
+                if (el.nodeName.toLowerCase() === 'select') return false;
                 if ($el.hasClass('no-fastclick') || $el.parents('.no-fastclick').length > 0) return false;
                 return true;
             }
