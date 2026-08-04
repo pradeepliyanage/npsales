@@ -992,7 +992,7 @@ function errorHandler(err) {
 
 
 // camera take picture
-function cameraTakePicturemobitelchanges(imagecaption,thisid,sourceType) { //mobitelchanges
+function cameraTakePicture(imagecaption,thisid,sourceType) { //mobitelchanges- nonMobitel
 	var imagecaption=imagecaption;//value passing from onclick button event
 	var thisid=thisid;
 	//alert(thisid));
@@ -1073,7 +1073,7 @@ function cameraTakePicturemobitelchanges(imagecaption,thisid,sourceType) { //mob
 }	
 
 
-function cameraTakePicture(imagecaption,thisid,type,sourceType) { //mobitelchanges
+function cameraTakePicturemobitelchanges(imagecaption,thisid,type,sourceType) { //mobitelchanges - Mobitel
 	var imagecaption=imagecaption;//value passing from onclick button event
 	var thisid=thisid;
 	//alert(thisid));
@@ -1155,7 +1155,7 @@ function cameraTakePicture(imagecaption,thisid,type,sourceType) { //mobitelchang
 
 // file transfer
 
-function uploadFilemobitelchanges(imageData,imagecaption,thisid,sourceType) {//mobitelchanges
+function uploadFile(imageData,imagecaption,thisid,sourceType) {//mobitelchanges - nonMobitel
    var fileURL = imageData;
    var imagecaption=imagecaption;//value passing from onclick button event
    if(document.getElementById("siteid"))
@@ -1204,7 +1204,7 @@ function uploadFilemobitelchanges(imageData,imagecaption,thisid,sourceType) {//m
 	
 }
 
-function uploadFile(imageData,imagecaption,thisid,type,sourceType) {//mobitelchanges
+function uploadFilemobitelchanges(imageData,imagecaption,thisid,type,sourceType) {//mobitelchanges - Mobitel
    var fileURL = imageData;
    var imagecaption=imagecaption;//value passing from onclick button event
    if(document.getElementById("siteid"))
@@ -1256,7 +1256,7 @@ function uploadFile(imageData,imagecaption,thisid,type,sourceType) {//mobitelcha
 
 
 //call from gather data universal to update form data to the tabels when onchange	
-function updatetabelonchange_npsalesorg(textcaption,thisid,thisvalue,saveto,type,barcodescan,multipleyes) {//get mobitel cjhnages as below
+function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodescan,multipleyes) {//get mobitel cjhnages as below - NonMobitel
 	$("#update").prop('disabled', true);
             var textcaption = textcaption;
             var thisid = thisid;
@@ -1463,7 +1463,7 @@ function updatetabelonchange_npsalesorg(textcaption,thisid,thisvalue,saveto,type
 
         }
 		
-function updatetabelonchange_npmobitelcombined(textcaption,thisid,thisvalue,saveto,type,barcodescan,multipleyes) {
+function updatetabelonchange_npmobitelcombined(textcaption,thisid,thisvalue,saveto,type,barcodescan,multipleyes) { // - Combined Mobitel and NonMobitel
 	$("#update").prop('disabled', true);
             var textcaption = textcaption;
             var thisid = thisid;
@@ -1708,7 +1708,7 @@ function updatetabelonchange_npmobitelcombined(textcaption,thisid,thisvalue,save
         }
 
 		
-function updatetabelonchange(textcaption,thisid,thisvalue,saveto,type,barcodescan,multipleyes) {
+function updatetabelonchange_mobitelchanges(textcaption,thisid,thisvalue,saveto,type,barcodescan,multipleyes) { // Mobitel
             var textcaption = textcaption;
             var thisid = thisid;
             var thisvalue = thisvalue;
