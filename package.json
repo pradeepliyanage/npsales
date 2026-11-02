@@ -19,7 +19,7 @@
   "devDependencies": {
     "cordova-android": "^15.1.0",
     "cordova-plugin-battery-status": "~2.0.3",
-    "cordova-plugin-ble-central": "^2.0.0",
+    "cordova-plugin-ble-central": "2.0.0-slim",
     "cordova-plugin-camera": "~8.0.0",
     "cordova-plugin-cleartext": "~1.0.0",
     "cordova-plugin-console": "~1.1.0",
