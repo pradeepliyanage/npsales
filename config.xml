@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.pradeepl.digitranslk" version="7.20.4" xmlns="http://www.w3.org/ns/widgets"
+<widget id="com.pradeepl.digitranslk" version="7.20.5" xmlns="http://www.w3.org/ns/widgets"
     xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>DigitransLK</name>
     <description>
@@ -78,7 +78,7 @@
     <plugin name="cordova-plugin-device-motion" source="npm" spec="~2.0.1" />
     <plugin name="cordova-plugin-device-orientation" source="npm" spec="~3.0.0" />
     <plugin name="cordova-plugin-dialogs" source="npm" spec="~2.0.2" />
-    <plugin name="cordova-plugin-file" source="npm" spec="~7.0.0" />
+    <plugin name="cordova-plugin-file" source="npm" spec="~8.1.3" />
     <feature name="File">
         <param name="android-package" value="org.apache.cordova.FileUtils" />
     </feature>
@@ -86,7 +86,7 @@
 
     <!--Android
     specific 03-->
-	<plugin name="cordova-plugin-pvt-file-transfer"  source="npm" spec="~2.0.0" />
+	<plugin name="cordova-plugin-file-transfer" source="npm" spec="~2.0.1" /><!--official plugin; pvt fork had trust-all SSL code rejected by Google Play-->
 
     
 	
@@ -97,7 +97,6 @@
 		<param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
 	</feature>
 	
-	<plugin name="cordova-plugin-advanced-http"  source="npm" spec="~3.3.1" />
 
    
 
@@ -124,7 +123,7 @@
             wherther you executed the task at the correct location</string>
     </edit-config>
 
-    <plugin name="cordova-plugin-location-provider" source="npm" spec="~1.5.7" />
+    <plugin name="cordova-plugin-location-provider" spec="./local-plugins/cordova-plugin-location-provider" /><!--local copy without background location / foreground service (Google Play policy)-->
 
     <!--<plugin
     name="cordova-background-geolocation-plugin" source="npm" spec="~2.0.8" />-->
@@ -152,9 +151,6 @@ end Android specific 02 -->
     name="cordova-plugin-splashscreen" source="npm" spec="~6.0.2" />-->
     <plugin name="cordova-plugin-statusbar" source="npm" spec="~4.0.0" />
     <plugin name="cordova-plugin-vibration" source="npm" spec="~3.1.1" />
-    <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.3.5" />
-    <plugin name="cordova-plugin-sms" source="npm" spec="~1.0.5" />
-    <plugin name="cordova-sms-plugin" source="npm" spec="~1.0.5" />
     <plugin name="cordova-plugin-cleartext" source="npm" spec="~1.0.0" />
     <plugin name="cordova-plugin-ionic-webview" source="npm" spec="~5.0.1" />
     <plugin name="cordova-plugin-fullscreen" source="npm" spec="~1.3.0" />

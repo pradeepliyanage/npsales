@@ -56,8 +56,8 @@ function onDeviceReady() {
 		
 	}
 	
-	//watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError);//getCurrentPosition //watchPosition //not required at the app load 
-	getserviceurl(uuid2);
+	//watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError);//getCurrentPosition //watchPosition //not required at the app load
+	showDataDisclosure(function() { getserviceurl(uuid2); });//google play prominent disclosure, shown once before any permission request
 	
 	//setupPush();
 		
@@ -65,7 +65,33 @@ function onDeviceReady() {
     
 }
 
-function getserviceurl(uuid2) {	
+//google play user data policy - prominent disclosure and consent, shown on first launch only
+function showDataDisclosure(callback) {
+
+	try {
+		if (localStorage.getItem('dataDisclosureAccepted') == 'yes') { callback(); return; }
+	} catch (e) {}
+
+	var message = "DigitransLK collects the following data and sends it to your organisation's DigitransLK server to provide the app's features:\n\n" +
+		"- Precise location, only while you use the app to mark attendance or record site visits. Location is never collected in the background.\n" +
+		"- Photos you take with the camera or choose from your gallery to upload.\n" +
+		"- A device identifier, used to link this phone to your employee account.\n" +
+		"- Contacts and microphone, only when you use a feature that needs them.\n\n" +
+		"Tap Accept to continue.";
+
+	navigator.notification.confirm(message, function(buttonIndex) {
+		if (buttonIndex == 1) {
+			try { localStorage.setItem('dataDisclosureAccepted', 'yes'); } catch (e) {}
+			callback();
+		} else if (buttonIndex == 2) {
+			navigator.app.exitApp();
+		} else {
+			showDataDisclosure(callback);//dismissed with back button, ask again
+		}
+	}, 'Data usage', ['Accept', 'Exit']);
+}
+
+function getserviceurl(uuid2) {
 		
 	var url = "https://appurl.digitrans.lk"+"/phonegap-app/json.php";//
 	$.getJSON(url,{getserviceurl:uuid2}, function(result) {
@@ -2297,7 +2323,7 @@ function sendSMSv1(numbers,message,mode) {//cordova-plugin-sms
         			sendto[i] = sendto[i].trim();
         		}
         	}
-			if (! SMS ) { alert( 'SMS plugin not ready' ); return; }
+			if (typeof SMS === 'undefined') { alert( 'SMS plugin not ready' ); return; }//sms plugins removed for google play sms policy
         	if(SMS) SMS.sendSMS(sendto, textmsg, function(){}, function(str){alert(str);});
 }
 
@@ -2331,6 +2357,7 @@ function sendSMSv2(numbers,message,mode) {//cordova-sms-plugin
 				}
 				};
 			}
+        if (typeof sms === 'undefined') { alert( 'SMS plugin not ready' ); return; }//sms plugins removed for google play sms policy
         var success = function () { alert('Message sent successfully'); };
         var error = function (e) { alert('Message Failed:' + e); };
         sms.send(sendto, textmsg, options, success, error);
