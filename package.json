@@ -36,7 +36,6 @@
     "cordova-plugin-inappbrowser": "~7.0.0",
     "cordova-plugin-ionic-webview": "~5.0.1",
     "cordova-plugin-ios-camera-permissions": "~1.2.0",
-    "cordova-plugin-location-provider": "file:local-plugins/cordova-plugin-location-provider",
     "cordova-plugin-media": "^7.0.0",
     "cordova-plugin-media-capture": "^6.0.0",
     "cordova-plugin-network-information": "~3.1.0",
@@ -65,7 +64,6 @@
       "cordova-plugin-geolocation": {
         "GPS_REQUIRED": "true"
       },
-      "cordova-plugin-location-provider": {},
       "cordova-plugin-globalization": {},
       "cordova-plugin-inappbrowser": {},
       "cordova-plugin-media": {},

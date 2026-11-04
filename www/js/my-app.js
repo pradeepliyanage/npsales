@@ -578,7 +578,28 @@ function errorHandlermapandopenurl(err) {
                alert("Error: Position is unavailable!");
             }
          }
-         		 
+
+// Replaces cordova.plugins.LocationProvider.getOwnPosition: same options ({accuracy: metres, timeout: seconds}).
+// The error only fires after the timeout, so callers that retry from their error callback do not spin.
+function getownposition(options, success, error) {
+	var accuracy = +options.accuracy || 50;
+	var timeout = (+options.timeout || 60) * 1000;
+	var best = null, done = false, watchid = null;
+	var timer = setTimeout(finish, timeout);
+	function finish() {
+		if(done) return;
+		done = true;
+		clearTimeout(timer);
+		if(watchid !== null) navigator.geolocation.clearWatch(watchid);
+		if(best) success(best); else error({code:-1, message:'location unavailable'});
+	}
+	if(!navigator.geolocation) return;
+	watchid = navigator.geolocation.watchPosition(function(position) {
+		if(best === null || position.coords.accuracy < best.coords.accuracy) best = position;
+		if(position.coords.accuracy <= accuracy) finish();
+	}, function(){}, {enableHighAccuracy: true, maximumAge: 0, timeout: timeout});
+}
+
 ///////location new version v3
 
 function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
@@ -602,7 +623,6 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 	 jasonhiddenvariable2 = document.getElementById('jasonhiddenvariable2sp').innerHTML;
 	
 	
-	//cordova.plugins.LocationProvider.setConfiguration();
 	locationtimenow=Date.now();	
 	if(locationtimenow-locationtime < +jasonhiddenvariable2) {
 	
@@ -628,7 +648,7 @@ function getLocationUpdate_v3(viewname,empnotemp,morevar,postval0,page) {
 	/* Android specific 01 */
 	
 	 var options = {accuracy: jasonhiddenvariable0, timeout: jasonhiddenvariable1};
-	 cordova.plugins.LocationProvider.getOwnPosition(options, successCallback, errorcallback);
+	 getownposition(options, successCallback, errorcallback);
 
 	 /* end Android specific 01 */
 
