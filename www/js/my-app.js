@@ -57,12 +57,21 @@ function onDeviceReady() {
 	}
 	
 	//watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError);//getCurrentPosition //watchPosition //not required at the app load
-	showDataDisclosure(function() { getserviceurl(uuid2); });//google play prominent disclosure, shown once before any permission request
+	showDataDisclosure(function() { getserviceurl(uuid2); testLocationLog(); });//google play prominent disclosure, shown once before any permission request
 	
 	//setupPush();
 		
 				
     
+}
+
+//TESTING ONLY - console log the app's own location state every 1 sec, remove before release
+//reads the globals set by getLocationUpdate / getLocationUpdate_v3 / getownposition, does not request location itself
+function testLocationLog() {
+	setInterval(function() {
+		var age = locationtime ? Math.round((Date.now() - locationtime) / 1000) + "s" : "never";
+		console.log("LOCATION lat: " + locationlat + " lon: " + locationlon + " accuracy: " + locationerror + " age: " + age + " watchID: " + watchID);
+	}, 1000);
 }
 
 //google play user data policy - prominent disclosure and consent, shown on first launch only
@@ -591,10 +600,13 @@ function getownposition(options, success, error) {
 		done = true;
 		clearTimeout(timer);
 		if(watchid !== null) navigator.geolocation.clearWatch(watchid);
+		console.log("GETOWNPOSITION finish: " + (best ? "success, accuracy " + best.coords.accuracy : "error, no fix in " + timeout + "ms"));//TESTING ONLY
 		if(best) success(best); else error({code:-1, message:'location unavailable'});
 	}
 	if(!navigator.geolocation) return;
+	console.log("GETOWNPOSITION start: want accuracy <= " + accuracy + "m, timeout " + timeout + "ms");//TESTING ONLY
 	watchid = navigator.geolocation.watchPosition(function(position) {
+		console.log("GETOWNPOSITION fix: " + position.coords.latitude + ", " + position.coords.longitude + " accuracy " + position.coords.accuracy);//TESTING ONLY
 		if(best === null || position.coords.accuracy < best.coords.accuracy) best = position;
 		if(position.coords.accuracy <= accuracy) finish();
 	}, function(){}, {enableHighAccuracy: true, maximumAge: 0, timeout: timeout});
